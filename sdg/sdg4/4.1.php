@@ -298,7 +298,7 @@ h2 {
             
 
                 echo "<td class='text-center'>
-                          <a href='edit.php?update&user_id={$id}' class='btn btn-secondary'>
+                          <a href='edit_4_1.php?update&research_id={$id}' class='btn btn-secondary'>
                               <i class='fa fa-edit'></i> 
                           </a>
                       </td>";
@@ -318,6 +318,8 @@ h2 {
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+
+  //this is js for sidebar panel
 /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;

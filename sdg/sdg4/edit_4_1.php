@@ -25,11 +25,11 @@ if(isset($_GET['research_id']))
  //Processing form data when form is submitted/ when update button is clicked
  if (isset ($_POST['update'])){
     $total_research = $_POST['total_number'];
-    $title = $_POST['title'];
-    $author = $_POST['author'];
+    $title = strtoupper($_POST['title']);
+    $author = strtoupper($_POST['author']);
     $year = $_POST['publication'];
     $total_citation = $_POST['citations'];
-    $source = $_POST['source'];
+    $source = strtoupper($_POST['source']);
 
       // SQL query to update the data in user table where the id = $userid 
         $query ="UPDATE `tbl4_1` SET   `total_research` = '{$total_research}', `title` = '{$title}', `author` = '{$author}',`year` = '{$year}',`total_citation` = '{$total_citation}',`source` = '{$source}' WHERE ID= $research_id";

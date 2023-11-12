@@ -173,8 +173,7 @@ h2 {
     }
     ?>
 
-<input type="text"style="color: black; text-align: center;" class="points" name="points" value="<?php echo $totalPoints; ?>" readonly>
-  
+<input type="text" style="color: black; text-align: center;" class="points" name="points" value="<?php echo min($totalPoints, 25); ?>" readonly>  
 </div>
 </div>
 

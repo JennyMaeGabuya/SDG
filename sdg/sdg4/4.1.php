@@ -188,7 +188,7 @@ h2 {
     }
     ?>
 </script>
-    <button type="reset" class="btn btn-danger mb-3" name="cancel"><i class="fa fa-times-circle"></i>Cancel</button>
+    <button type="reset" class="btn btn-danger mb-3" name="cancel"><i class="fa fa-times-circle"></i> Cancel</button>
   </form>
   </div>
 </div>
@@ -245,8 +245,8 @@ h2 {
                 echo "<td>{$author}</td>";
                 echo "<td>{$publication}</td>";
                 echo "<td>{$citations}</td>";
-             echo "<td>{$source} </td>";
-                echo "<td>Php $ptsR</td>"; 
+                echo "<td>{$source} </td>";
+                echo "<td>$ptsR</td>"; 
             
 
                 echo "<td class='text-center'>

@@ -1,0 +1,155 @@
+#sdg1 {
+    background-image: url('IMG/1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg2 {
+    background-image: url('IMG/2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg3 {
+    background-image: url('IMG/3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg4 {
+    background-image: url('IMG/4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg5 {
+    background-image: url('IMG/5.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg6 {
+    background-image: url('IMG/6.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg7 {
+    background-image: url('IMG/7.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg8 {
+    background-image: url('IMG/8.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg9 {
+    background-image: url('IMG/9.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg10 {
+    background-image: url('IMG/10.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg11 {
+    background-image: url('IMG/11.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg12 {
+    background-image: url('IMG/12.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg13 {
+    background-image: url('IMG/13.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg14 {
+    background-image: url('IMG/14.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg15 {
+    background-image: url('IMG/15.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg16 {
+    background-image: url('IMG/16.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#sdg17 {
+    background-image: url('IMG/17.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+
+.opacity1{
+    width: 60%;
+    height: 89px;
+    background-color: grey;
+    position: absolute;
+ 
+}
+.opacity2{
+    border-top-left-radius:50px;
+    border-bottom-left-radius:50px;
+    width: 50%;
+    height: 89px;
+    z-index: 1;
+    position: absolute;
+margin-left: 50%;
+}
+
+
+.logo-container{
+    margin-top: 18.5px;
+    width: 560px;
+    height: 70px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+    border-top-right-radius:30px;
+ 
+   
+}
+
+.slideshow-opacity{
+    display: flex;
+
+}

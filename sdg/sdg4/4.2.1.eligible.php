@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['submit'])) {
-    // Get form data
+  // Get form data
   $total_number = $_POST['total_number'];
   $eligibleProgram = $_POST['eligibleProgram'];
   $eligibleMale = $_POST['eligibleMale'];
@@ -178,12 +178,11 @@ if (isset($_POST['submit'])) {
 
         <div class="mb-2 mt-2"><i class="fa fa-bar-chart"></i>
           <label for="eligibleFemale">Total number of female graduates</label>
-            <input type="number" class="form-control" id="eligibleFemale" name="eligibleFemale" required>
+          <input type="number" class="form-control" id="eligibleFemale" name="eligibleFemale" required>
         </div>
 
         <button type="submit" class="btn btn-primary mb-3" name="submit"><i class="fa fa-check"></i> Check</button>
         <script type="text/javascript">
-
           <?php
           if (isset($successMessage)) {
 
@@ -216,7 +215,7 @@ if (isset($_POST['submit'])) {
         </tr>
       </thead>
       <tbody>
-        
+
         <?php
         include "includes/config.php";
         $query = "SELECT * FROM `tbl421_eligible`"; // SQL query to fetch all table data
@@ -232,10 +231,17 @@ if (isset($_POST['submit'])) {
           $eligibleProgram = $row['program'];
           $eligibleMale = $row['male'];
           $eligibleFemale = $row['female'];
-          $percentage = $row['percentage'];
 
-          $percentageMale = ($eligibleMale / $total_number) * 100;
-          $percentageFemale = ($eligibleFemale / $total_number) * 100;
+          // Calculate the percentage
+          $percentage = (($eligibleMale + $eligibleFemale) / $total_number) * 100;
+
+          // Update the percentage in the database
+          $updateQuery = "UPDATE `tbl421_eligible` SET percentage = $percentage WHERE ID = $id";
+          $updateResult = mysqli_query($conn, $updateQuery);
+
+          if (!$updateResult) {
+            die("Error updating percentage: " . mysqli_error($conn)); // Output the error message for debugging
+          }
 
           echo "<tr>";
           echo "<td>{$id}</td>";
@@ -243,7 +249,7 @@ if (isset($_POST['submit'])) {
           echo "<td>{$eligibleProgram}</td>";
           echo "<td>{$eligibleMale}</td>";
           echo "<td>{$eligibleFemale}</td>";
-          echo "<td>Male: {$percentageMale}%  Female: {$percentageFemale}%</td>";
+          echo "<td>{$percentage}%</td>";
 
           echo "<td class='text-center'>
                           <a href='edit_4.2.1.eligible.php?update&eligible_id={$id}' class='btn btn-secondary'>

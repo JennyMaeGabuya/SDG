@@ -113,7 +113,7 @@ CREATE TABLE `tbl421_eligible` (
   `program` varchar(255) NOT NULL,
   `male` int(11) NOT NULL,
   `female` int(11) NOT NULL,
-  `percentage` int(11) NOT NULL
+  `percentage` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

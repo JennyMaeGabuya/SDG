@@ -130,6 +130,9 @@ h2 {
     justify-content:center;
     margin-left: 300px;
   }
+  .points{
+    box-shadow: grey;
+  }
 </style>
 
 <body>
@@ -201,10 +204,11 @@ h2 {
       <label for="total_number">Total number of research on early years and lifelong education</label>
       <input type="number" class="form-control" id="total_number"  name="total_number" required>
     </div>
-    <div class="mb-2"><i class="fa fa-bookmark"></i>
-      <label for="title">Title of research</label>
-      <input type="text" class="form-control" id="title"  name="title" required>
-    </div>
+    <div class="mb-2">
+    <i class="fa fa-bookmark"></i>
+    <label for="title">Title of research</label>
+    <textarea class="form-control" id="title" name="title" rows="5" required></textarea>
+</div>
     <div class="mb-2 mt-2"><i class="fa fa-user"></i>
       <label for="author">Author</label>
       <input type="text" class="form-control" id="author"  name="author"required>
@@ -220,7 +224,7 @@ h2 {
     </div>
     <div class="mb-2 mt-2"><i class="fa fa-book"></i>
       <label for="citations">Source</label>
-      <input type="text" class="form-control" id="source"  name="source"required>
+      <textarea class="form-control" id="source"  name="source"required></textarea>
     </div>
     <button type="submit" class="btn btn-primary mb-3" name="submit"><i class="fa fa-send-o"></i>Submit</button>
     <script type="text/javascript">
@@ -298,13 +302,13 @@ h2 {
             
 
                 echo "<td class='text-center'>
-                          <a href='edit.php?update&user_id={$id}' class='btn btn-secondary'>
+                          <a href='edit_4_1.php?update&research_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>
                       </td>";
 
                 echo "<td class='text-center'>
-                          <a href='delete.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete_4.1.php?delete={$id}' class='btn btn-danger'>
                               <i class='fa fa-trash'></i>
                           </a>
                       </td>";
@@ -318,6 +322,8 @@ h2 {
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+
+  //this is js for sidebar panel
 /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;

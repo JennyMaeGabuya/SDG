@@ -246,13 +246,13 @@ if (isset($_POST['submit'])) {
           echo "<td>Male: {$percentageMale}%  Female: {$percentageFemale}%</td>";
 
           echo "<td class='text-center'>
-                          <a href='edit.php?update&user_id={$id}' class='btn btn-secondary'>
+                          <a href='edit_4.2.1.eligible.php?update&eligible_id={$id}' class='btn btn-secondary'>
                               <i class='fa fa-edit'></i> 
                           </a>
                       </td>";
 
           echo "<td class='text-center'>
-                          <a href='delete.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete_4.2.1.eligible.php?delete=eligible_id{$id}' class='btn btn-danger'>
                               <i class='fa fa-trash'></i>
                           </a>
                       </td>";

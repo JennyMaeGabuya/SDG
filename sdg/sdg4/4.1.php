@@ -125,6 +125,8 @@ h2 {
   .table-container{
     margin-left: 300px;
     margin-right: 50px;
+    width:73%;
+    overflow-x: auto; 
   }
   .h3text{
     justify-content:center;
@@ -226,7 +228,7 @@ h2 {
       <label for="citations">Source</label>
       <textarea class="form-control" id="source"  name="source"required></textarea>
     </div>
-    <button type="submit" class="btn btn-primary mb-3" name="submit"><i class="fa fa-send-o"></i>Submit</button>
+    <button type="submit" class="btn btn-primary mb-3" name="submit"><i class="fa fa-send"></i>Submit</button>
     <script type="text/javascript">
     <?php
     if (isset($successMessage)) {
@@ -247,19 +249,19 @@ h2 {
 <div class="table-container">
   <h2>Researches</h2>           
   <table class="table table-bordered">
-    <thead>
-      <tr>
-      <th scope="col">#</th>
-        <th scope="col">Total Research</th>
-        <th scope="col">Title</th>
-        <th scope="col">Author</th>
-        <th scope="col">Year of Publication</th>
-        <th scope="col">Total Citations</th>
-        <th scope="col">Source</th>
-        <th scope="col">Points</th>
-        <th scope="col" colspan="3" class="text-center">Action</th>
-      </tr>
-    </thead>
+  <thead>
+    <tr>
+      <th scope="col" style="width: 30px;">#</th>
+      <th scope="col" style="width: 30px;">Total Research</th>
+      <th scope="col" style="width: 200px;">Title</th>
+      <th scope="col" style="width: 100px;">Author</th>
+      <th scope="col" style="width: 100px;">Year of Publication</th>
+      <th scope="col" style="width: 100px;">Total Citations</th>
+      <th scope="col" style="width: 130px;">Source</th>
+      <th scope="col" style="width: 50px;">Points</th>
+      <th scope="col"colspan="2"  style="width: 100px;">Action</th>
+    </tr>
+  </thead>
     <tbody>
     <?php
             include "includes/config.php";
@@ -301,18 +303,22 @@ h2 {
                 echo "<td>$ptsR</td>"; 
             
 
-                echo "<td class='text-center'>
+                echo "<td style='width:100px'>
                           <a href='edit_4_1.php?update&research_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>
+                          <a href='delete_4.1.php?delete={$id}' class='btn btn-danger'>
+                          <i class='fa fa-trash'></i>
+                      </a>
                       </td>";
 
-                echo "<td class='text-center'>
+            /*    echo "<td class='text-center'>
                           <a href='delete_4.1.php?delete={$id}' class='btn btn-danger'>
                               <i class='fa fa-trash'></i>
                           </a>
                       </td>";
-                echo "</tr>";
+                echo "</tr>"; 
+                */
             }
             ?>
     </tbody>

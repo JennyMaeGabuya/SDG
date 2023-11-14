@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2023 at 07:23 AM
+-- Generation Time: Nov 14, 2023 at 02:31 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -42,8 +42,10 @@ CREATE TABLE `tbl4_1` (
 --
 
 INSERT INTO `tbl4_1` (`ID`, `total_research`, `title`, `author`, `year`, `total_citation`, `source`) VALUES
-(1, 1, 'as', 'qww', '2012', 2, ''),
-(17, 12, 'ERIKA', 'ERIKA', '2001', 12, 'SCOPUS');
+(22, 23, 'A STUDY OF THE IMPACT OF EARLY CHILDHOOD EDUCATION ON COGNITIVE  AND SOCIOEMOTIONAL DEVELOPMENT, AND EFFECTIVE STRATEGIES FOR  IMPROVING ACCESS TO HIGH-QUALITY EARLY CHILDHOOD EDUCATION', 'ERIKA', '2023', 2, 'SCOPUC'),
+(23, 12, 'EXPLORING THE EFFECTIVENESS OF PEER MENTORING PROGRAMS IN \r\nPROMOTING ACADEMIC SUCCESS AND SOCIAL SUPPORT FOR STUDENTS \r\nFROM MARGINALIZED BACKGROUNDS', 'ERIKA', '1999', 2, 'KIMIII'),
+(24, 2, 'A STUDY OF THE IMPACT OF EDUCATION ON LIFELONG LEARNING AND SKILLS \r\nDEVELOPMENT, AND EFFECTIVE STRATEGIES FOR PROMOTING LIFELONG \r\nLEARNING\r\n', 'ERIKA', '2022', 23, 'KIMIII KIMIII KIMIII KIMIII KIMIII KIMIII KIMIII'),
+(26, 1, 'SASAASAA', 'EWWEWE', '2009', 21, 'EMMEEEE');
 
 -- --------------------------------------------------------
 
@@ -116,6 +118,14 @@ CREATE TABLE `tbl421_eligible` (
   `percentage` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tbl421_eligible`
+--
+
+INSERT INTO `tbl421_eligible` (`ID`, `total_number`, `program`, `male`, `female`, `percentage`) VALUES
+(1, 12, 'beed', 6, 6, ''),
+(2, 12, 'beed', 6, 6, '');
+
 -- --------------------------------------------------------
 
 --
@@ -149,62 +159,40 @@ CREATE TABLE `tbl421_graduates` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl422_beed`
---
-
-CREATE TABLE `tbl422_beed` (
-  `ID` int(11) NOT NULL,
-  `male` int(11) NOT NULL,
-  `female` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl422_bped`
---
-
-CREATE TABLE `tbl422_bped` (
-  `ID` int(11) NOT NULL,
-  `male` int(11) NOT NULL,
-  `female` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl422_bsed`
---
-
-CREATE TABLE `tbl422_bsed` (
-  `ID` int(11) NOT NULL,
-  `male` int(11) NOT NULL,
-  `female` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl422_btled`
---
-
-CREATE TABLE `tbl422_btled` (
-  `ID` int(11) NOT NULL,
-  `male` int(11) NOT NULL,
-  `female` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl422_let`
 --
 
 CREATE TABLE `tbl422_let` (
   `ID` int(11) NOT NULL,
-  `male` int(11) NOT NULL,
-  `female` int(11) NOT NULL
+  `let total number` int(11) NOT NULL,
+  `letmale` int(11) NOT NULL,
+  `letfemale` int(11) NOT NULL,
+  `bsed total number` int(11) NOT NULL,
+  `bsedmale` int(11) NOT NULL,
+  `bsedfemale` int(11) NOT NULL,
+  `beed total number` int(11) NOT NULL,
+  `beedmale` int(11) NOT NULL,
+  `beedfemale` int(11) NOT NULL,
+  `bped total number` int(11) NOT NULL,
+  `bpedmale` int(11) NOT NULL,
+  `bpedfemale` int(11) NOT NULL,
+  `btled total number` int(11) NOT NULL,
+  `btledmale` int(11) NOT NULL,
+  `btledfemale` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl422_let`
+--
+
+INSERT INTO `tbl422_let` (`ID`, `let total number`, `letmale`, `letfemale`, `bsed total number`, `bsedmale`, `bsedfemale`, `beed total number`, `beedmale`, `beedfemale`, `bped total number`, `bpedmale`, `bpedfemale`, `btled total number`, `btledmale`, `btledfemale`) VALUES
+(34, 23, 10, 13, 7, 3, 4, 6, 3, 3, 5, 2, 3, 5, 2, 3),
+(36, 4156, 610, 3546, 67, 23, 44, 3777, 343, 3434, 266, 232, 34, 46, 12, 34),
+(37, 4156, 610, 3546, 67, 23, 44, 3777, 343, 3434, 266, 232, 34, 46, 12, 34),
+(38, 189, 88, 101, 35, 23, 12, 57, 23, 34, 53, 21, 32, 44, 21, 23),
+(39, 189, 88, 101, 35, 23, 12, 57, 23, 34, 53, 21, 32, 44, 21, 23),
+(40, 554, 66, 488, 35, 12, 23, 42, 21, 21, 233, 21, 212, 244, 12, 232),
+(41, 554, 66, 488, 35, 12, 23, 42, 21, 21, 233, 21, 212, 244, 12, 232);
 
 -- --------------------------------------------------------
 
@@ -337,30 +325,6 @@ ALTER TABLE `tbl421_graduates`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `tbl422_beed`
---
-ALTER TABLE `tbl422_beed`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl422_bped`
---
-ALTER TABLE `tbl422_bped`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl422_bsed`
---
-ALTER TABLE `tbl422_bsed`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl422_btled`
---
-ALTER TABLE `tbl422_btled`
-  ADD PRIMARY KEY (`ID`);
-
---
 -- Indexes for table `tbl422_let`
 --
 ALTER TABLE `tbl422_let`
@@ -404,7 +368,7 @@ ALTER TABLE `tbl435_access`
 -- AUTO_INCREMENT for table `tbl4_1`
 --
 ALTER TABLE `tbl4_1`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `tbl44_firstgen`
@@ -434,7 +398,7 @@ ALTER TABLE `tbl421_acquired`
 -- AUTO_INCREMENT for table `tbl421_eligible`
 --
 ALTER TABLE `tbl421_eligible`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl421_failed`
@@ -449,28 +413,10 @@ ALTER TABLE `tbl421_graduates`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tbl422_beed`
---
-ALTER TABLE `tbl422_beed`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl422_bsed`
---
-ALTER TABLE `tbl422_bsed`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl422_btled`
---
-ALTER TABLE `tbl422_btled`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `tbl422_let`
 --
 ALTER TABLE `tbl422_let`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `tbl431_resources`

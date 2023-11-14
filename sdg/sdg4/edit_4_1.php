@@ -94,7 +94,7 @@ h3{
     </div>
     <div class="form-group"><i class="fa fa-bookmark"></i>
       <label for="title">Title of research</label>
-      <input type="text" class="form-control" id="title"  name="title" value="<?php echo $title ?>" required>
+      <textarea class="form-control" id="title"  name="title" value="" required><?php echo $title ?></textarea>
     </div>
     <div class="form-group"><i class="fa fa-user"></i>
       <label for="author">Author</label>
@@ -110,7 +110,7 @@ h3{
      </div>
     <div class="form-group"><i class="fa fa-book"></i>
       <label for="citations">Source</label>
-      <input type="text" class="form-control" id="source"  name="source" value="<?php echo $source ?>" required>
+      <textarea class="form-control" id="source"  name="source" value="" required><?php echo $source ?></textarea>
    </div>
    <button type="submit" class="btn btn-primary mt-6 mb-3" name="update"><i class="far fa-edit"></i>Update</button>
  

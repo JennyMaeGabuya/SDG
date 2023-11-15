@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 14, 2023 at 02:31 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Host: 127.0.0.1:3306
+-- Generation Time: Nov 15, 2023 at 03:26 PM
+-- Server version: 8.0.31
+-- PHP Version: 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,15 +27,17 @@ SET time_zone = "+00:00";
 -- Table structure for table `tbl4_1`
 --
 
-CREATE TABLE `tbl4_1` (
-  `ID` int(11) NOT NULL,
-  `total_research` int(11) NOT NULL,
+DROP TABLE IF EXISTS `tbl4_1`;
+CREATE TABLE IF NOT EXISTS `tbl4_1` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `total_research` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `author` varchar(255) NOT NULL,
   `year` text NOT NULL,
-  `total_citation` int(11) NOT NULL,
-  `source` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `total_citation` int NOT NULL,
+  `source` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl4_1`
@@ -53,13 +55,15 @@ INSERT INTO `tbl4_1` (`ID`, `total_research`, `title`, `author`, `year`, `total_
 -- Table structure for table `tbl44_firstgen`
 --
 
-CREATE TABLE `tbl44_firstgen` (
-  `ID` int(11) NOT NULL,
-  `total_number` int(11) NOT NULL,
-  `male` int(11) NOT NULL,
-  `female` int(11) NOT NULL,
-  `percentage` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `tbl44_firstgen`;
+CREATE TABLE IF NOT EXISTS `tbl44_firstgen` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `total_number` int NOT NULL,
+  `male` int NOT NULL,
+  `female` int NOT NULL,
+  `percentage` int NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -67,13 +71,15 @@ CREATE TABLE `tbl44_firstgen` (
 -- Table structure for table `tbl44_firstgen_firstyear`
 --
 
-CREATE TABLE `tbl44_firstgen_firstyear` (
-  `ID` int(11) NOT NULL,
-  `total_number` int(11) NOT NULL,
-  `male` int(11) NOT NULL,
-  `female` int(11) NOT NULL,
-  `percentage` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `tbl44_firstgen_firstyear`;
+CREATE TABLE IF NOT EXISTS `tbl44_firstgen_firstyear` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `total_number` int NOT NULL,
+  `male` int NOT NULL,
+  `female` int NOT NULL,
+  `percentage` int NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -81,80 +87,46 @@ CREATE TABLE `tbl44_firstgen_firstyear` (
 -- Table structure for table `tbl44_firstyear`
 --
 
-CREATE TABLE `tbl44_firstyear` (
-  `ID` int(11) NOT NULL,
-  `total_number` int(11) NOT NULL,
-  `male` int(11) NOT NULL,
-  `female` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `tbl44_firstyear`;
+CREATE TABLE IF NOT EXISTS `tbl44_firstyear` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `total_number` int NOT NULL,
+  `male` int NOT NULL,
+  `female` int NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl421_acquired`
+-- Table structure for table `tbl421_licensure`
 --
 
-CREATE TABLE `tbl421_acquired` (
-  `ID` int(11) NOT NULL,
-  `total_number` int(11) NOT NULL,
-  `program` varchar(255) NOT NULL,
-  `male` int(11) NOT NULL,
-  `female` int(11) NOT NULL,
-  `percentage` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl421_eligible`
---
-
-CREATE TABLE `tbl421_eligible` (
-  `ID` int(11) NOT NULL,
-  `total_number` int(11) NOT NULL,
-  `program` varchar(255) NOT NULL,
-  `male` int(11) NOT NULL,
-  `female` int(11) NOT NULL,
-  `percentage` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `tbl421_licensure`;
+CREATE TABLE IF NOT EXISTS `tbl421_licensure` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `Program` varchar(255) NOT NULL,
+  `EligibleTotal` int NOT NULL,
+  `TookExam` int NOT NULL,
+  `Acquired` int NOT NULL,
+  `Failed` int NOT NULL,
+  `PercentEligible` decimal(5,2) NOT NULL,
+  `PercentTookExam` decimal(5,2) NOT NULL,
+  `PercentAcquired` decimal(5,2) NOT NULL,
+  `PercentFailed` decimal(5,2) NOT NULL,
+  `Points` int NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=83 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `tbl421_eligible`
+-- Dumping data for table `tbl421_licensure`
 --
 
-INSERT INTO `tbl421_eligible` (`ID`, `total_number`, `program`, `male`, `female`, `percentage`) VALUES
-(1, 12, 'beed', 6, 6, ''),
-(2, 12, 'beed', 6, 6, '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl421_failed`
---
-
-CREATE TABLE `tbl421_failed` (
-  `ID` int(11) NOT NULL,
-  `total_number` int(11) NOT NULL,
-  `program` varchar(255) NOT NULL,
-  `male` int(11) NOT NULL,
-  `female` int(11) NOT NULL,
-  `percentage` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl421_graduates`
---
-
-CREATE TABLE `tbl421_graduates` (
-  `ID` int(11) NOT NULL,
-  `total_number` int(11) NOT NULL,
-  `program` varchar(255) NOT NULL,
-  `male` int(11) NOT NULL,
-  `female` varchar(255) NOT NULL,
-  `percentage` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `tbl421_licensure` (`ID`, `Program`, `EligibleTotal`, `TookExam`, `Acquired`, `Failed`, `PercentEligible`, `PercentTookExam`, `PercentAcquired`, `PercentFailed`, `Points`) VALUES
+(81, 'CTE', 1000, 600, 500, 100, '100.00', '60.00', '83.33', '16.67', 0),
+(80, 'CAS', 150, 150, 50, 100, '100.00', '100.00', '33.33', '66.67', 0),
+(79, 'ENGINEERING', 1500, 1450, 1400, 50, '100.00', '96.67', '96.55', '3.45', 0),
+(82, 'IT', 900, 500, 300, 200, '100.00', '55.56', '60.00', '40.00', 0);
 
 -- --------------------------------------------------------
 
@@ -162,24 +134,26 @@ CREATE TABLE `tbl421_graduates` (
 -- Table structure for table `tbl422_let`
 --
 
-CREATE TABLE `tbl422_let` (
-  `ID` int(11) NOT NULL,
-  `let total number` int(11) NOT NULL,
-  `letmale` int(11) NOT NULL,
-  `letfemale` int(11) NOT NULL,
-  `bsed total number` int(11) NOT NULL,
-  `bsedmale` int(11) NOT NULL,
-  `bsedfemale` int(11) NOT NULL,
-  `beed total number` int(11) NOT NULL,
-  `beedmale` int(11) NOT NULL,
-  `beedfemale` int(11) NOT NULL,
-  `bped total number` int(11) NOT NULL,
-  `bpedmale` int(11) NOT NULL,
-  `bpedfemale` int(11) NOT NULL,
-  `btled total number` int(11) NOT NULL,
-  `btledmale` int(11) NOT NULL,
-  `btledfemale` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `tbl422_let`;
+CREATE TABLE IF NOT EXISTS `tbl422_let` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `let total number` int NOT NULL,
+  `letmale` int NOT NULL,
+  `letfemale` int NOT NULL,
+  `bsed total number` int NOT NULL,
+  `bsedmale` int NOT NULL,
+  `bsedfemale` int NOT NULL,
+  `beed total number` int NOT NULL,
+  `beedmale` int NOT NULL,
+  `beedfemale` int NOT NULL,
+  `bped total number` int NOT NULL,
+  `bpedmale` int NOT NULL,
+  `bpedfemale` int NOT NULL,
+  `btled total number` int NOT NULL,
+  `btledmale` int NOT NULL,
+  `btledfemale` int NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl422_let`
@@ -200,14 +174,16 @@ INSERT INTO `tbl422_let` (`ID`, `let total number`, `letmale`, `letfemale`, `bse
 -- Table structure for table `tbl431_resources`
 --
 
-CREATE TABLE `tbl431_resources` (
-  `ID` int(11) NOT NULL,
-  `total_number` int(11) NOT NULL,
+DROP TABLE IF EXISTS `tbl431_resources`;
+CREATE TABLE IF NOT EXISTS `tbl431_resources` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `total_number` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost` int(11) NOT NULL,
-  `fund` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `cost` int NOT NULL,
+  `fund` int NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -215,14 +191,16 @@ CREATE TABLE `tbl431_resources` (
 -- Table structure for table `tbl432_events`
 --
 
-CREATE TABLE `tbl432_events` (
-  `ID` int(11) NOT NULL,
-  `total_number` int(11) NOT NULL,
+DROP TABLE IF EXISTS `tbl432_events`;
+CREATE TABLE IF NOT EXISTS `tbl432_events` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `total_number` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost` int(11) NOT NULL,
-  `fund` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `cost` int NOT NULL,
+  `fund` int NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -230,14 +208,16 @@ CREATE TABLE `tbl432_events` (
 -- Table structure for table `tbl433_vocational`
 --
 
-CREATE TABLE `tbl433_vocational` (
-  `ID` int(11) NOT NULL,
-  `total_number` int(11) NOT NULL,
+DROP TABLE IF EXISTS `tbl433_vocational`;
+CREATE TABLE IF NOT EXISTS `tbl433_vocational` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `total_number` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost` int(11) NOT NULL,
-  `fund` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `cost` int NOT NULL,
+  `fund` int NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -245,14 +225,16 @@ CREATE TABLE `tbl433_vocational` (
 -- Table structure for table `tbl434_outreach`
 --
 
-CREATE TABLE `tbl434_outreach` (
-  `ID` int(11) NOT NULL,
-  `total_number` int(11) NOT NULL,
+DROP TABLE IF EXISTS `tbl434_outreach`;
+CREATE TABLE IF NOT EXISTS `tbl434_outreach` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `total_number` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost` int(11) NOT NULL,
-  `fund` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `cost` int NOT NULL,
+  `fund` int NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -260,193 +242,19 @@ CREATE TABLE `tbl434_outreach` (
 -- Table structure for table `tbl435_access`
 --
 
-CREATE TABLE `tbl435_access` (
-  `ID` int(11) NOT NULL,
-  `50above` int(11) NOT NULL,
-  `50abovePercentage` int(11) NOT NULL,
-  `totalaccess` int(11) NOT NULL,
-  `totalPPAS` int(11) NOT NULL,
+DROP TABLE IF EXISTS `tbl435_access`;
+CREATE TABLE IF NOT EXISTS `tbl435_access` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `50above` int NOT NULL,
+  `50abovePercentage` int NOT NULL,
+  `totalaccess` int NOT NULL,
+  `totalPPAS` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost` int(11) NOT NULL,
-  `fund` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `tbl4_1`
---
-ALTER TABLE `tbl4_1`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl44_firstgen`
---
-ALTER TABLE `tbl44_firstgen`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl44_firstgen_firstyear`
---
-ALTER TABLE `tbl44_firstgen_firstyear`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl44_firstyear`
---
-ALTER TABLE `tbl44_firstyear`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl421_acquired`
---
-ALTER TABLE `tbl421_acquired`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl421_eligible`
---
-ALTER TABLE `tbl421_eligible`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl421_failed`
---
-ALTER TABLE `tbl421_failed`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl421_graduates`
---
-ALTER TABLE `tbl421_graduates`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl422_let`
---
-ALTER TABLE `tbl422_let`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl431_resources`
---
-ALTER TABLE `tbl431_resources`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl432_events`
---
-ALTER TABLE `tbl432_events`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl433_vocational`
---
-ALTER TABLE `tbl433_vocational`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl434_outreach`
---
-ALTER TABLE `tbl434_outreach`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tbl435_access`
---
-ALTER TABLE `tbl435_access`
-  ADD PRIMARY KEY (`ID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `tbl4_1`
---
-ALTER TABLE `tbl4_1`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
---
--- AUTO_INCREMENT for table `tbl44_firstgen`
---
-ALTER TABLE `tbl44_firstgen`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl44_firstgen_firstyear`
---
-ALTER TABLE `tbl44_firstgen_firstyear`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl44_firstyear`
---
-ALTER TABLE `tbl44_firstyear`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl421_acquired`
---
-ALTER TABLE `tbl421_acquired`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl421_eligible`
---
-ALTER TABLE `tbl421_eligible`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `tbl421_failed`
---
-ALTER TABLE `tbl421_failed`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl421_graduates`
---
-ALTER TABLE `tbl421_graduates`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl422_let`
---
-ALTER TABLE `tbl422_let`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
-
---
--- AUTO_INCREMENT for table `tbl431_resources`
---
-ALTER TABLE `tbl431_resources`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl432_events`
---
-ALTER TABLE `tbl432_events`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl433_vocational`
---
-ALTER TABLE `tbl433_vocational`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl434_outreach`
---
-ALTER TABLE `tbl434_outreach`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl435_access`
---
-ALTER TABLE `tbl435_access`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  `cost` int NOT NULL,
+  `fund` int NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

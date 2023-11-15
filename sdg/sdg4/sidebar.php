@@ -19,13 +19,7 @@
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="#">4.2.1</a>
-    <div class="nested-dropdown">
-        <a href="4.2.1.graduates.php">Graduate</a>
-        <a href="4.2.1.acquired.php">Acquired</a>
-        <a href="4.2.1.eligible.php">Eligible</a>
-        <a href="4.2.1.failed.php">Failed</a>
-    </div>
+    <a href="4.2.1.php">4.2.1</a>
     <a href="4.2.2.php">4.2.2</a>
   </div>
   <button class="dropdown-btn">4.3

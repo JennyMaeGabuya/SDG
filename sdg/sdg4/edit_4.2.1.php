@@ -1,33 +1,35 @@
 <?php
 include "includes/config.php";
 
-if (isset($_GET['eligible_id'])) {
-    $eligible_id = $_GET['eligible_id'];
+if (isset($_GET['licensure_id'])) {
+    $licensure_id = $_GET['licensure_id'];
 }
 
-// SQL query to select all the data from the table where eligible_id = $eligible_id
-$query = "SELECT * FROM `tbl421_eligible` WHERE `ID` = $eligible_id";
+// SQL query to select all the data from the table where licensure_id = $licensure_id
+$query = "SELECT * FROM `tbl421_licensure` WHERE `ID` = $licensure_id";
 $result = mysqli_query($conn, $query);
 while ($row = mysqli_fetch_assoc($result)) {
 
     //the data inside [''] are the columns in db
-    $total_number = $row['total_number'];
-    $eligibleProgram = $row['program'];
-    $eligibleMale = $row['male'];
-    $eligibleFemale = $row['female'];
+    $program = $row['Program'];
+    $eligible_total = $row['EligibleTotal'];
+    $took_exam = $row['TookExam'];
+    $acquired = $row['Acquired'];
+    $failed = $row['Failed'];
 }
 
 //Processing form data when form is submitted/ when update button is clicked
 if (isset($_POST['update'])) {
-    $total_number = $_POST['total_number'];
-    $eligibleProgram = $_POST['eligibleProgram'];
-    $eligibleMale = $_POST['eligibleMale'];
-    $eligibleFemale = $_POST['eligibleFemale'];
+    $program = $_POST['program'];
+    $eligible_total = $_POST['eligible_total'];
+    $took_exam = $_POST['took_exam'];
+    $acquired = $_POST['acquired'];
+    $failed = $_POST['failed'];
 
     // SQL query to update the data in user table where the id = $userid 
-    $query = "UPDATE `tbl421_eligible` SET   `total_number` = '{$total_number}', `program` = '{$eligibleProgram}', `male` = '{$eligibleMale}',`female` = '{$eligibleFemale}' WHERE ID= $eligible_id";
+    $query = "UPDATE `tbl421_licensure` SET   `Program` = '$program', `EligibleTotal` = '$eligible_total', `TookExam` = '{$took_exam}',`Acquired` = '{$acquired}',`Failed` = '{$failed}' WHERE ID= $licensure_id";
     $update = mysqli_query($conn, $query);
-    echo "<script type='text/javascript'>alert(' data updated successfully!')</script>";
+    $successMessage = "You have successfully entered data";
 }
 ?>
 
@@ -86,35 +88,51 @@ if (isset($_POST['update'])) {
     <div class="card">
         <form method="POST">
 
-            <h3 class="h3text">Eligible Graduates</h3><br>
+            <h3 class="h3text">Licensure Examination Statistics</h3><br>
 
-                <div class="form-group"><i class="fa fa-search"></i>
-                    <label for="total_number">Total number of graduates who are eligible for licensure examination</label>
-                    <input type="number" class="form-control" id="total_number" name="total_number" value="<?php echo $total_number ?>" required>
-                </div>
+            <div class="form-group"><i class="fa fa-book"></i>
+                <label for="program">Program: </label>
+                <input type="text" class="form-control" id="program" name="program" value="<?php echo $program ?>" required>
+            </div>
 
+            <div class="form-group"><i class="fa fa-search"></i>
+                <label for="eligible_total">Total number of graduates who are eligible for licensure examination: </label>
+                <input type="number" class="form-control" id="eligible_total" name="eligible_total" value="<?php echo $eligible_total ?>" required>
+            </div>
 
-                <div class="form-group"><i class="fa fa-user"></i>
-                    <label for="eligibleProgram">Program</label>
-                    <input type="text" class="form-control" id="eligibleProgram" name="eligibleProgram" value="<?php echo $eligibleProgram ?>" required>
-                </div>
+            <div class="form-group"><i class="fa fa-user"></i>
+                <label for="took_exam">Total number of graduates who take the licensure examination: </label>
+                <input type="number" class="form-control" id="took_exam" name="took_exam" value="<?php echo $took_exam ?>" required>
+            </div>
 
-                <div class="form-group"><i class="fa fa-bookmark"></i>
-                    <label for="eligibleMale">Total number of male graduates</label>
-                    <input type="number" class="form-control" id="eligibleMale" name="eligibleMale" value="<?php echo $eligibleMale ?>" required>
-                </div>
+            <div class="form-group"><i class="fa fa-check"></i>
+                <label for="acquired">Total number of graduates who acquired a license: </label>
+                <input type="number" class="form-control" id="acquired" name="acquired" value="<?php echo $acquired ?>" required>
+            </div>
 
-                <div class="form-group"><i class="fa fa-bar-chart"></i>
-                    <label for="eligibleFemale">Total number of female graduates</label>
-                    <input type="number" class="form-control" id="eligibleFemale" name="eligibleFemale" value="<?php echo $eligibleFemale ?>" required>
-                </div>
+            <div class="form-group"><i class="fa fa-lg fa-times"></i>
+                <label for="failed">Total number of graduates who failed to pass the licensure examination: </label>
+                <input type="number" class="form-control" id="failed" name="failed" value="<?php echo $failed ?>" required>
+            </div>
 
-                <br><button type="submit" class="btn btn-primary mt-6 mb-3" name="update"><i class="far fa-edit"></i>Update</button>
+            <br><button type="submit" class="btn btn-primary mt-6 mb-3" name="update"><i class="far fa-edit"></i> Update</button>
+            <script type="text/javascript">
+                <?php
+                if (isset($successMessage)) {
 
-                <button type="reset" class="btn btn-danger mt-6 mb-3" name="cancel" onclick="window.location.href='4.1.php';">
-                    <i class="fa fa-times-circle"></i> Cancel
-                </button>
-                <br><br>
+                    echo "swal({
+        title: 'Success',
+        text: '$successMessage',
+        icon: 'success',
+        button: 'OK'
+    });";
+                }
+                ?>
+            </script>
+            <button type="reset" class="btn btn-danger mt-6 mb-3" name="cancel" onclick="window.location.href='4.2.1.php';">
+                <i class="fa fa-times-circle"></i> Cancel
+            </button>
+            <br><br>
 
         </form>
     </div>

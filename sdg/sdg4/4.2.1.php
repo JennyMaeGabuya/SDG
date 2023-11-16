@@ -212,7 +212,7 @@ if (isset($_POST['submit'])) {
 
         <div class="container mt-3 d-flex">
             <form method="POST" class="flex-grow-1">
-                <h3 class="h3text">Licensure Examination Statistics</h3>
+                <h3 class="h3text" style="margin: 20px; padding-left: 180px;">Licensure Examination Statistics</h3>
 
                 <div class="mb-2 mt-2"><i class="fa fa-book"></i>
                     <label for="program">Program: </label>
@@ -225,7 +225,7 @@ if (isset($_POST['submit'])) {
                 </div>
 
                 <div class="mb-2">
-                    <i class="fa fa-bookmark"></i>
+                    <i class="fa fa-user"></i>
                     <label for="took_exam">Total number of graduates who take the licensure examination: </label>
                     <input type="number" class="form-control" id="took_exam" name="took_exam" required></textarea>
                 </div>
@@ -236,13 +236,13 @@ if (isset($_POST['submit'])) {
                 </div>
 
                 <div class="mb-2">
-                    <i class="fa fa-calendar"></i>
+                    <i class="fa fa-lg fa-times"></i>
                     <label for="failed">Total number of graduates who failed to pass the licensure examination:</label>
                     <input type="number" class="form-control" id="failed" name="failed" required>
                 </div><br>
 
                 <button type="submit" class="btn btn-primary mb-3" name="submit"><i class="fa fa-send"></i> Submit</button>
-
+                <button type="reset" class="btn btn-danger mb-3" name="cancel"><i class="fa fa-times-circle"></i> Cancel</button>
             </form>
 
             <script type="text/javascript">
@@ -327,10 +327,10 @@ if (isset($_POST['submit'])) {
                     echo "<td>{$percent_acquired} %</td>";
                     echo "<td>{$percent_failed} %</td>";
                     echo "<td style='width:100px'>
-                          <a href='edit_4_1.php?update&research_id={$id}' class='btn btn-primary'>
+                          <a href='edit_4.2.1.php?update&licensure_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>
-                          <a href='delete_4.1.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete_4.2.1.php?delete={$id}' class='btn btn-danger'>
                           <i class='fa fa-trash'></i>
                       </a>
                       </td>";

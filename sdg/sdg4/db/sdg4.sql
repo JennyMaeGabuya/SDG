@@ -136,37 +136,22 @@ INSERT INTO `tbl421_licensure` (`ID`, `Program`, `EligibleTotal`, `TookExam`, `A
 
 DROP TABLE IF EXISTS `tbl422_let`;
 CREATE TABLE IF NOT EXISTS `tbl422_let` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `let total number` int NOT NULL,
-  `letmale` int NOT NULL,
-  `letfemale` int NOT NULL,
-  `bsed total number` int NOT NULL,
-  `bsedmale` int NOT NULL,
-  `bsedfemale` int NOT NULL,
-  `beed total number` int NOT NULL,
-  `beedmale` int NOT NULL,
-  `beedfemale` int NOT NULL,
-  `bped total number` int NOT NULL,
-  `bpedmale` int NOT NULL,
-  `bpedfemale` int NOT NULL,
-  `btled total number` int NOT NULL,
-  `btledmale` int NOT NULL,
-  `btledfemale` int NOT NULL,
+ `ID` int(11) NOT NULL,
+  `let total number` int(11) NOT NULL,
+  `bsed total number` int(11) NOT NULL,
+  `beed total number` int(11) NOT NULL,
+  `bped total number` int(11) NOT NULL,
+  `btled total number` int(11) NOT NULL,
+  `percentage` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl422_let`
 --
+INSERT INTO `tbl422_let` (`ID`, `let total number`, `bsed total number`, `beed total number`, `bped total number`, `btled total number`, `percentage`) VALUES
+(48, 500, 120, 100, 140, 120, 71);
 
-INSERT INTO `tbl422_let` (`ID`, `let total number`, `letmale`, `letfemale`, `bsed total number`, `bsedmale`, `bsedfemale`, `beed total number`, `beedmale`, `beedfemale`, `bped total number`, `bpedmale`, `bpedfemale`, `btled total number`, `btledmale`, `btledfemale`) VALUES
-(34, 23, 10, 13, 7, 3, 4, 6, 3, 3, 5, 2, 3, 5, 2, 3),
-(36, 4156, 610, 3546, 67, 23, 44, 3777, 343, 3434, 266, 232, 34, 46, 12, 34),
-(37, 4156, 610, 3546, 67, 23, 44, 3777, 343, 3434, 266, 232, 34, 46, 12, 34),
-(38, 189, 88, 101, 35, 23, 12, 57, 23, 34, 53, 21, 32, 44, 21, 23),
-(39, 189, 88, 101, 35, 23, 12, 57, 23, 34, 53, 21, 32, 44, 21, 23),
-(40, 554, 66, 488, 35, 12, 23, 42, 21, 21, 233, 21, 212, 244, 12, 232),
-(41, 554, 66, 488, 35, 12, 23, 42, 21, 21, 233, 21, 212, 244, 12, 232);
 
 -- --------------------------------------------------------
 

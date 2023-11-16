@@ -1,120 +1,21 @@
 <?php 
-$percentage = 0;
-if (isset($_POST['confirm'])) {
-  $lettotal = $_POST['lettotal'];
-  $letmale = $_POST['letmale'];
-  $letfemale = ($_POST['letfemale']);
-
-  $bsedtotal = $_POST['bsedtotal'];
-  $bsedmale = $_POST['bsedmale'];
-  $bsedfemale = ($_POST['bsedfemale']);
-
-  $beedtotal = $_POST['beedtotal'];
-  $beedmale = $_POST['beedmale'];
-  $beedfemale = ($_POST['beedfemale']);
-
-  $bpedtotal = $_POST['bpedtotal'];
-  $bpedmale = $_POST['bpedmale'];
-  $bpedfemale = ($_POST['bpedfemale']);
-
-  $btledtotal = $_POST['btledtotal'];
-  $btledmale = $_POST['btledmale'];
-  $btledfemale = ($_POST['btledfemale']);
-
-
-  //this code will calculate total passer for each program
-  $bsedtotal= $bsedmale + $bsedfemale;
-  $beedtotal= $beedmale + $beedfemale;
-  $bpedtotal= $bpedmale + $bpedfemale;
-  $btledtotal= $btledmale + $btledfemale;
-//calculate the total passer
-  $total =$bsedtotal + $beedtotal+$bpedtotal+ $btledtotal;
-  //calculate all male passer in all program
-    $maletotal=$bsedmale + $beedmale+ $bpedmale +$btledmale ;
-    //calculate all female passer in all program
-    $femaletotal=$bsedfemale + $beedfemale+ $bpedfemale +$btledfemale ;
-
-    
-    //calculate the percentage of grad who acquired licenae and teaching qualification
-    //still not sure about these
-    $percentage=(($maletotal + $femaletotal) / $total) * 100 ;
- $percentage = ($total > 0) ? (($maletotal + $femaletotal) / $total) * 100 : 0;
-
-
-}
-
 if (isset($_POST['submit'])) {
   // Get form data
   $lettotal = $_POST['lettotal'];
-  $letmale = $_POST['letmale'];
-  $letfemale = ($_POST['letfemale']);
-
   $bsedtotal = $_POST['bsedtotal'];
-  $bsedmale = $_POST['bsedmale'];
-  $bsedfemale = ($_POST['bsedfemale']);
-
   $beedtotal = $_POST['beedtotal'];
-  $beedmale = $_POST['beedmale'];
-  $beedfemale = ($_POST['beedfemale']);
-
   $bpedtotal = $_POST['bpedtotal'];
-  $bpedmale = $_POST['bpedmale'];
-  $bpedfemale = ($_POST['bpedfemale']);
-
   $btledtotal = $_POST['btledtotal'];
-  $btledmale = $_POST['btledmale'];
-  $btledfemale = ($_POST['btledfemale']);
 
   include "includes/config.php";
 
   // SQL query to insert data
-  $sql = "INSERT INTO `tbl422_let` (`let total number`, `letmale`, `letfemale`, `bsed total number`, `bsedmale`, `bsedfemale`, `beed total number`, `beedmale`, `beedfemale`, `bped total number`, `bpedmale`, `bpedfemale`, `btled total number`, `btledmale`, `btledfemale`) 
-  VALUES ('$lettotal', '$letmale', '$letfemale','$bsedtotal', '$bsedmale', '$bsedfemale','$beedtotal', '$beedmale', '$beedfemale','$bpedtotal', '$bpedmale', '$bpedfemale','$btledtotal', '$btledmale', '$btledfemale')";
+  $sql = "INSERT INTO `tbl422_let` (`let total number`, `bsed total number`, `beed total number`, `bped total number`, `btled total number`) 
+  VALUES ('$lettotal','$bsedtotal','$beedtotal','$bpedtotal','$btledtotal')";
 
   if ($conn->query($sql) === TRUE) {
-      // The research was successfully entered
+      // The dat was successfully entered
       $successMessage = "You have successfully entered data";
-  } else {
-      // There was an error in the SQL query
-      echo "Error: " . $sql . "<br>" . $conn->error;
-  }
-
-  // Close the connection
-  $conn->close();
-
-
-
-  include "includes/config.php";
-
-  // SQL query to insert data
-  $sql = "INSERT INTO `tbl422_let` (`let total number`, `letmale`, `letfemale`, `bsed total number`, `bsedmale`, `bsedfemale`, `beed total number`, `beedmale`, `beedfemale`, `bped total number`, `bpedmale`, `bpedfemale`, `btled total number`, `btledmale`, `btledfemale`) 
-  VALUES ('$lettotal', '$letmale', '$letfemale','$bsedtotal', '$bsedmale', '$bsedfemale','$beedtotal', '$beedmale', '$beedfemale','$bpedtotal', '$bpedmale', '$bpedfemale','$btledtotal', '$btledmale', '$btledfemale')";
-
-  if ($conn->query($sql) === TRUE) {
-      // The research was successfully entered
-      $successMessage = "You have successfully entered data";
-
-      //after alert remove all the data to insert new data
-      $lettotal = " ";
-      $letmale = " ";
-      $letfemale = "";
-    
-      $bsedtotal = "";
-      $bsedmale = "";
-      $bsedfemale = "";
-    
-      $beedtotal ="";
-      $beedmale = "";
-      $beedfemale = "";
-    
-      $bpedtotal = "";
-      $bpedmale = "";
-      $bpedfemale = "";
-    
-      $btledtotal = "";
-      $btledmale = "";
-      $btledfemale = "";
-
   } else {
       // There was an error in the SQL query
       echo "Error: " . $sql . "<br>" . $conn->error;
@@ -123,11 +24,7 @@ if (isset($_POST['submit'])) {
   // Close the connection
   $conn->close();
 }
-
-
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -197,11 +94,11 @@ h2 {
   }
  
   .card{
-    margin-left: 300px;
-    margin-right: 80px;
+    margin-left: 350px;
+    margin-right: 120px;
     margin-bottom: 70px;
     margin-top: 20px;
-    height: 950px;
+    height: 500px;
 
   }
   .content>p{
@@ -221,7 +118,7 @@ h2 {
   }
   .contentform{
     margin-top: 30px;
-    margin-left: 50px;
+    margin-left: 100px;
     margin-bottom:30px;
     justify-content: center;
     align-items: center;
@@ -281,18 +178,30 @@ h2 {
     <p>Points</p>
 
     <?php
-    // Initializing total points    
-     $totalPoints = 0;
+            include "includes/config.php";
+            $query = "SELECT * FROM `tbl422_let`"; // SQL query to fetch all table data
+            $result = mysqli_query($conn, $query); // sending the query to the database
 
-    if ($percentage >=70){
-      $Points = 5;
-    }
-    else{
-      $Points = 0;
-    }
-    $totalPoints += $Points;
-    
-    ?>
+            $totalPoints = 0;
+
+            while ($row = mysqli_fetch_assoc($result)) {
+                $percentage = $row['percentage'];
+               $percent= $percentage;
+
+                // Check if the program is CTE and update points
+                $points = 0;
+                
+                if ($percent >=70) {
+                    $points += 5;
+                }
+                  else{
+                    $points += 0;
+                  }
+
+                // Add the points  to the total points
+                $totalPoints += $points;
+            }
+            ?>
 
 <input type="text" style="color: black; text-align: center;" class="points" name="points" value="<?php echo min($totalPoints, 5); ?>" readonly>  
 </div>
@@ -305,7 +214,7 @@ h2 {
     <h3>4.2.2 Proportion of graduates with teaching qualifications to 
 teach at primary level</h3>
   <p>This is the total headcount number of graduates at all levels from your 
-institution who gained a qualification that entitled them to teach at 
+institution who gained a qualification that entitled <br>them to teach at 
 primary school level.</p>
     <!--remove muna pic 
     <div class="image" style="width: 50px;"style="height: 50px;">
@@ -319,123 +228,29 @@ primary school level.</p>
   <form method="POST" >
 
     <!-- FOR Total number of LET passers -->
-   <p><?php echo $percentage?>% of graduates who acquired a license have teaching 
-qualifications to teach at primary level.</p>
-    <div class="mb-2 mt-2"><i class="fa fa-search"></i>
+<!--   <p><?php echo $percentage?>% of graduates who acquired a license have teaching 
+qualifications to teach at primary level.</p> -->
+
+<div class="form-group"><i class="fa fa-bar-chart"></i>
       <label for="total_number" class="text-center ">Total number of LET passers</label>
+      <input type="number" class="form-control" id="lettotal" name="lettotal"required>
     </div>
-  <div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="male">Male</label>
-      <input type="number" class="form-control" id="letmale" name="letmale"placeholder="Male" value="<?php echo $maletotal ?>"  readonly>
+    <div class="form-group"><i class="fa fa-area-chart"></i>
+      <label for="total">Total number of BSED LET passers</label>
+      <input type="number" class="form-control" id="bsedtotal" name="bsedtotal"  required>
     </div>
-    <div class="form-group col-md-4">
-      <label for="female">Female</label>
-      <input type="number" class="form-control" id="letfemale" name="letfemale"placeholder="female" value="<?php echo $femaletotal ?>"  readonly>
+    <div class="form-group"><i class="	fa fa-book"></i>
+      <label for="total">Total number of BEED LET passers</label>
+      <input type="number" class="form-control" id="beedtotal" name="beedtotal" required>
     </div>
-    <div class="form-group col-md-4">
-      <label for="total">Total number of LET passers</label>
-      <input type="number" class="form-control" id="lettotal" name="lettotal" placeholder="total" value="<?php echo $total ?>" readonly>
+    <div class="form-group"><i class="fa fa-drivers-license"></i>
+      <label for="total">Total number of BPED passers</label>
+      <input type="number" class="form-control" id="bpedtotal" name="bpedtotal" required>
     </div>
+    <div class="form-group "><i class="fa fa-graduation-cap"></i>
+      <label for="total">Total number of BTLED passers</label>
+      <input type="number" class="form-control" id="btledtotal" name="btledtotal" required>
   </div>
-  <div class="fields">
-    <p><br></p>
-  </div>
-  <br>
-   <!-- FOR Total number of LET passers -->
-  <div class="mb-2 mt-2 "><i class="fa fa-search"></i>
-      <label for="total_number" class="text-center">Total number of BSED LET passers</label>
-    </div>
-  <div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="male">Male</label>
-      <input type="number" class="form-control" id="male" name="bsedmale"placeholder="Male" value="<?php echo $bsedmale ?>" required>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="female">Female</label>
-      <input type="number" class="form-control" id="female" name="bsedfemale"placeholder="female" value="<?php echo $bsedfemale ?>" required>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="total">Total number of LET passers</label>
-      <input type="number" class="form-control" id="bsedtotal" name="bsedtotal" value="<?php echo $bsedtotal?>" placeholder="total" readonly>
-    </div>
-  </div>
-  <div class="fields">
-    <p><br></p>
-  </div>
-  <br>
-   <!-- FOR Total number of LET passers -->
-  <div class="mb-2 mt-2"><i class="fa fa-search"></i>
-      <label for="total_number" class="text-center">Total number of BEED LET passers</label>
-    </div>
-  <div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="male">Male</label>
-      <input type="number" class="form-control" id="male" name="beedmale"placeholder="Male" value="<?php echo $beedmale ?>" required>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="female">Female</label>
-      <input type="number" class="form-control" id="female" name="beedfemale"placeholder="female" value="<?php echo $beedfemale ?>" required>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="total">Total number of LET passers</label>
-      <input type="number" class="form-control" id="beedtotal" name="beedtotal" value="<?php echo $beedtotal ?>" placeholder="total" readonly>
-    </div>
-    <p><br></p>
-    <div class="fields">
-    <p><br></p>
-  </div>
-  <br>
-     <!-- FOR Total number of LET passers -->
-  
-  <div class="mb-2 mt-2"><i class="fa fa-search"></i>
-      <label for="total_number" class="text-center">Total number of BPED LET passers</label>
-    </div>
-  <div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="male">Male</label>
-      <input type="number" class="form-control" id="male" name="bpedmale"placeholder="Male" value="<?php echo $bpedmale ?>" required>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="female">Female</label>
-      <input type="number" class="form-control" id="female" name="bpedfemale"placeholder="female"value="<?php echo $bpedfemale ?>" required>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="total">Total number of LET passers</label>
-      <input type="number" class="form-control" id="bpedtotal" name="bpedtotal" placeholder="total" value="<?php echo $bpedtotal ?>" readonly>
-    </div>
-    <p><br></p>
-    <div class="fields">
-    <p><br></p>
-  </div>
-  <br>
-     <!-- FOR Total number of LET passers -->
-  <div class="mb-2 mt-2"><i class="fa fa-search"></i>
-      <label for="total_number" class="text-center">Total number of BTLED LET passers</label>
-    </div>
-  <div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="male">Male</label>
-      <input type="number" class="form-control" id="male" name="btledmale"placeholder="Male" value="<?php echo $btledmale ?>" required>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="female">Female</label>
-      <input type="number" class="form-control" id="female" name="btledfemale"placeholder="female"value="<?php echo $btledfemale ?>" required>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="total">Total number of LET passers</label>
-      <input type="number" class="form-control" id="btledtotal" name="btledtotal" value="<?php echo $btledtotal ?>" placeholder="total" readonly>
-    </div>
-  </div>
-  <br> <br>
-     <!-- FOR Total number of LET passers -->
-    <br>
-    <div class="button-container">
-    <button type="submit" class="btn btn-warning mb-3" id="confirm" name="confirm" >
-        <i class="fa fa-check-circle"></i>
-    </button>
-    <p class="confirmation-text">Please click the Confirm button first before submitting the form. Thank you!</p>
-</div>
   <div>
     <button type="submit" class="btn btn-primary  mb-3" id="submit" name="submit" >
       <i class="fa fa-send"></i>Submit</button>
@@ -458,7 +273,105 @@ qualifications to teach at primary level.</p>
 </form>
   </div>
 </div>
+<!-- START OF TABLE -->
+<div class="table-container">
+  <h2>Graduate with qualification to teach at primary level</h2>           
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" style="width: 30px;">#</th>
+      <th scope="col" style="width: 30px;">LET passers</th>
+      <th scope="col" style="width: 80px;">BSED passers</th>
+      <th scope="col" style="width: 80px;">BEED passers</th>
+      <th scope="col" style="width: 100px;">BPED passers</th>
+      <th scope="col" style="width: 80px;">BTLED passers</th>
+      <th scope="col" style="width: 130px;">Graduates with license & can teach at primary level.</th>
+      <th scope="col" style="width: 50px;">Points</th>
+      <th scope="col"colspan="2"  style="width: 100px;">Action</th>
+    </tr>
+  </thead>
+    <tbody>
+    <?php
+            include "includes/config.php";
+            $query = "SELECT * FROM `tbl422_let`"; // SQL query to fetch all table data
+            $result = mysqli_query($conn, $query); // sending the query to the database
 
+            if (!$result) {
+                die("Error: " . mysqli_error($conn)); // Output the error message for debugging
+            }
+            // Displaying all the data retrieved from the database using a while loop
+            while ($row = mysqli_fetch_assoc($result)) {
+              $id = $row['ID'];
+                $lettotal = $row['let total number'];
+                $bsedtotal = $row['bsed total number'];
+                $beedtotal = $row['beed total number'];
+                $bpedtotal = $row['bped total number'];
+                $btledtotal = $row['btled total number'];
+               
+                 // Calculate percentages get the value from tbl4.2.1
+                 $query ="SELECT SUM(`Acquired`) AS total FROM tbl421_licensure  WHERE `program`='CTE'" ;
+                 
+                // Execute the query
+                $rslt = $conn->query($query);
+                // Check if the query was successful
+if ($rslt) {
+  // Fetch the result into an associative array
+  $row = $rslt->fetch_assoc();
+  
+  // Access the 'total' column from the result
+  $acquiredTotal = $row['total'];
+  $percentage = number_format(($lettotal/$acquiredTotal* 100),2);
+  // Use $acquiredTotal in your update query for another table (tbl422_let in this example)
+  $updateQuery = "UPDATE `tbl422_let` SET  `percentage` = '$percentage'";
+  
+  // Execute the update query
+  $updateResult = $conn->query($updateQuery);
+  
+  if (!$updateResult) {
+      echo "Error updating table: " . $conn->error;
+  }
+
+}
+ if ($percentage >=70) {
+                    $points = 5;
+                }
+                  else{
+                    $points = 0;
+                  }
+               
+
+                echo "<tr>";
+                echo "<td>{$id}</td>";
+                echo "<td>{$lettotal}</td>";
+                echo "<td>{$bsedtotal}</td>";
+                echo "<td>{$beedtotal}</td>";
+                echo "<td>{$bpedtotal}</td>";
+                echo "<td>{$btledtotal}</td>";
+                echo "<td>{$percentage}% </td>";
+                echo "<td>$points</td>"; 
+            
+
+                echo "<td style='width:100px'>
+                          <a href='edit4.2.2.php?update&passer_id={$id}' class='btn btn-primary'>
+                              <i class='fa fa-edit'></i> 
+                          </a>
+                          <a href='delete4.2.2.php?delete={$id}' class='btn btn-danger'>
+                          <i class='fa fa-trash'></i>
+                      </a>
+                      </td>";
+
+            /*    echo "<td class='text-center'>
+                          <a href='delete_4.1.php?delete={$id}' class='btn btn-danger'>
+                              <i class='fa fa-trash'></i>
+                          </a>
+                      </td>";
+                echo "</tr>"; 
+                */
+            }
+            ?>
+    </tbody>
+  </table>
+</div>
 
 
 

@@ -94,7 +94,7 @@ h3{
     </div>
     <div class="form-group"><i class="fa fa-bookmark"></i>
       <label for="title">Title of research</label>
-      <textarea class="form-control" id="title"  name="title" value="" required><?php echo $title ?></textarea>
+      <textarea class="form-control" id="title"  name="title" rows="5" value="" required><?php echo $title ?></textarea>
     </div>
     <div class="form-group"><i class="fa fa-user"></i>
       <label for="author">Author</label>

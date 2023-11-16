@@ -161,13 +161,12 @@ INSERT INTO `tbl422_let` (`ID`, `let total number`, `bsed total number`, `beed t
 
 DROP TABLE IF EXISTS `tbl431_resources`;
 CREATE TABLE IF NOT EXISTS `tbl431_resources` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `total_number` int NOT NULL,
+  `total_number` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `cost` int NOT NULL,
   `fund` int NOT NULL,
-  PRIMARY KEY (`ID`)
+  PRIMARY KEY (`total_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------

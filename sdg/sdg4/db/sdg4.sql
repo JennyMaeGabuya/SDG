@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 15, 2023 at 03:26 PM
+-- Generation Time: Nov 16, 2023 at 06:22 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -114,19 +114,15 @@ CREATE TABLE IF NOT EXISTS `tbl421_licensure` (
   `PercentTookExam` decimal(5,2) NOT NULL,
   `PercentAcquired` decimal(5,2) NOT NULL,
   `PercentFailed` decimal(5,2) NOT NULL,
-  `Points` int NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=83 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=86 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl421_licensure`
 --
 
-INSERT INTO `tbl421_licensure` (`ID`, `Program`, `EligibleTotal`, `TookExam`, `Acquired`, `Failed`, `PercentEligible`, `PercentTookExam`, `PercentAcquired`, `PercentFailed`, `Points`) VALUES
-(81, 'CTE', 1000, 600, 500, 100, '100.00', '60.00', '83.33', '16.67', 0),
-(80, 'CAS', 150, 150, 50, 100, '100.00', '100.00', '33.33', '66.67', 0),
-(79, 'ENGINEERING', 1500, 1450, 1400, 50, '100.00', '96.67', '96.55', '3.45', 0),
-(82, 'IT', 900, 500, 300, 200, '100.00', '55.56', '60.00', '40.00', 0);
+INSERT INTO `tbl421_licensure` (`ID`, `Program`, `EligibleTotal`, `TookExam`, `Acquired`, `Failed`, `PercentEligible`, `PercentTookExam`, `PercentAcquired`, `PercentFailed`) VALUES
+(85, 'CE', 2000, 1500, 790, 610, '100.00', '75.00', '52.67', '40.67');
 
 -- --------------------------------------------------------
 
@@ -136,22 +132,22 @@ INSERT INTO `tbl421_licensure` (`ID`, `Program`, `EligibleTotal`, `TookExam`, `A
 
 DROP TABLE IF EXISTS `tbl422_let`;
 CREATE TABLE IF NOT EXISTS `tbl422_let` (
- `ID` int(11) NOT NULL,
-  `let total number` int(11) NOT NULL,
-  `bsed total number` int(11) NOT NULL,
-  `beed total number` int(11) NOT NULL,
-  `bped total number` int(11) NOT NULL,
-  `btled total number` int(11) NOT NULL,
-  `percentage` int(11) NOT NULL,
+  `ID` int NOT NULL,
+  `let total number` int NOT NULL,
+  `bsed total number` int NOT NULL,
+  `beed total number` int NOT NULL,
+  `bped total number` int NOT NULL,
+  `btled total number` int NOT NULL,
+  `percentage` int NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl422_let`
 --
-INSERT INTO `tbl422_let` (`ID`, `let total number`, `bsed total number`, `beed total number`, `bped total number`, `btled total number`, `percentage`) VALUES
-(48, 500, 120, 100, 140, 120, 71);
 
+INSERT INTO `tbl422_let` (`ID`, `let total number`, `bsed total number`, `beed total number`, `bped total number`, `btled total number`, `percentage`) VALUES
+(0, 100, 100, 100, 100, 100, 0);
 
 -- --------------------------------------------------------
 
@@ -161,13 +157,13 @@ INSERT INTO `tbl422_let` (`ID`, `let total number`, `bsed total number`, `beed t
 
 DROP TABLE IF EXISTS `tbl431_resources`;
 CREATE TABLE IF NOT EXISTS `tbl431_resources` (
-  `total_number` int(11) NOT NULL AUTO_INCREMENT,
+  `total_number` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `cost` int NOT NULL,
   `fund` int NOT NULL,
   PRIMARY KEY (`total_number`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -178,13 +174,13 @@ CREATE TABLE IF NOT EXISTS `tbl431_resources` (
 DROP TABLE IF EXISTS `tbl432_events`;
 CREATE TABLE IF NOT EXISTS `tbl432_events` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `total_number` int NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `cost` int NOT NULL,
-  `fund` int NOT NULL,
+  `total_events_hosted` int DEFAULT NULL,
+  `event_title` varchar(100) DEFAULT NULL,
+  `event_description` text,
+  `total_cost` decimal(10,2) DEFAULT NULL,
+  `fund_source` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 

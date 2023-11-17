@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 16, 2023 at 06:22 PM
+-- Generation Time: Nov 17, 2023 at 05:52 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -163,7 +163,14 @@ CREATE TABLE IF NOT EXISTS `tbl431_resources` (
   `cost` int NOT NULL,
   `fund` int NOT NULL,
   PRIMARY KEY (`total_number`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl431_resources`
+--
+
+INSERT INTO `tbl431_resources` (`total_number`, `title`, `description`, `cost`, `fund`) VALUES
+(2, 'vddvds', 'dvdss', 5000, 0);
 
 -- --------------------------------------------------------
 
@@ -174,13 +181,19 @@ CREATE TABLE IF NOT EXISTS `tbl431_resources` (
 DROP TABLE IF EXISTS `tbl432_events`;
 CREATE TABLE IF NOT EXISTS `tbl432_events` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `total_events_hosted` int DEFAULT NULL,
-  `event_title` varchar(100) DEFAULT NULL,
-  `event_description` text,
-  `total_cost` decimal(10,2) DEFAULT NULL,
-  `fund_source` varchar(50) DEFAULT NULL,
+  `event_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `event_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `total_cost` decimal(10,2) NOT NULL,
+  `fund_source` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl432_events`
+--
+
+INSERT INTO `tbl432_events` (`ID`, `event_title`, `event_description`, `total_cost`, `fund_source`) VALUES
+(1, 'The Goodness for All\r\nSpookython - A Coding Marathon', 'it is a coding a and a viewing program open fpr public', '2500.00', 'Mayor and Organization Funds');
 
 -- --------------------------------------------------------
 

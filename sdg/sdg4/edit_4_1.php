@@ -87,8 +87,9 @@ h3{
 <div class="card"> 
 <form method="POST">
  
-    <h3 class="h3text">Research</h3>
-     <div class="form-group"><i class="fa fa-search"></i>
+    <h3 class="h3text" style="color: red; font-weight: bolder">Research</h3>
+     
+    <div class="form-group"><i class="fa fa-search"></i>
       <label for="total_number">Total number of research on early years and lifelong education</label>
       <input type="number" class="form-control" id="total_number" name="total_number" value="<?php echo $total_research ?>" required>
     </div>

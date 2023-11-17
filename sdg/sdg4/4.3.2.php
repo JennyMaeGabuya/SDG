@@ -1,7 +1,6 @@
 <?php
 if (isset($_POST['submit'])) {
   // Get form data
-  $events = $_POST['total_events_hosted'];
   $title = $_POST['event_title'];
   $description = $_POST['event_description'];
   $cost = $_POST['total_cost'];
@@ -10,8 +9,8 @@ if (isset($_POST['submit'])) {
   include "includes/config.php";
 
   // SQL query to insert data
-  $sql = "INSERT INTO `tbl432_events` ( `total_events_hosted`, `event_title`, `event_description`, `total_cost`, `fund_source`) 
-  VALUES ('$events','$title', '$description', '$cost','$fund')";
+  $sql = "INSERT INTO `tbl432_events` ( `event_title`, `event_description`, `total_cost`, `fund_source`) 
+  VALUES ('$title', '$description', '$cost','$fund')";
 
   if ($conn->query($sql) === TRUE) {
     // The dat was successfully entered
@@ -31,7 +30,7 @@ if (isset($_POST['submit'])) {
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SDG 4.3.1 | Public resources (lifelong learning)</title>
+  <title>SDG 4.3.2 | Public events (lifelong learning) </title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href=css/sidebar.css>
@@ -243,11 +242,6 @@ if (isset($_POST['submit'])) {
     <div class="contentform">
       <form method="POST">
 
-        <div class="form-group"><i class="fa fa-user"></i>
-          <label for="total_events_hosted">Total number of educational events hosted at the university tat are open to the general public: </label>
-          <input type="number" class="form-control" id="total_events_hosted" name="total_events_hosted" required></textarea>
-        </div>
-
         <div class="form-group"><i class="fa fa-bookmark"></i>
           <label for="event_title" class="text-center ">Title of the PPA</label>
           <textarea class="form-control" id="event_title" name="event_title" rows="3" required></textarea>
@@ -255,7 +249,7 @@ if (isset($_POST['submit'])) {
 
         <div class="form-group"><i class="fa fa-edit"></i>
           <label for="event_description">Short description of the PPA</label>
-          <textarea class="form-control" id="event_description" name="event_description" rows="2" required></textarea>
+          <textarea class="form-control" id="event_description" name="event_description" rows="5" required></textarea>
         </div>
 
         <div class="form-group"><i class="fa fa-dollar"></i>
@@ -293,11 +287,9 @@ if (isset($_POST['submit'])) {
 
   <!-- START OF TABLE -->
   <div class="table-container">
-    <h2>Public resources</h2>
+    <h2>Public events</h2>
     <table class="table table-bordered">
       <thead>
-        <tr>
-          <th scope="col" style="width: 75px;">Total Number of Educational Events</th>
           <th scope="col" style="width: 150px;">Title of PPA</th>
           <th scope="col" style="width: 150px;">Description</th>
           <th scope="col" style="width: 75px;">Total Cost</th>
@@ -318,14 +310,12 @@ if (isset($_POST['submit'])) {
         // Displaying all the data retrieved from the database using a while loop
         while ($row = mysqli_fetch_assoc($result)) {
           $id = $row['ID'];
-          $events = $row['total_events_hosted'];
           $title = $row['event_title'];
           $description = $row['event_description'];
           $cost = $row['total_cost'];
           $fund = $row['fund_source'];
 
           echo "<tr>";
-          echo "<td>{$events}</td>";
           echo "<td>{$title}</td>";
           echo "<td>{$description}</td>";
           echo "<td>Php {$cost}</td>";
@@ -335,7 +325,7 @@ if (isset($_POST['submit'])) {
                           <a href='edit_4.3.2.php?update&event_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>
-                          <a href='delete4.3.2.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete_4.3.2.php?delete={$id}' class='btn btn-danger'>
                           <i class='fa fa-trash'></i>
                       </a>
                       </td>";

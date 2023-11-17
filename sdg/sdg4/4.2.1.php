@@ -200,7 +200,7 @@ if (isset($_POST['submit'])) {
 
     <div class="content">
         <br>
-        <h3>Proportion of graduates with relevant qualifications in each respective field</h3>
+        <h3>4.2.1 Proportion of graduates with relevant qualifications in each respective field</h3>
         <!--remove muna pic 
     <div class="image" style="width: 50px;"style="height: 50px;">
             <img src="img/rs.png" alt="Image">

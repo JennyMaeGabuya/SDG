@@ -88,7 +88,7 @@ if (isset($_POST['update'])) {
     <div class="card">
         <form method="POST">
 
-            <h3 class="h3text">Licensure Examination Statistics</h3><br>
+            <h3 class="h3text" style="color: red; font-weight: bolder">Licensure Examination Statistics</h3><br>
 
             <div class="form-group"><i class="fa fa-book"></i>
                 <label for="program">Program: </label>

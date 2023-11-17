@@ -1,0 +1,198 @@
+
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.radio-wrapper {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    top: 95%;
+    z-index: 5;
+}
+
+.radio-container {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+}
+
+.radio-button {
+    margin: 2px;
+    border-radius: 50%;
+    border: 3px solid black;
+    padding: 5px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.radio-button:active {
+    background-color: black;
+}
+
+.sdg-container {
+    width: auto;
+    height: 202px;
+    position: fixed;
+    border: 6px solid black;
+    overflow: hidden;
+    top: 65%;
+    z-index: 5;
+
+}
+
+.sdg-slider {
+    position: relative;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.sdg-button {
+    margin: 0 70px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.sdg {
+    width: 100%;
+    height: 100%;
+}
+
+.radio-button:hover + .sdg-container .sdg-slider {
+    transform: translateX(10px);
+}
+
+
+
+        .sdg-new{
+            width: 100%;
+            height: 100%;
+        }
+        .sdg-new:active{
+            margin: 1px;
+        }
+
+        #image1 {
+            background-image: url('../IMG/1.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image2  {
+            background-image: url('../IMG/2.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image3  {
+            background-image: url('../IMG/3.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image4  {
+            background-image: url('../IMG/4.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image5  {
+            background-image: url('../IMG/5.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image6 {
+            background-image: url('../IMG/6.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image7  {
+            background-image: url('../IMG/7.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image8 {
+            background-image: url('../IMG/8.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image9  {
+            background-image: url('../IMG/9.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image10  {
+            background-image: url('../IMG/10.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image11  {
+            background-image: url('../IMG/11.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image12 {
+            background-image: url('../IMG/12.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image13  {
+            background-image: url('../IMG/13.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image14  {
+            background-image: url('../IMG/14.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image15  {
+            background-image: url('../IMG/15.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image16  {
+            background-image: url('../IMG/16.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #image17  {
+            background-image: url('../IMG/17.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            
+        }

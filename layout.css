@@ -1,0 +1,189 @@
+body,html{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width:100%;
+    height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   align-items: center;
+   justify-content: center;
+   
+   }
+   body{
+  
+    width: auto;
+   
+   }
+   
+   nav{
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    width: 100%;
+    height: 89px;
+
+   
+   }
+   header{
+       width: 100%;
+       min-height: 80px;
+       border-top: 5px solid black;
+       border-bottom: 5px solid black;
+   }
+   
+   iframe{
+       display: none;
+       z-index: 1;
+       animation: fade 0.5s ease;
+       min-width: 100%;
+       padding: 0%;
+       margin: 0;
+       height: 100%;
+   
+   }
+ 
+   .sdg{
+       padding: 10px;
+   width: 200px;
+   min-height: 200px;
+   font-size: 10px;
+   }
+   
+   
+   .sdg-container{
+       width: 100%;
+       height: auto;
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+   }
+   
+   .smooth-transition {
+       transition: opacity 0.3s ease;
+   }
+   
+   .about-sdg{
+    
+       width: 100%;
+       min-height:100px;
+   }
+   
+   
+   .first-layer{
+       display: flex;
+     
+       align-items: center;
+       justify-content: center;
+   }
+   
+   .second-layer{
+       display: flex;
+       
+       align-items: center;
+       justify-content: center;
+   }
+   .third-layer{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+
+
+
+
+#nav-icon{
+    margin: 10px 20px;
+}
+.sidebar, ul, li, a{
+    list-style-type: none;  
+}
+
+.side-bar{
+    padding-top: 50px;
+    height: 100vh;
+    width: 300px;
+ margin-left: -400px;
+ transition: .4s ease-in-out;
+ z-index: 4;
+ background-color: rgb(255, 255, 255);
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+}
+
+#nav-icon:hover + .side-bar,
+.side-bar:hover {
+    display: block;
+    margin-left: 0;
+
+}
+
+#nav-icon,
+.side-bar {
+    cursor: pointer;
+    position: absolute;
+}
+li{
+    border: 2px solid black;
+    width: 200px;
+    line-height: 20px;
+    margin-bottom:10px;
+    text-align: center;
+}
+
+ul :hover li{
+    padding-left: 50px;
+
+}
+
+
+.webDEV{
+    background-color: rgb(198, 198, 198);
+    width: 300px;
+    height: 50px;
+    float: right;
+margin: 15px 20px;
+}
+
+
+.logoleft{
+    width: 60px;
+    height: 60px;
+}
+
+.logomid{
+    width: 120px;
+    height: 70px;
+}
+
+.logoright{
+    width: 60px;
+    height: 60px;
+}
+
+.logoleft img{
+    width: 100%;
+    height: 100%;
+}
+.logomid img{
+    width: 100%;
+    height: 100%;
+}
+.logoright img{
+    width: 100%;
+    height: 100%;
+}
+.LOGOS{
+    margin-top:10px;
+    display: flex;
+    position: absolute;
+    right: 45%;
+}
+
+.main-container{
+    width: 100%;
+    height: 120%;
+    border: 6px solid black;
+  overflow: hidden;
+  box-sizing: border-box;
+
+}

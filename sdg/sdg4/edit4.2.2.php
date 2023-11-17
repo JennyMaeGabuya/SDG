@@ -90,11 +90,7 @@ h3{
 <!-- FOR Total number of LET passers -->
 <!--   <p><?php echo $percentage?>% of graduates who acquired a license have teaching 
 qualifications to teach at primary level.</p> -->
-<<<<<<< HEAD
 <h3 class="h3text">Update Information</h3> <br>
-=======
-<h3 class="h3text" style="color: red; font-weight: bolder">Update Information</h3> <br>
->>>>>>> 92e1f9257e57690bfd6756561c3867467d9812f0
 <div class="form-group"><i class="fa fa-bar-chart"></i>
   <label for="total_number" class="text-center ">Total number of LET passers</label>
   <input type="number" class="form-control" id="lettotal" name="lettotal" value="<?php echo $lettotal?>"required>

@@ -161,11 +161,7 @@ CREATE TABLE IF NOT EXISTS `tbl431_resources` (
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `cost` int NOT NULL,
-<<<<<<< HEAD
   `fund` varchar(255) NOT NULL,
-=======
-  `fund` int NOT NULL,
->>>>>>> 92e1f9257e57690bfd6756561c3867467d9812f0
   PRIMARY KEY (`total_number`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 

@@ -1,8 +1,4 @@
-<!--
-ERIKA R. MAGNAYE
-BSIT-SM-3101
 
--->
 
 <?php
 include "includes/config.php";
@@ -13,7 +9,7 @@ if (isset($_GET['delete'])) {
     // Check if the user has confirmed the deletion
     if (isset($_GET['confirm']) && $_GET['confirm'] == 'true') {
         // SQL query to delete data from the "order" table where id = $userid
-        $query = "DELETE FROM `tbl4_1` WHERE ID = {$deleteid}";
+        $query = "DELETE FROM `tbl4_1` WHERE `total_research` = {$deleteid}";
         $delete_query = mysqli_query($conn, $query);
         echo "<script type='text/javascript'>alert(' data deleted successfully!')</script>";
         header("Location: 4.1.php");

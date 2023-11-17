@@ -150,9 +150,9 @@ if (isset($_POST['submit'])) {
 }
   */
     .table-container {
-      margin-left: 300px;
+      margin-left: 350px;
       margin-right: 50px;
-      width: 73%;
+      width: 64%;
       overflow-x: auto;
     }
 

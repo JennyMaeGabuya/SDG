@@ -148,36 +148,48 @@ h2 {
 
     <?php
     include "includes/config.php";
-    $query = "SELECT * FROM `tbl4_1`"; // SQL query to fetch all table data
+    $query = "SELECT Count(*) AS total  FROM `tbl4_1`"; // SQL query to fetch all table data
     $result = mysqli_query($conn, $query); // sending the query to the database
 
-    if (!$result) {
-      die("Error: " . mysqli_error($conn)); // Output the error message for debugging
-    }
 
-    // Initializing total points outside the loop
-    $totalPoints = 0;
-
-    // Displaying all the data retrieved from the database using a while loop
     while ($row = mysqli_fetch_assoc($result)) {
-      $source = $row['source'];
+        $total = $row['total'];
+       $totalno= $total;
 
-      // Define source for different categories
-      $src = "SCOPUS";
-      $osrc = "WEB OF SCIENCE";
-
-      $ptsR = 0; // Initialize points for the current research
-
-      // Check if the source matches SCOPUS or WEB OF SCIENCE
-      if ($source === $src || $source === $osrc) {
-        $ptsR = 25;
-      } else {
-        $ptsR = 10;
-      }
-
-      // Add the points for the current research to the total points
-      $totalPoints += $ptsR;
+       $query = "SELECT * FROM `tbl4_1`"; // SQL query to fetch all table data
+       $result = mysqli_query($conn, $query); // sending the query to the database
+   
+       if (!$result) {
+         die("Error: " . mysqli_error($conn)); // Output the error message for debugging
+       }
+   
+       // Initializing total points outside the loop
+       $totalPoints = 0;
+   
+       // Displaying all the data retrieved from the database using a while loop
+       while ($row = mysqli_fetch_assoc($result)) {
+         $source = $row['source'];
+   
+         // Define source for different categories
+         $src = "SCOPUS";
+         $osrc = "WEB OF SCIENCE";
+   
+     
+       }
+       $ptsR = 0; // Initialize points for the current research
+   
+       // Check if the source matches SCOPUS or WEB OF SCIENCE
+       if ($source === $src || $source === $osrc) {
+         $ptsR = $totalno * 25;
+       } else {
+         $ptsR = $totalno * 10;
+       }
+ 
+       // Add the points for the current research to the total points
+       $totalPoints += $ptsR;
     }
+
+  
     ?>
 
 <input type="text" style="color: black; text-align: center;" class="points" name="points" value="<?php echo min($totalPoints, 25); ?>" readonly>  
@@ -251,13 +263,13 @@ h2 {
   <table class="table table-bordered">
   <thead>
     <tr>
-      <th scope="col" style="width: 30px;">#</th>
-      <th scope="col" style="width: 30px;">Total Research</th>
+  <!--    <th scope="col" style="width: 30px;">#</th>
+      <th scope="col" style="width: 30px;">Total Research</th>  -->
       <th scope="col" style="width: 200px;">Title</th>
       <th scope="col" style="width: 100px;">Author</th>
       <th scope="col" style="width: 100px;">Year of Publication</th>
       <th scope="col" style="width: 100px;">Total Citations</th>
-      <th scope="col" style="width: 130px;">Source</th>
+      <th scope="col" style="width: 150px;">Source</th>
       <th scope="col" style="width: 50px;">Points</th>
       <th scope="col"colspan="2"  style="width: 100px;">Action</th>
     </tr>
@@ -273,8 +285,7 @@ h2 {
             }
             // Displaying all the data retrieved from the database using a while loop
             while ($row = mysqli_fetch_assoc($result)) {
-              $id = $row['ID'];
-                $total_number = $row['total_research'];
+              $id = $row['total_research'];
                 $title = $row['title'];
                 $author = $row['author'];
                 $publication = $row['year'];
@@ -293,8 +304,8 @@ h2 {
                   }
 
                 echo "<tr>";
-                echo "<td>{$id}</td>";
-                echo "<td>{$total_number}</td>";
+               // echo "<td>{$id}</td>";
+               // echo "<td>{$total_number}</td>";
                 echo "<td>{$title}</td>";
                 echo "<td>{$author}</td>";
                 echo "<td>{$publication}</td>";

@@ -84,13 +84,7 @@ h3{
     
 <div class="card"> 
 <form method="POST">
- 
-<<<<<<< HEAD
-    <h3 class="h3text">Update Information</h3>
-=======
-    <h3 class="h3text" style="color: red; font-weight: bolder">Update Information</h3>
-    
->>>>>>> 92e1f9257e57690bfd6756561c3867467d9812f0
+  <h3 class="h3text" style="color: red; font-weight: bolder">Update Information</h3>
     <div class="form-group"><i class="fa fa-bar-chart"></i>
       <label for="title" class="text-center ">Title of the PPA</label>
       <textarea class="form-control" id="title" name="title" rows="3" value="" required><?php echo $title ?></textarea>

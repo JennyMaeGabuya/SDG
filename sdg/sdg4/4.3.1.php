@@ -133,9 +133,9 @@ h2 {
 }
   */
   .table-container{
-    margin-left: 300px;
+    margin-left: 350px;
     margin-right: 50px;
-    width:73%;
+    width:64%;
     overflow-x: auto; 
   }
   .h3text{
@@ -267,10 +267,10 @@ qualifications to teach at primary level.</p> -->
   <thead>
     <tr>
   <!--    <th scope="col" style="width: 30px;">#</th> -->
-      <th scope="col" style="width: 150px;">Title of PPA</th>
-      <th scope="col" style="width: 150px;">Description</th>
+      <th scope="col" style="width: 10px;">Title of PPA</th>
+      <th scope="col" style="width: 130px;">Description</th>
       <th scope="col" style="width: 50px;">Total Cost</th>
-      <th scope="col" style="width: 100px;">Fund Source</th>
+      <th scope="col" style="width: 80px;">Fund Source</th>
    <!--   <th scope="col" style="width: 50px;">Points</th>  -->
       <th scope="col"colspan="2"  style="width: 60px;">Action</th>
     </tr>

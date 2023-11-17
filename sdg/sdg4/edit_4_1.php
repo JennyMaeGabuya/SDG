@@ -7,7 +7,7 @@ if(isset($_GET['research_id']))
     }
     
       // SQL query to select all the data from the table where researchid = $researchid
-     $query = "SELECT * FROM `tbl4_1` WHERE `ID` = $research_id";
+     $query = "SELECT * FROM `tbl4_1` WHERE `total_research` = $research_id";
      $result= mysqli_query($conn,$query);
      while ($row = mysqli_fetch_assoc($result)) { 
           
@@ -24,7 +24,7 @@ if(isset($_GET['research_id']))
             
  //Processing form data when form is submitted/ when update button is clicked
  if (isset ($_POST['update'])){
-    $total_research = $_POST['total_number'];
+    //$total_research = $_POST['total_number'];
     $title = strtoupper($_POST['title']);
     $author = strtoupper($_POST['author']);
     $year = $_POST['publication'];
@@ -32,7 +32,7 @@ if(isset($_GET['research_id']))
     $source = strtoupper($_POST['source']);
 
       // SQL query to update the data in user table where the id = $userid 
-        $query ="UPDATE `tbl4_1` SET   `total_research` = '{$total_research}', `title` = '{$title}', `author` = '{$author}',`year` = '{$year}',`total_citation` = '{$total_citation}',`source` = '{$source}' WHERE ID= $research_id";
+        $query ="UPDATE `tbl4_1` SET `title` = '{$title}', `author` = '{$author}',`year` = '{$year}',`total_citation` = '{$total_citation}',`source` = '{$source}' WHERE `total_research`= $research_id";
         $update = mysqli_query($conn, $query);
         echo "<script type='text/javascript'>alert(' data updated successfully!')</script>";
     }
@@ -88,11 +88,6 @@ h3{
 <form method="POST">
  
     <h3 class="h3text" style="color: red; font-weight: bolder">Research</h3>
-     
-    <div class="form-group"><i class="fa fa-search"></i>
-      <label for="total_number">Total number of research on early years and lifelong education</label>
-      <input type="number" class="form-control" id="total_number" name="total_number" value="<?php echo $total_research ?>" required>
-    </div>
     <div class="form-group"><i class="fa fa-bookmark"></i>
       <label for="title">Title of research</label>
       <textarea class="form-control" id="title"  name="title" rows="5" value="" required><?php echo $title ?></textarea>

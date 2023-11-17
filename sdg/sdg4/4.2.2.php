@@ -135,9 +135,9 @@ h2 {
 }
   */
   .table-container{
-    margin-left: 300px;
+    margin-left: 350px;
     margin-right: 50px;
-    width:73%;
+    width:70%;
     overflow-x: auto; 
   }
   .h3text{
@@ -279,15 +279,15 @@ qualifications to teach at primary level.</p> -->
   <table class="table table-bordered">
   <thead>
     <tr>
-      <th scope="col" style="width: 30px;">#</th>
-      <th scope="col" style="width: 30px;">LET passers</th>
-      <th scope="col" style="width: 80px;">BSED passers</th>
-      <th scope="col" style="width: 80px;">BEED passers</th>
-      <th scope="col" style="width: 100px;">BPED passers</th>
-      <th scope="col" style="width: 80px;">BTLED passers</th>
-      <th scope="col" style="width: 130px;">Graduates with license & can teach at primary level.</th>
-      <th scope="col" style="width: 50px;">Points</th>
-      <th scope="col"colspan="2"  style="width: 100px;">Action</th>
+    <!--  <th scope="col" style="width: 30px;">#</th>  -->
+      <th scope="col" style="width: 50px;">LET passers</th>
+      <th scope="col" style="width: 50px;">BSED passers</th>
+      <th scope="col" style="width: 50px;">BEED passers</th>
+      <th scope="col" style="width: 50px;">BPED passers</th>
+      <th scope="col" style="width: 50px;">BTLED passers</th>
+      <th scope="col" style="width: 100px;">Graduates with license & can teach at primary level.</th>
+      <th scope="col" style="width: 40px;">Points</th>
+      <th scope="col"colspan="2"  style="width: 70px;">Action</th>
     </tr>
   </thead>
     <tbody>
@@ -341,7 +341,7 @@ if ($rslt) {
                
 
                 echo "<tr>";
-                echo "<td>{$id}</td>";
+             //   echo "<td>{$id}</td>";
                 echo "<td>{$lettotal}</td>";
                 echo "<td>{$bsedtotal}</td>";
                 echo "<td>{$beedtotal}</td>";

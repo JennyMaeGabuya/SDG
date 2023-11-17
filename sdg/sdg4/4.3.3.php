@@ -135,7 +135,7 @@ h2 {
   .table-container{
     margin-left: 350px;
     margin-right: 50px;
-    width:68%;
+    width:65%;
     overflow-x: auto; 
   }
   .h3text{

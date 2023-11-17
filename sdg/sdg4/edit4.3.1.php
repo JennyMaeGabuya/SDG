@@ -39,11 +39,8 @@ if(isset($_GET['ppa_id'])) //the ppa_id came from 4.3.1.php which was declared a
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-<title>SDG 4.1 | Research on Early Years ... Education</title>
-=======
 <title>SDG 4.3.1 | Public resources (lifelong learning) </title>
->>>>>>> 92e1f9257e57690bfd6756561c3867467d9812f0
+
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href= css/sidebar.css>

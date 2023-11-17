@@ -221,7 +221,6 @@ CREATE TABLE IF NOT EXISTS `tbl433_vocational` (
 DROP TABLE IF EXISTS `tbl434_outreach`;
 CREATE TABLE IF NOT EXISTS `tbl434_outreach` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `total_number` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `cost` int NOT NULL,

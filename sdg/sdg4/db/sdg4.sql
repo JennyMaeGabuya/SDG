@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 15, 2023 at 03:26 PM
+-- Generation Time: Nov 17, 2023 at 05:52 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -114,19 +114,15 @@ CREATE TABLE IF NOT EXISTS `tbl421_licensure` (
   `PercentTookExam` decimal(5,2) NOT NULL,
   `PercentAcquired` decimal(5,2) NOT NULL,
   `PercentFailed` decimal(5,2) NOT NULL,
-  `Points` int NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=83 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=86 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl421_licensure`
 --
 
-INSERT INTO `tbl421_licensure` (`ID`, `Program`, `EligibleTotal`, `TookExam`, `Acquired`, `Failed`, `PercentEligible`, `PercentTookExam`, `PercentAcquired`, `PercentFailed`, `Points`) VALUES
-(81, 'CTE', 1000, 600, 500, 100, '100.00', '60.00', '83.33', '16.67', 0),
-(80, 'CAS', 150, 150, 50, 100, '100.00', '100.00', '33.33', '66.67', 0),
-(79, 'ENGINEERING', 1500, 1450, 1400, 50, '100.00', '96.67', '96.55', '3.45', 0),
-(82, 'IT', 900, 500, 300, 200, '100.00', '55.56', '60.00', '40.00', 0);
+INSERT INTO `tbl421_licensure` (`ID`, `Program`, `EligibleTotal`, `TookExam`, `Acquired`, `Failed`, `PercentEligible`, `PercentTookExam`, `PercentAcquired`, `PercentFailed`) VALUES
+(85, 'CE', 2000, 1500, 790, 610, '100.00', '75.00', '52.67', '40.67');
 
 -- --------------------------------------------------------
 
@@ -136,37 +132,22 @@ INSERT INTO `tbl421_licensure` (`ID`, `Program`, `EligibleTotal`, `TookExam`, `A
 
 DROP TABLE IF EXISTS `tbl422_let`;
 CREATE TABLE IF NOT EXISTS `tbl422_let` (
-  `ID` int NOT NULL AUTO_INCREMENT,
+  `ID` int NOT NULL,
   `let total number` int NOT NULL,
-  `letmale` int NOT NULL,
-  `letfemale` int NOT NULL,
   `bsed total number` int NOT NULL,
-  `bsedmale` int NOT NULL,
-  `bsedfemale` int NOT NULL,
   `beed total number` int NOT NULL,
-  `beedmale` int NOT NULL,
-  `beedfemale` int NOT NULL,
   `bped total number` int NOT NULL,
-  `bpedmale` int NOT NULL,
-  `bpedfemale` int NOT NULL,
   `btled total number` int NOT NULL,
-  `btledmale` int NOT NULL,
-  `btledfemale` int NOT NULL,
+  `percentage` int NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl422_let`
 --
 
-INSERT INTO `tbl422_let` (`ID`, `let total number`, `letmale`, `letfemale`, `bsed total number`, `bsedmale`, `bsedfemale`, `beed total number`, `beedmale`, `beedfemale`, `bped total number`, `bpedmale`, `bpedfemale`, `btled total number`, `btledmale`, `btledfemale`) VALUES
-(34, 23, 10, 13, 7, 3, 4, 6, 3, 3, 5, 2, 3, 5, 2, 3),
-(36, 4156, 610, 3546, 67, 23, 44, 3777, 343, 3434, 266, 232, 34, 46, 12, 34),
-(37, 4156, 610, 3546, 67, 23, 44, 3777, 343, 3434, 266, 232, 34, 46, 12, 34),
-(38, 189, 88, 101, 35, 23, 12, 57, 23, 34, 53, 21, 32, 44, 21, 23),
-(39, 189, 88, 101, 35, 23, 12, 57, 23, 34, 53, 21, 32, 44, 21, 23),
-(40, 554, 66, 488, 35, 12, 23, 42, 21, 21, 233, 21, 212, 244, 12, 232),
-(41, 554, 66, 488, 35, 12, 23, 42, 21, 21, 233, 21, 212, 244, 12, 232);
+INSERT INTO `tbl422_let` (`ID`, `let total number`, `bsed total number`, `beed total number`, `bped total number`, `btled total number`, `percentage`) VALUES
+(0, 100, 100, 100, 100, 100, 0);
 
 -- --------------------------------------------------------
 
@@ -176,14 +157,20 @@ INSERT INTO `tbl422_let` (`ID`, `let total number`, `letmale`, `letfemale`, `bse
 
 DROP TABLE IF EXISTS `tbl431_resources`;
 CREATE TABLE IF NOT EXISTS `tbl431_resources` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `total_number` int NOT NULL,
+  `total_number` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `cost` int NOT NULL,
-  `fund` int NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `fund` varchar(255) NOT NULL,
+  PRIMARY KEY (`total_number`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl431_resources`
+--
+
+INSERT INTO `tbl431_resources` (`total_number`, `title`, `description`, `cost`, `fund`) VALUES
+(2, 'vddvds', 'dvdss', 5000, 0);
 
 -- --------------------------------------------------------
 
@@ -194,13 +181,19 @@ CREATE TABLE IF NOT EXISTS `tbl431_resources` (
 DROP TABLE IF EXISTS `tbl432_events`;
 CREATE TABLE IF NOT EXISTS `tbl432_events` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `total_number` int NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `cost` int NOT NULL,
-  `fund` int NOT NULL,
+  `event_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `event_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `total_cost` decimal(10,2) NOT NULL,
+  `fund_source` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl432_events`
+--
+
+INSERT INTO `tbl432_events` (`ID`, `event_title`, `event_description`, `total_cost`, `fund_source`) VALUES
+(1, 'The Goodness for All\r\nSpookython - A Coding Marathon', 'it is a coding a and a viewing program open fpr public', '2500.00', 'Mayor and Organization Funds');
 
 -- --------------------------------------------------------
 
@@ -210,13 +203,12 @@ CREATE TABLE IF NOT EXISTS `tbl432_events` (
 
 DROP TABLE IF EXISTS `tbl433_vocational`;
 CREATE TABLE IF NOT EXISTS `tbl433_vocational` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `total_number` int NOT NULL,
+  `total_number` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `cost` int NOT NULL,
-  `fund` int NOT NULL,
-  PRIMARY KEY (`ID`)
+  `fund` varchar(255) NOT NULL,
+  PRIMARY KEY (`total_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -228,11 +220,10 @@ CREATE TABLE IF NOT EXISTS `tbl433_vocational` (
 DROP TABLE IF EXISTS `tbl434_outreach`;
 CREATE TABLE IF NOT EXISTS `tbl434_outreach` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `total_number` int NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `cost` int NOT NULL,
-  `fund` int NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `cost` decimal(10,2) NOT NULL,
+  `fund` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -252,7 +243,7 @@ CREATE TABLE IF NOT EXISTS `tbl435_access` (
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `cost` int NOT NULL,
-  `fund` int NOT NULL,
+  `fund` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;

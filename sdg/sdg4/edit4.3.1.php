@@ -1,38 +1,35 @@
 
 <?php
 include "includes/config.php";
-if(isset($_GET['research_id']))
+if(isset($_GET['ppa_id'])) //the ppa_id came from 4.3.1.php which was declared as variable to edit record
     {
-      $research_id = $_GET['research_id']; 
+      $ppa_id = $_GET['ppa_id']; 
     }
     
       // SQL query to select all the data from the table where researchid = $researchid
-     $query = "SELECT * FROM `tbl4_1` WHERE `ID` = $research_id";
+     $query = "SELECT * FROM `tbl431_resources` WHERE `total_number` = $ppa_id";
      $result= mysqli_query($conn,$query);
      while ($row = mysqli_fetch_assoc($result)) { 
           
         //the data inside [''] are the columns in db
-        $total_research = $row['total_research'];
         $title = $row['title'];
-        $author = $row['author'];
-        $year = $row['year'];
-        $total_citation = $row['total_citation'];
-        $source = $row['source'];
+        $desc = $row['description'];
+        $cost = $row['cost'];
+        $fund = $row['fund'];
+       
      }
         
          
             
  //Processing form data when form is submitted/ when update button is clicked
  if (isset ($_POST['update'])){
-    $total_research = $_POST['total_number'];
-    $title = strtoupper($_POST['title']);
-    $author = strtoupper($_POST['author']);
-    $year = $_POST['publication'];
-    $total_citation = $_POST['citations'];
-    $source = strtoupper($_POST['source']);
+    $title = $_POST['title'];
+    $desc = $_POST['desc'];
+    $cost = $_POST['cost'];
+    $fund = $_POST['fund'];
 
-      // SQL query to update the data in user table where the id = $userid 
-        $query ="UPDATE `tbl4_1` SET   `total_research` = '{$total_research}', `title` = '{$title}', `author` = '{$author}',`year` = '{$year}',`total_citation` = '{$total_citation}',`source` = '{$source}' WHERE ID= $research_id";
+      // SQL query to update the data in user table where the total_number = $ppa_id 
+        $query ="UPDATE `tbl431_resources` SET   `title` = '{$title}', `description` = '{$desc}', `cost` = '{$cost}',`fund` = '{$fund}' WHERE `total_number`= $ppa_id";
         $update = mysqli_query($conn, $query);
         echo "<script type='text/javascript'>alert(' data updated successfully!')</script>";
     }
@@ -87,34 +84,26 @@ h3{
 <div class="card"> 
 <form method="POST">
  
-    <h3 class="h3text">Research</h3>
-     <div class="form-group"><i class="fa fa-search"></i>
-      <label for="total_number">Total number of research on early years and lifelong education</label>
-      <input type="number" class="form-control" id="total_number" name="total_number" value="<?php echo $total_research ?>" required>
-    </div>
-    <div class="form-group"><i class="fa fa-bookmark"></i>
-      <label for="title">Title of research</label>
-      <textarea class="form-control" id="title"  name="title" rows="5" value="" required><?php echo $title ?></textarea>
-    </div>
-    <div class="form-group"><i class="fa fa-user"></i>
-      <label for="author">Author</label>
-      <input type="text" class="form-control" id="author"  name="author" value="<?php echo $author ?>" required>
-      </div>
-    <div class="form-group"><i class="fa fa-calendar"></i>
-  <label for="publication">Year of publication</label>
-  <input type="text" class="form-control" id="publication" name="publication" value="<?php echo $year ?>" maxlength="4" placeholder="YYYY" required>
- </div>
+    <h3 class="h3text">Update Information</h3>
     <div class="form-group"><i class="fa fa-bar-chart"></i>
-      <label for="citations">Total number of citations</label>
-      <input type="number" class="form-control" id="citations"  name="citations" value="<?php echo $total_citation ?>" required>
-     </div>
-    <div class="form-group"><i class="fa fa-book"></i>
-      <label for="citations">Source</label>
-      <textarea class="form-control" id="source"  name="source" value="" required><?php echo $source ?></textarea>
-   </div>
+      <label for="title" class="text-center ">Title of the PPA</label>
+      <textarea class="form-control" id="title" name="title" rows="3" value="" required><?php echo $title ?></textarea>
+    </div>
+    <div class="form-group"><i class="fa fa-area-chart"></i>
+      <label for="desc">Short description of the PPA</label>
+      <textarea class="form-control" id="desc" name="desc" rows="5" value="" required><?php echo $desc ?></textarea>
+    </div>
+    <div class="form-group"><i class="	fa fa-book"></i>
+      <label for="cost">Total cost</label>
+      <input type="number" class="form-control" id="" name="cost" value="<?php echo $cost ?>" required>
+    </div>
+    <div class="form-group"><i class="fa fa-drivers-license"></i>
+      <label for="fund">Fund source</label>
+      <input type="text" class="form-control" id="" name="fund" value="<?php echo $fund ?>" required>
+    </div>
    <button type="submit" class="btn btn-primary mt-6 mb-3" name="update"><i class="far fa-edit"></i>Update</button>
  
-<button type="reset" class="btn btn-danger mt-6 mb-3" name="cancel" onclick="window.location.href='4.1.php';">
+<button type="reset" class="btn btn-danger mt-6 mb-3" name="cancel" onclick="window.location.href='4.3.1.php';">
     <i class="fa fa-times-circle"></i> Cancel
 </button>
   <br>

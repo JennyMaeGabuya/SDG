@@ -18,13 +18,13 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 //Processing form data when form is submitted/ when update button is clicked
 if (isset($_POST['update'])) {
-    $title = $_POST['event_title'];
-    $description = $_POST['event_description'];
-    $cost = $_POST['total_cost'];
-    $fund = $_POST['fund_source'];
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $cost = $_POST['cost'];
+    $fund = $_POST['fund'];
 
     // SQL query to update the data in user table where the total_number = $ppa_id 
-    $query = "UPDATE `tbl432_events` SET   `event_title` = '{$title}', `event_description` = '{$description}', `ctotal_costost` = '{$cost}', `fund_source` = '{$fund}' WHERE `ID`= $events_id";
+    $query = "UPDATE `tbl432_events` SET   `event_title` = '{$title}', `event_description` = '{$description}', `total_cost` = '{$cost}', `fund_source` = '{$fund}' WHERE `ID`= $event_id";
     $update = mysqli_query($conn, $query);
     echo "<script type='text/javascript'>alert(' data updated successfully!')</script>";
 }

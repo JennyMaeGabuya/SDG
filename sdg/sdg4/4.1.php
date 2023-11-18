@@ -1,7 +1,7 @@
 <?php 
 if (isset($_POST['submit'])) {
   // Get form data
-  $total_number = $_POST['total_number'];
+ // $total_number = $_POST['total_number'];
   $title =  strtoupper($_POST['title']);
   $author = strtoupper( $_POST['author']);
   $publication = $_POST['publication'];
@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
   include "includes/config.php";
 
   // SQL query to insert data
-  $sql = "INSERT INTO `tbl4_1` (`total_research`, `title`, `author`, `year`, `total_citation`, `source`) VALUES ('$total_number', '$title', '$author', '$publication', '$citation', '$source')";
+  $sql = "INSERT INTO `tbl4_1` (`title`, `author`, `year`, `total_citation`, `source`) VALUES ('$title', '$author', '$publication', '$citation', '$source')";
 
   if ($conn->query($sql) === TRUE) {
       // The research was successfully entered
@@ -214,10 +214,10 @@ h2 {
   <form method="POST" class="flex-grow-1">
   <h3 class="h3text">Research</h3>
 
-    <div class="mb-2 mt-2"><i class="fa fa-search"></i>
+  <!--  <div class="mb-2 mt-2"><i class="fa fa-search"></i>
       <label for="total_number">Total number of research on early years and lifelong education</label>
       <input type="number" class="form-control" id="total_number"  name="total_number" required>
-    </div>
+    </div>  -->
     <div class="mb-2">
     <i class="fa fa-bookmark"></i>
     <label for="title">Title of research</label>

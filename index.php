@@ -51,7 +51,7 @@
     <a href="sdg/sdg1/sdg.php"> <button class="sdg" id="sdg1" name="sdg1" style=" background-color: darkorange;"></button></a>
     <a href="sdg/sdg2/sdg.php"><button class="sdg" id="sdg2" name="sdg2" style=" background-color: darkred;" ></button></a>
     <a href="sdg/sdg3/sdg.php"><button class="sdg" id="sdg3" name="sdg3" style=" background-color: lightgreen;"></button></a>
-    <a href="sdg/sdg4/sdg.php"><button class="sdg" id="sdg4" name="sdg4" style=" background-color: lightblue;"></button></a>
+    <a href="sdg/sdg4/index.php"><button class="sdg" id="sdg4" name="sdg4" style=" background-color: lightblue;"></button></a>
     <a href="sdg/sdg5/sdg.php"><button class="sdg" id="sdg5" name="sdg5" style=" background-color: darkyellow;"></button></a>
     <a href="sdg/sdg6/sdg.php"><button class="sdg" id="sdg6" name="sdg6" style=" background-color: darkblue;"></button></a>
     <a href="sdg/sdg7.php"><button class="sdg" id="sdg7" name="sdg7" style=" background-color: darkorange;"></button></a>

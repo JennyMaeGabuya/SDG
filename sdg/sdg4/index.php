@@ -13,7 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
 body {
-  font-family: "Lato", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: white;
 }
 
@@ -24,6 +24,7 @@ body {
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 0px 10px;
   color: black;
+  font-family:Arial, Helvetica, sans-serif;
 
 }
   /* Make the image fully responsive */
@@ -47,9 +48,10 @@ body {
 h2{
   margin-left:250px;
   margin-top: 0;
-      background-color: #F4BF96; 
+      background-color: #C31F33; 
       color: #fff; 
       padding: 10px; 
+      font-family:Museo, Sans;
 }
 
 

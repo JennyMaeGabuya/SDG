@@ -51,7 +51,7 @@ if (isset($_POST['update'])) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <style>
-        .card {
+        .card {   
             margin-left: 350px;
             margin-right: 350px;
             margin-bottom: 50px;

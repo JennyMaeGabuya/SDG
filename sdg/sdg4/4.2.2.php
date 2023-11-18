@@ -171,7 +171,9 @@ h2 {
 <body>
 <?php include('sidebar.php'); ?>
 
-<!-- START OF HEADER POINTING SYSTEM -->
+<!--============================================================================================= 
+  START OF HEADER POINTING SYSTEM 
+============================================================================================= -->
 <div class="main">
   <h2>SDG 4 QUALITY EDUCATION</h2>
   <div class="input-container">

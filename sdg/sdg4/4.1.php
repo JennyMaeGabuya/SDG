@@ -1,3 +1,7 @@
+<!--============================================================================================= 
+                      INSERT DATA TO DB ONCE SUBMIT BUTTON WAS CLICKED
+============================================================================================= -->
+
 <?php 
 if (isset($_POST['submit'])) {
   // Get form data
@@ -140,14 +144,18 @@ h2 {
 <body>
 <?php include('sidebar.php'); ?>
 
-<!-- START OF HEADER POINTING SYSTEM -->
+<!--============================================================================================= 
+                                  START OF HEADER POINTING SYSTEM 
+============================================================================================= -->
 <div class="main" style="background-color:#C31F33;">
   <h2>SDG 4 QUALITY EDUCATION</h2>
   <div class="input-container">
     <p>Points</p>
 
-    <?php
-    include "includes/config.php";
+    <?php                              //==========================================================       
+    include "includes/config.php";   // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE
+                                     //========================================================== 
+
     $query = "SELECT Count(*) AS total  FROM `tbl4_1`"; // SQL query to fetch all table data
     $result = mysqli_query($conn, $query); // sending the query to the database
 
@@ -196,7 +204,9 @@ h2 {
 </div>
 </div>
 
-<!-- END OF HEADER POINTING SYSTEM -->
+<!--============================================================================================= 
+                                  END OF HEADER POINTING SYSTEM 
+ ============================================================================================= -->
 
   <div class="content">
     <br>
@@ -208,6 +218,10 @@ h2 {
 -->
 
   </div>
+
+  <!--============================================================================================= 
+                                  START OF FORM
+============================================================================================= -->
  <div class="card">
 
  <div class="container mt-3 d-flex">
@@ -258,6 +272,13 @@ h2 {
   </form>
   </div>
 </div>
+<!--============================================================================================= 
+                                END OF FORM
+============================================================================================= -->
+
+<!--============================================================================================= 
+                        START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
+============================================================================================= -->
 
 <div class="table-container">
   <h2>Researches</h2>           
@@ -336,13 +357,19 @@ h2 {
     </tbody>
   </table>
 </div>
+<!--============================================================================================= 
+                                END OF TABLE
+============================================================================================= -->
 
+<!--============================================================================================= 
+//                           this is js for sidebar panel
+// DONT REMOVE IT. MAKE SURE TO INCLUDE IT TO ALL YOUR FILES
+//============================================================================================= -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 
-  //this is js for sidebar panel
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content */
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 

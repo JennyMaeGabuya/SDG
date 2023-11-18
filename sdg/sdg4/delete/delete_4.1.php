@@ -1,5 +1,9 @@
+<!--============================================================================================= 
+                                DELETE DATA
+============================================================================================= -->
+
 <?php
-include "../includes/config.php";
+include "../includes/config.php"; //REPLACE THE "config.php" WITH YOUR ACTUAL CONNECTION TO DATABASE EX: conn.php
 
 if (isset($_GET['delete'])) {
     $deleteid = $_GET['delete'];
@@ -10,7 +14,7 @@ if (isset($_GET['delete'])) {
         $query = "DELETE FROM `tbl4_1` WHERE `total_research` = {$deleteid}";
         $delete_query = mysqli_query($conn, $query);
         echo "<script type='text/javascript'>alert(' data deleted successfully!')</script>";
-        header("Location: ../4.1.php");
+        header("Location: ../4.1.php"); //REPLACE THIS WITH YOUR ACTUAL FILE ONCE DATA IS DELETED
     } else {
         // If not confirmed, show a confirmation dialog using JavaScript
         echo "<script>

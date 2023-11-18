@@ -1,5 +1,10 @@
+<!--============================================================================================= 
+                                DELETE DATA
+============================================================================================= -->
+
 <?php
-include "../includes/config.php";
+include "../includes/config.php"; //REPLACE THE "config.php" WITH YOUR ACTUAL CONNECTION TO DATABASE EX: conn.php
+
 
 if (isset($_GET['delete'])) {
     $deleteid = $_GET['delete'];

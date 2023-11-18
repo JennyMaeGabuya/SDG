@@ -1,6 +1,8 @@
-
+<!--============================================================================================= 
+                                EDIT DATA RETRIEVED FROM DATABASE 
+============================================================================================= -->
 <?php
-include "../includes/config.php";
+include "../includes/config.php";  //REPLACE THE "config.php" WITH YOUR ACTUAL CONNECTION TO DATABASE EX: conn.php
 if(isset($_GET['ppa_id'])) //the ppa_id came from 4.3.1.php which was declared as variable to edit record
     {
       $ppa_id = $_GET['ppa_id']; 
@@ -18,9 +20,10 @@ if(isset($_GET['ppa_id'])) //the ppa_id came from 4.3.1.php which was declared a
         $fund = $row['fund'];
        
      }
-        
-         
-            
+               
+  //============================================================================================= 
+    //                     UPDATE DATA ONCE UPDATE BUTTON WAS CLICKED
+//============================================================================================= -->         
  //Processing form data when form is submitted/ when update button is clicked
  if (isset ($_POST['update'])){
     $title = $_POST['title'];
@@ -81,7 +84,9 @@ h3{
 </style>
 </head>
 <body>
-    
+        <!--============================================================================================= 
+                              FORM TO EDIT DATA 
+============================================================================================= -->
 <div class="card"> 
 <form method="POST">
   <h3 class="h3text" style="color: red; font-weight: bolder">Update Information</h3>

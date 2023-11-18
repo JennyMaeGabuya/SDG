@@ -1,6 +1,11 @@
+<!--============================================================================================= 
+                                EDIT DATA RETRIEVED FROM DATABASE 
+============================================================================================= -->
+
 
 <?php
-include "../includes/config.php";
+include "../includes/config.php"; //REPLACE THE "config.php" WITH YOUR ACTUAL CONNECTION TO DATABASE EX: conn.php
+
 if(isset($_GET['passer_id']))
     {
       $passer_id = $_GET['passer_id']; 
@@ -20,7 +25,9 @@ if(isset($_GET['passer_id']))
      }
         
          
-            
+  //============================================================================================= 
+    //                     UPDATE DATA ONCE UPDATE BUTTON WAS CLICKED
+//============================================================================================= -->         
  //Processing form data when form is submitted/ when update button is clicked
  if (isset ($_POST['update'])){
     $lettotal = $_POST['lettotal'];
@@ -83,7 +90,9 @@ h3{
 </style>
 </head>
 <body>
-    
+       <!--============================================================================================= 
+                              FORM TO EDIT DATA 
+============================================================================================= --> 
 <div class="card"> 
 <form method="POST" >
 

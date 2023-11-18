@@ -1,5 +1,11 @@
+<!--============================================================================================= 
+                                EDIT DATA RETRIEVED FROM DATABASE 
+============================================================================================= -->
+
+
 <?php
-include "../includes/config.php";
+include "../includes/config.php"; //REPLACE THE "config.php" WITH YOUR ACTUAL CONNECTION TO DATABASE EX: conn.php
+
 if (isset($_GET['outreach_id'])) {
     $outreach_id = $_GET['outreach_id'];
 }
@@ -15,7 +21,9 @@ while ($row = mysqli_fetch_assoc($result)) {
     $cost = $row['cost'];
     $fund = $row['fund'];
 }
-
+  //============================================================================================= 
+    //                     UPDATE DATA ONCE UPDATE BUTTON WAS CLICKED
+//============================================================================================= --> 
 //Processing form data when form is submitted/ when update button is clicked
 if (isset($_POST['update'])) {
     $title = $_POST['title'];
@@ -81,7 +89,9 @@ if (isset($_POST['update'])) {
 </head>
 
 <body>
-
+    <!--============================================================================================= 
+                              FORM TO EDIT DATA 
+============================================================================================= -->
     <div class="card">
         <form method="POST">
 

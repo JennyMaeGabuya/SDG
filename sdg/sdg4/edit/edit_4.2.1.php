@@ -20,7 +20,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 //Processing form data when form is submitted/ when update button is clicked
 if (isset($_POST['update'])) {
-    $program = $_POST['program'];
+    $program = strtoupper($_POST['program']);
     $eligible_total = $_POST['eligible_total'];
     $took_exam = $_POST['took_exam'];
     $acquired = $_POST['acquired'];

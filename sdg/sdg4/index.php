@@ -25,10 +25,9 @@ body {
   padding: 0px 10px;
   color: black;
   font-family:Arial, Helvetica, sans-serif;
-
 }
-  /* Make the image fully responsive */
-
+  
+/* Make the image fully responsive */
   .card{
     border-radius: 10px;
     box-shadow: 0 6px 10px rgba(0,0,0,.1);
@@ -38,20 +37,22 @@ body {
     margin-bottom: 60px;
     margin-top: 50px;
   }
+  
   p{
     margin: 20px;
     padding: 20px;
-    font-size: small;
+    font-size: large;
     text-align: justify;
-
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
+
 h2{
   margin-left:250px;
   margin-top: 0;
       background-color: #C31F33; 
       color: #fff; 
       padding: 10px; 
-      font-family:Museo, Sans;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 
@@ -73,10 +74,6 @@ The 2030 Agenda for Sustainable Development is “a plan of action for people, p
 SDG 4 focuses on education and aims to “ensure inclusive and equitable quality education and promote lifelong learning opportunities for all." </p>
 
 </div>
-</div>
-<div class="footer">
-<?php include('footer.php');?>
-
 </div>
 
 <link rel="stylesheet" href= css/sidebar.css>

@@ -19,7 +19,7 @@
 
   <b><a href="../../index.php">Home</a></b>
   <a href="index.php">SDG 4: Quality Education</a>
-  <a href="4.1.php">4.1 Research Early Years </a>
+  <a href="4.1.php">4.1 Research on Early ... </a>
   <button class="dropdown-btn">4.2 Graduates
     <i class="fa fa-caret-down"></i>
   </button>
@@ -37,5 +37,5 @@
     <a href="4.3.4.php">4.3.4 Outreach Activity</a>
     <a href="4.3.5.php">4.3.5 Learning Access</a>
   </div>
-  <a href="4.4.php">4.4 First-Generation Student</a>
+  <a href="4.4.php">4.4 First-Generation ... </a>
 </div>

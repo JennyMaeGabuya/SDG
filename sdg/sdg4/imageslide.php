@@ -75,21 +75,17 @@ img {vertical-align: middle;}
 
 <div class="mySlides fade">
   <img src="img/sdg.png" style="width:100%">
-  <div class="text">SDG 4</div>
 </div>
 
 <div class="mySlides fade">
   <img src="img/1.jpg" style="width:100%">
-  <div class="text">wala pa caption</div>
 </div>
 
 <div class="mySlides fade">
   <img src="img/educ.jpg" style="width:100%">
-  <div class="text">education</div>
 </div>
 <div class="mySlides fade">
   <img src="img/pic.jpg" style="width:100%">
-  <div class="text">education</div>
 </div>
 </div>
 <br>

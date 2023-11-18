@@ -318,7 +318,7 @@ h2 {
                           <a href='edit_4_1.php?update&research_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>
-                          <a href='delete_4.1.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete/delete_4.1.php?delete={$id}' class='btn btn-danger'>
                           <i class='fa fa-trash'></i>
                       </a>
                       </td>";

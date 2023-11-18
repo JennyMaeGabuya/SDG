@@ -152,7 +152,7 @@ if (isset($_POST['submit'])) {
     <?php include('sidebar.php'); ?>
 
     <!-- START OF HEADER POINTING SYSTEM -->
-    <div class="main">
+    <div class="main"style="background-color:#C31F33;">
         <h2>SDG 4 QUALITY EDUCATION</h2>
         <div class="input-container">
             <p>Points</p>

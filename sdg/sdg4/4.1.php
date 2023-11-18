@@ -141,7 +141,7 @@ h2 {
 <?php include('sidebar.php'); ?>
 
 <!-- START OF HEADER POINTING SYSTEM -->
-<div class="main">
+<div class="main" style="background-color:#C31F33;">
   <h2>SDG 4 QUALITY EDUCATION</h2>
   <div class="input-container">
     <p>Points</p>
@@ -192,7 +192,7 @@ h2 {
   
     ?>
 
-<input type="text" style="color: black; text-align: center;" class="points" name="points" value="<?php echo min($totalPoints, 25); ?>" readonly>  
+<input type="text" style="color: black; text-align: center;  " class="points" name="points" value="<?php echo min($totalPoints, 25); ?>" readonly>  
 </div>
 </div>
 

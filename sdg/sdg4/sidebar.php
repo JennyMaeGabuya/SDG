@@ -12,8 +12,8 @@
     display: block;
 }
 </style>
-
-  <a href="index.php">Home</a>
+  <a href="../../index.php">Home</a>
+  <a href="index.php">Quality Education</a>
   <a href="4.1.php">4.1</a>
   <button class="dropdown-btn">4.2
     <i class="fa fa-caret-down"></i>

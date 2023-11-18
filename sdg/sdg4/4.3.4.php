@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #F4BF96;
+      background-color: #C31F33;
       font-family: Verdana, sans-serif;
       font-weight: bolder;
 

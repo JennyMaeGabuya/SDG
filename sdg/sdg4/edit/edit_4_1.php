@@ -34,7 +34,7 @@ if(isset($_GET['research_id']))
       // SQL query to update the data in user table where the id = $userid 
         $query ="UPDATE `tbl4_1` SET `title` = '{$title}', `author` = '{$author}',`year` = '{$year}',`total_citation` = '{$total_citation}',`source` = '{$source}' WHERE `total_research`= $research_id";
         $update = mysqli_query($conn, $query);
-        echo "<script type='text/javascript'>alert(' data updated successfully!')</script>";
+        $successMessage = "You have successfully updated data";
     }
 ?>
 
@@ -109,7 +109,19 @@ h3{
       <textarea class="form-control" id="source"  name="source" value="" required><?php echo $source ?></textarea>
    </div>
    <button type="submit" class="btn btn-primary mt-6 mb-3" name="update"><i class="far fa-edit"></i>Update</button>
- 
+   <script type="text/javascript">
+                <?php
+                if (isset($successMessage)) {
+
+                    echo "swal({
+        title: 'Success',
+        text: '$successMessage',
+        icon: 'success',
+        button: 'OK'
+    });";
+                }
+                ?>
+            </script>
 <button type="reset" class="btn btn-danger mt-6 mb-3" name="cancel" onclick="window.location.href='../4.1.php';">
     <i class="fa fa-times-circle"></i> Cancel
 </button>

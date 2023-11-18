@@ -29,7 +29,7 @@ if (isset($_POST['update'])) {
     // SQL query to update the data in user table where the id = $userid 
     $query = "UPDATE `tbl421_licensure` SET   `Program` = '$program', `EligibleTotal` = '$eligible_total', `TookExam` = '{$took_exam}',`Acquired` = '{$acquired}',`Failed` = '{$failed}' WHERE ID= $licensure_id";
     $update = mysqli_query($conn, $query);
-    $successMessage = "You have successfully entered data";
+    $successMessage = "You have successfully Updated data";
 }
 ?>
 

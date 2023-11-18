@@ -26,7 +26,7 @@ if (isset($_POST['update'])) {
     // SQL query to update the data in user table where the total_number = $ppa_id 
     $query = "UPDATE `tbl432_events` SET   `event_title` = '{$title}', `event_description` = '{$description}', `total_cost` = '{$cost}', `fund_source` = '{$fund}' WHERE `ID`= $event_id";
     $update = mysqli_query($conn, $query);
-    echo "<script type='text/javascript'>alert(' data updated successfully!')</script>";
+    $successMessage = "You have successfully Updated data";
 }
 ?>
 
@@ -108,7 +108,19 @@ if (isset($_POST['update'])) {
             </div><br>
 
             <button type="submit" class="btn btn-primary mt-6 mb-3" name="update"><i class="far fa-edit"></i> Update</button>
-
+            <script type="text/javascript">
+<?php
+if (isset($successMessage)) {
+    
+    echo "swal({
+        title: 'Success',
+        text: '$successMessage',
+        icon: 'success',
+        button: 'OK'
+    });";
+}
+?>
+</script>
             <button type="reset" class="btn btn-danger mt-6 mb-3" name="cancel" onclick="window.location.href='../4.3.2.php';">
                 <i class="fa fa-times-circle"></i> Cancel
             </button>

@@ -33,7 +33,7 @@ if(isset($_GET['passer_id']))
       // SQL query to update the data in user table where the id = $userid 
         $query ="UPDATE `tbl422_let` SET   `let total number` = '{$lettotal}', `bsed total number` = '{$bsedtotal}', `beed total number` = '{$beedtotal}',`bped total number` = '{$bpedtotal}',`btled total number` = '{$btledtotal}' WHERE ID= $passer_id";
         $update = mysqli_query($conn, $query);
-        $successMessage = "You have successfully entered data";
+        $successMessage = "You have successfully Updated data";
     }
 ?>
 

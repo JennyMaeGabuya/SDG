@@ -60,7 +60,7 @@ teach at primary level</title>
   display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #F4BF96;
+    background-color: #C31F33;
     font-family: Verdana, sans-serif;
     font-weight: bolder;
  
@@ -223,7 +223,7 @@ primary school level.</p>
 -->
 
   </div>
- <div class="card"style="background-color:#C31F33;">
+ <div class="card">
 <div class="contentform">
   <form method="POST" >
 

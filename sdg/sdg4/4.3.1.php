@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
   display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #F4BF96;
+    background-color: #C31F33;
     font-family: Verdana, sans-serif;
     font-weight: bolder;
  
@@ -170,7 +170,7 @@ h2 {
 <?php include('sidebar.php'); ?>
 
 <!-- START OF HEADER POINTING SYSTEM -->
-<div class="main"style="background-color:#C31F33;">
+<div class="main">
   <h2>SDG 4 QUALITY EDUCATION</h2>
   <div class="input-container">
     <p>Points</p>

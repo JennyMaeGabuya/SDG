@@ -24,7 +24,7 @@
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="4.2.1.php">4.2.1 Resepective Field</a>
+    <a href="4.2.1.php">4.2.1 Respective Field</a>
     <a href="4.2.2.php">4.2.2 Primary Level</a>
   </div>
   <button class="dropdown-btn">4.3 Learning Measures

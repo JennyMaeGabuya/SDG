@@ -319,7 +319,7 @@ qualifications to teach at primary level.</p> -->
             
 
                 echo "<td style='width:100px'>
-                          <a href='edit4.3.1.php?update&ppa_id={$id}' class='btn btn-primary'>
+                          <a href='edit/edit4.3.1.php?update&ppa_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>
                           <a href='delete4.3.1.php?delete={$id}' class='btn btn-danger'>

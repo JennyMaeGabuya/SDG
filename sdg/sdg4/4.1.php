@@ -258,6 +258,7 @@ h2 {
   </form>
   </div>
 </div>
+
 <div class="table-container">
   <h2>Researches</h2>           
   <table class="table table-bordered">
@@ -315,10 +316,10 @@ h2 {
             
 
                 echo "<td style='width:100px'>
-                          <a href='edit_4_1.php?update&research_id={$id}' class='btn btn-primary'>
+                          <a href='edit/edit_4_1.php?update&research_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>
-                          <a href='delete_4.1.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete/delete_4.1.php?delete={$id}' class='btn btn-danger'>
                           <i class='fa fa-trash'></i>
                       </a>
                       </td>";

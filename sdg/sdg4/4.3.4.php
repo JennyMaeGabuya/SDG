@@ -322,7 +322,7 @@ if (isset($_POST['submit'])) {
           echo "<td>{$fund}</td>";
 
           echo "<td style='width:100px'>
-                          <a href='edit_4.3.4.php?update&outreach_id={$id}' class='btn btn-primary'>
+                          <a href='edit/edit_4.3.4.php?update&outreach_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>
                           <a href='delete_4.3.4.php?delete={$id}' class='btn btn-danger'>

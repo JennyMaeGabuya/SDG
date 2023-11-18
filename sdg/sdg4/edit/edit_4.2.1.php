@@ -1,5 +1,5 @@
 <?php
-include "includes/config.php";
+include "../includes/config.php";
 
 if (isset($_GET['licensure_id'])) {
     $licensure_id = $_GET['licensure_id'];
@@ -129,7 +129,7 @@ if (isset($_POST['update'])) {
                 }
                 ?>
             </script>
-            <button type="reset" class="btn btn-danger mt-6 mb-3" name="cancel" onclick="window.location.href='4.2.1.php';">
+            <button type="reset" class="btn btn-danger mt-6 mb-3" name="cancel" onclick="window.location.href='../4.2.1.php';">
                 <i class="fa fa-times-circle"></i> Cancel
             </button>
             <br><br>

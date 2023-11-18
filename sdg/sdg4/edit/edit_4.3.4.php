@@ -1,5 +1,5 @@
 <?php
-include "includes/config.php";
+include "../includes/config.php";
 if (isset($_GET['outreach_id'])) {
     $outreach_id = $_GET['outreach_id'];
 }
@@ -109,7 +109,7 @@ if (isset($_POST['update'])) {
 
             <button type="submit" class="btn btn-primary mt-6 mb-3" name="update"><i class="far fa-edit"></i> Update</button>
 
-            <button type="reset" class="btn btn-danger mt-6 mb-3" name="cancel" onclick="window.location.href='4.3.4.php';">
+            <button type="reset" class="btn btn-danger mt-6 mb-3" name="cancel" onclick="window.location.href='../4.3.4.php';">
                 <i class="fa fa-times-circle"></i> Cancel
             </button>
             <br><br>

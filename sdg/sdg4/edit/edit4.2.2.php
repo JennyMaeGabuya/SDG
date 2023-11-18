@@ -1,6 +1,6 @@
 
 <?php
-include "includes/config.php";
+include "../includes/config.php";
 if(isset($_GET['passer_id']))
     {
       $passer_id = $_GET['passer_id']; 
@@ -127,7 +127,7 @@ if (isset($successMessage)) {
 }
 ?>
 </script>
-<button type="reset" class="btn btn-danger mb-3" name="cancel" onclick="window.location.href='4.2.2.php';">
+<button type="reset" class="btn btn-danger mb-3" name="cancel" onclick="window.location.href='../4.2.2.php';">
     <i class="fa fa-times-circle"></i> Cancel</button>
 </div><br>
 

@@ -327,7 +327,7 @@ if (isset($_POST['submit'])) {
                     echo "<td>{$percent_acquired} %</td>";
                     echo "<td>{$percent_failed} %</td>";
                     echo "<td style='width:100px'>
-                          <a href='edit_4.2.1.php?update&licensure_id={$id}' class='btn btn-primary'>
+                          <a href='edit/edit_4.2.1.php?update&licensure_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>
                           <a href='delete/delete_4.2.1.php?delete={$id}' class='btn btn-danger'>

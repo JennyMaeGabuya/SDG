@@ -1,6 +1,6 @@
 
 <?php
-include "includes/config.php";
+include "../includes/config.php";
 if(isset($_GET['ppa_id'])) //the ppa_id came from 4.3.1.php which was declared as variable to edit record
     {
       $ppa_id = $_GET['ppa_id']; 
@@ -103,7 +103,7 @@ h3{
     </div>
    <button type="submit" class="btn btn-primary mt-6 mb-3" name="update"><i class="far fa-edit"></i>Update</button>
  
-<button type="reset" class="btn btn-danger mt-6 mb-3" name="cancel" onclick="window.location.href='4.3.1.php';">
+<button type="reset" class="btn btn-danger mt-6 mb-3" name="cancel" onclick="window.location.href='../4.3.1.php';">
     <i class="fa fa-times-circle"></i> Cancel
 </button>
   <br>

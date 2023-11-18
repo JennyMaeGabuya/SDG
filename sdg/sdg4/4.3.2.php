@@ -325,7 +325,7 @@ if (isset($_POST['submit'])) {
                           <a href='edit_4.3.2.php?update&event_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>
-                          <a href='delete_4.3.2.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete/delete_4.3.2.php?delete={$id}' class='btn btn-danger'>
                           <i class='fa fa-trash'></i>
                       </a>
                       </td>";

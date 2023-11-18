@@ -1,5 +1,5 @@
 <?php
-include "includes/config.php";
+include "../includes/config.php";
 
 if (isset($_GET['delete'])) {
     $deleteid = $_GET['delete'];
@@ -14,7 +14,7 @@ if (isset($_GET['delete'])) {
         } else {
             echo "<script type='text/javascript'>alert('Error deleting data!')</script>";
         }
-        header("Location: 4.2.1.php");
+        header("Location: ../4.2.1.php");
     } else {
         // If not confirmed, show a confirmation dialog using JavaScript
         echo <<<EOD
@@ -24,7 +24,7 @@ if (isset($_GET['delete'])) {
                 if (confirmation) {
                     window.location.href = 'delete_4.2.1.php?delete=$deleteid&confirm=true';
                 } else {
-                    window.location.href = '4.2.1.php';
+                    window.location.href = '../4.2.1.php';
                 }
             }
             confirmDelete();

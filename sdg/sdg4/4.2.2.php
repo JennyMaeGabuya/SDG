@@ -355,7 +355,7 @@ if ($rslt) {
                           <a href='edit4.2.2.php?update&passer_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>
-                          <a href='delete4.2.2.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete/delete4.2.2.php?delete={$id}' class='btn btn-danger'>
                           <i class='fa fa-trash'></i>
                       </a>
                       </td>";

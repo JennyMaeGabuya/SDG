@@ -1,7 +1,5 @@
-
-
 <?php
-include "includes/config.php";
+include "../includes/config.php";
 
 if (isset($_GET['delete'])) {
     $deleteid = $_GET['delete'];
@@ -12,7 +10,7 @@ if (isset($_GET['delete'])) {
         $query = "DELETE FROM `tbl433_vocational` WHERE `total_number` = {$deleteid}";
         $delete_query = mysqli_query($conn, $query);
         echo "<script type='text/javascript'>alert(' data deleted successfully!')</script>";
-        header("Location: 4.3.3.php");
+        header("Location: ../4.3.3.php");
     } else {
         // If not confirmed, show a confirmation dialog using JavaScript
         echo "<script>
@@ -20,7 +18,7 @@ if (isset($_GET['delete'])) {
               if (confirmed) {
                   window.location.href = 'delete4.3.3.php?delete=$deleteid&confirm=true';
               } else {
-                  window.location.href = '4.3.3.php';
+                  window.location.href = '../4.3.3.php';
               }
               </script>";
     }

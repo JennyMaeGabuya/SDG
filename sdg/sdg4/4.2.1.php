@@ -330,7 +330,7 @@ if (isset($_POST['submit'])) {
                           <a href='edit_4.2.1.php?update&licensure_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>
-                          <a href='delete_4.2.1.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete/delete_4.2.1.php?delete={$id}' class='btn btn-danger'>
                           <i class='fa fa-trash'></i>
                       </a>
                       </td>";

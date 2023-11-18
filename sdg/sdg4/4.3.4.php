@@ -1,3 +1,6 @@
+<!--============================================================================================= 
+                      INSERT DATA TO DB ONCE SUBMIT BUTTON WAS CLICKED
+============================================================================================= -->
 <?php
 if (isset($_POST['submit'])) {
   // Get form data
@@ -6,7 +9,8 @@ if (isset($_POST['submit'])) {
   $cost = $_POST['cost'];
   $fund = $_POST['fund'];
 
-  include "includes/config.php";
+  include "includes/config.php";  // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
+
 
   // SQL query to insert data
   $sql = "INSERT INTO `tbl434_outreach` ( `title`, `description`, `cost`, `fund`) 
@@ -192,8 +196,9 @@ if (isset($_POST['submit'])) {
 
 <body>
   <?php include('sidebar.php'); ?>
-
-  <!-- START OF HEADER POINTING SYSTEM -->
+<!--============================================================================================= 
+                                  START OF HEADER POINTING SYSTEM 
+============================================================================================= -->
 
   <div class="main"style="background-color:#C31F33;">
     <h2>SDG 4 QUALITY EDUCATION</h2>
@@ -201,7 +206,7 @@ if (isset($_POST['submit'])) {
       <p>Points</p>
 
       <?php
-      include "includes/config.php";
+      include "includes/config.php";  // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
       $query = "SELECT Count(*) AS total FROM `tbl434_outreach`"; // SQL query to fetch all table data
       $result = mysqli_query($conn, $query); // sending the query to the database
 
@@ -224,7 +229,9 @@ if (isset($_POST['submit'])) {
     </div>
   </div>
 
-  <!-- END OF HEADER POINTING SYSTEM -->
+ <!--============================================================================================= 
+                                  END OF HEADER POINTING SYSTEM 
+ ============================================================================================= -->
 
   <div class="content">
     <br>
@@ -238,6 +245,9 @@ if (isset($_POST['submit'])) {
 -->
 
   </div>
+    <!--============================================================================================= 
+                                  START OF FORM
+============================================================================================= -->
   <div class="card">
     <div class="contentform">
       <form method="POST">
@@ -284,8 +294,9 @@ if (isset($_POST['submit'])) {
       </form>
     </div>
   </div>
-
-  <!-- START OF TABLE -->
+<!--============================================================================================= 
+                        START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
+============================================================================================= -->
   <div class="table-container">
     <h2>Outreach Activities</h2>
     <table class="table table-bordered">
@@ -300,7 +311,7 @@ if (isset($_POST['submit'])) {
 
       <tbody>
         <?php
-        include "includes/config.php";
+        include "includes/config.php";  // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
         $query = "SELECT * FROM `tbl434_outreach`"; // SQL query to fetch all table data
         $result = mysqli_query($conn, $query); // sending the query to the database
 
@@ -334,7 +345,10 @@ if (isset($_POST['submit'])) {
       </tbody>
     </table>
   </div>
-
+<!--============================================================================================= 
+//                           this is js for sidebar panel
+// DONT REMOVE IT. MAKE SURE TO INCLUDE IT TO ALL YOUR FILES   !!!!!!!!!!
+//============================================================================================= -->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>

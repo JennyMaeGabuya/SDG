@@ -1,3 +1,6 @@
+<!--============================================================================================= 
+                      INSERT DATA TO DB ONCE SUBMIT BUTTON WAS CLICKED
+============================================================================================= -->
 <?php
 if (isset($_POST['submit'])) {
 
@@ -151,14 +154,17 @@ if (isset($_POST['submit'])) {
 <body>
     <?php include('sidebar.php'); ?>
 
-    <!-- START OF HEADER POINTING SYSTEM -->
+ <!--============================================================================================= 
+                                  START OF HEADER POINTING SYSTEM 
+============================================================================================= -->
     <div class="main"style="background-color:#C31F33;">
         <h2>SDG 4 QUALITY EDUCATION</h2>
         <div class="input-container">
             <p>Points</p>
 
-            <?php
-            include "includes/config.php";
+            <?php                           //===========================================================================   
+            include "includes/config.php"; //REPLACE THIS WITH YOUR ACTUAL FILE FOR CONNECTION TO DATABASE EX: conn.php
+                                            //===========================================================================   
             $query = "SELECT * FROM `tbl421_licensure`"; // SQL query to fetch all table data
             $result = mysqli_query($conn, $query); // sending the query to the database
 
@@ -195,19 +201,18 @@ if (isset($_POST['submit'])) {
             <input type="text" style="color: black; text-align: center;" class="points" name="points" value="<?php echo min($totalPoints, 25); ?>" readonly>
         </div>
     </div>
-
-    <!-- END OF HEADER POINTING SYSTEM -->
+<!--============================================================================================= 
+                                  END OF HEADER POINTING SYSTEM 
+ ============================================================================================= -->
 
     <div class="content">
         <br>
         <h3>4.2.1 Proportion of graduates with relevant qualifications in each respective field</h3>
-        <!--remove muna pic 
-    <div class="image" style="width: 50px;"style="height: 50px;">
-            <img src="img/rs.png" alt="Image">
-        </div>
--->
-
     </div>
+    
+  <!--============================================================================================= 
+                                  START OF FORM
+============================================================================================= -->
     <div class="card">
 
         <div class="container mt-3 d-flex">
@@ -261,7 +266,13 @@ if (isset($_POST['submit'])) {
 
         </div>
     </div>
+<!--============================================================================================= 
+                                END OF FORM
+============================================================================================= -->
 
+<!--============================================================================================= 
+                        START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
+============================================================================================= -->
     <div class="table-container">
         <h2>Graduates Statistics</h2>
         <table class="table table-bordered">
@@ -340,7 +351,14 @@ if (isset($_POST['submit'])) {
             </tbody>
         </table>
     </div>
+<!--============================================================================================= 
+                                END OF TABLE
+============================================================================================= -->
 
+<!--============================================================================================= 
+//                           this is js for sidebar panel
+// DONT REMOVE IT. MAKE SURE TO INCLUDE IT TO ALL YOUR FILES !!!!!!!!
+//============================================================================================= -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>

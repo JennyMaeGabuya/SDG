@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
   $citation = $_POST['citations'];
   $source =  strtoupper($_POST['source']);
 
-  include "includes/config.php";
+  include "includes/config.php";  // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
 
   // SQL query to insert data
   $sql = "INSERT INTO `tbl4_1` (`title`, `author`, `year`, `total_citation`, `source`) VALUES ('$title', '$author', '$publication', '$citation', '$source')";
@@ -298,7 +298,7 @@ h2 {
   </thead>
     <tbody>
     <?php
-            include "includes/config.php";
+            include "includes/config.php";   // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
             $query = "SELECT * FROM `tbl4_1`"; // SQL query to fetch all table data
             $result = mysqli_query($conn, $query); // sending the query to the database
 
@@ -363,7 +363,7 @@ h2 {
 
 <!--============================================================================================= 
 //                           this is js for sidebar panel
-// DONT REMOVE IT. MAKE SURE TO INCLUDE IT TO ALL YOUR FILES
+// DONT REMOVE IT. MAKE SURE TO INCLUDE IT TO ALL YOUR FILES   !!!!!!!!!!
 //============================================================================================= -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

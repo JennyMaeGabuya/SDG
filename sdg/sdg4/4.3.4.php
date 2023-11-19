@@ -111,7 +111,7 @@ if (isset($_POST['submit'])) {
       margin-right: 120px;
       margin-bottom: 70px;
       margin-top: 20px;
-      height: 500px;
+      height: auto;
 
     }
 
@@ -312,7 +312,7 @@ if (isset($_POST['submit'])) {
       <tbody>
         <?php
         include "includes/config.php";  // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
-        $query = "SELECT * FROM `tbl434_outreach`"; // SQL query to fetch all table data
+        $query = "SELECT * FROM `tbl434_outreach`ORDER BY `ID` DESC"; // SQL query to fetch all table data
         $result = mysqli_query($conn, $query); // sending the query to the database
 
         if (!$result) {

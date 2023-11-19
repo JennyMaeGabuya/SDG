@@ -100,7 +100,7 @@ h2 {
     margin-right: 120px;
     margin-bottom: 70px;
     margin-top: 20px;
-    height: 500px;
+    height: auto;
 
   }
   .content>p{
@@ -292,7 +292,7 @@ qualifications to teach at primary level.</p> -->
     <tbody>
     <?php
             include "includes/config.php";
-            $query = "SELECT * FROM `tbl433_vocational`"; // SQL query to fetch all table data
+            $query = "SELECT * FROM `tbl433_vocational`ORDER BY `total_number` DESC"; // SQL query to fetch all table data
             $result = mysqli_query($conn, $query); // sending the query to the database
 
             if (!$result) {
@@ -327,7 +327,7 @@ qualifications to teach at primary level.</p> -->
                // echo "<td>{$id}</td>";
                 echo "<td>{$title}</td>";
                 echo "<td>{$desc}</td>";
-                echo "<td>Php{$cost}</td>";
+                echo "<td>Php {$cost}</td>";
                 echo "<td>{$fund}</td>";
               //  echo "<td>$points</td>"; 
             

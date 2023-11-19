@@ -100,8 +100,8 @@ h2 {
     margin-right: 120px;
     margin-bottom: 70px;
     margin-top: 20px;
-    height: 500px;
-
+    height: auto;
+    width: auto;
   }
   .content>p{
     text-align: justify;
@@ -297,7 +297,7 @@ qualifications to teach at primary level.</p> -->
     <tbody>
     <?php
             include "includes/config.php";
-            $query = "SELECT * FROM `tbl431_resources`"; // SQL query to fetch all table data
+            $query = "SELECT * FROM `tbl431_resources`ORDER BY `total_number` DESC"; // SQL query to fetch all table data
             $result = mysqli_query($conn, $query); // sending the query to the database
 
             if (!$result) {

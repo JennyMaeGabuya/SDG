@@ -110,13 +110,15 @@ if (isset($_POST['submit'])) {
             margin-right: 50px;
             margin-bottom: 50px;
             margin-top: 20px;
+            height:auto;
         }
 
         .form-control {
-            margin-right: 50px;
-            display: block;
-            width: 60%;
-            height: 30px;
+            margin-right: 30px;
+    display: block;
+    width: 60%;
+    height: 30px;
+    margin-right: 30px;
         }
 
         .container {
@@ -128,12 +130,7 @@ if (isset($_POST['submit'])) {
             align-items: center;
         }
 
-        /* remove muna pic 
-.image{
-  width: 50px;
-  height: 50px;
-}
-  */
+
         .table-container {
             margin-left: 300px;
             margin-right: 50px;
@@ -294,7 +291,7 @@ if (isset($_POST['submit'])) {
 
                 <?php
                 include "includes/config.php";
-                $query = "SELECT * FROM `tbl421_licensure`"; // SQL query to fetch all table data
+                $query = "SELECT * FROM `tbl421_licensure` ORDER BY `ID` DESC"; // SQL query to fetch all table data
                 $result = mysqli_query($conn, $query); // sending the query to the database
 
                 if (!$result) {

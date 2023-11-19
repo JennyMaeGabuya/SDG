@@ -1,21 +1,23 @@
 <!--============================================================================================= 
                       INSERT DATA TO DB ONCE SUBMIT BUTTON WAS CLICKED
 ============================================================================================= -->
-
 <?php 
 if (isset($_POST['submit'])) {
   // Get form data
-  $lettotal = $_POST['lettotal'];
-  $bsedtotal = $_POST['bsedtotal'];
-  $beedtotal = $_POST['beedtotal'];
-  $bpedtotal = $_POST['bpedtotal'];
-  $btledtotal = $_POST['btledtotal'];
+  $totalstud = $_POST['totalstud'];
+  $percent50above = $_POST['percent50above'];
+  $policy = $_POST['policy'];
+  $title = $_POST['title'];
+  $desc = $_POST['desc'];
+  $cost = $_POST['cost'];
+  $fund = $_POST['fund'];
 
-  include "includes/config.php";
+  include "includes/config.php"; // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
+
 
   // SQL query to insert data
-  $sql = "INSERT INTO `tbl422_let` (`let total number`, `bsed total number`, `beed total number`, `bped total number`, `btled total number`) 
-  VALUES ('$lettotal','$bsedtotal','$beedtotal','$bpedtotal','$btledtotal')";
+  $sql = "INSERT INTO `tbl435_access` (`50above`, `50abovePercentage`, `totalaccess`, `title`, `description`, `cost`, `fund`) 
+  VALUES ('$totalstud','$percent50above','$policy' ,'$title','$desc','$cost','$fund')";
 
   if ($conn->query($sql) === TRUE) {
       // The dat was successfully entered
@@ -33,8 +35,7 @@ if (isset($_POST['submit'])) {
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SDG 4.2.2 |  Proportion of graduates with teaching qualifications to 
-teach at primary level</title>
+<title>SDG 4.3.5 |  Lifelong learning access policy</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href= css/sidebar.css>
@@ -103,6 +104,7 @@ h2 {
     margin-bottom: 70px;
     margin-top: 20px;
     height: auto;
+    width: auto;
 
   }
   .content>p{
@@ -112,17 +114,20 @@ h2 {
   .form-control{
     margin-right: 30px;
     display: block;
-    width: 88%;
+    width: 95%;
     height: 30px;
+    margin-right: 30px;
   }
   .form-row{
 
     height: 30px;
     
   }
+
   .contentform{
     margin-top: 30px;
-    margin-left: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
     margin-bottom:30px;
     justify-content: center;
     align-items: center;
@@ -132,12 +137,7 @@ h2 {
     margin-bottom: 10px;
 
 }
-  /* remove muna pic 
-.image{
-  width: 50px;
-  height: 50px;
-}
-  */
+
   .table-container{
     margin-left: 350px;
     margin-right: 50px;
@@ -170,13 +170,15 @@ h2 {
     }
 
 /* endddd */
+
 </style>
 
 <body>
 <?php include('sidebar.php'); ?>
 
+
 <!--============================================================================================= 
-  START OF HEADER POINTING SYSTEM 
+                                  START OF HEADER POINTING SYSTEM 
 ============================================================================================= -->
 <div class="main">
   <h2>SDG 4 QUALITY EDUCATION</h2>
@@ -184,30 +186,37 @@ h2 {
     <p>Points</p>
 
     <?php
-            include "includes/config.php";
-            $query = "SELECT * FROM `tbl422_let`"; // SQL query to fetch all table data
-            $result = mysqli_query($conn, $query); // sending the query to the database
+include "includes/config.php";
 
-            $totalPoints = 0;
+$query = "SELECT COUNT(`totalaccess`) AS total_access FROM `tbl435_access`";
+$result = mysqli_query($conn, $query);
 
-            while ($row = mysqli_fetch_assoc($result)) {
-                $percentage = $row['percentage'];
-               $percent= $percentage;
+$totalPoints = 0;
 
-                // Check if the program is CTE and update points
-                $points = 0;
-                
-                if ($percent >=70) {
-                    $points += 5;
-                }
-                  else{
-                    $points += 0;
-                  }
+while ($row = mysqli_fetch_assoc($result)) {
+    $totalno = $row['total_access'];
+    // calculate points by dividing total number of access policy by 1 
+    $points = ($totalno / 1);
+}
 
-                // Add the points  to the total points
-                $totalPoints += $points;
-            }
-            ?>
+// Add the points to the total points
+$totalPoints += $points;
+
+$query = "SELECT COUNT(`title`) AS total_ppa FROM `tbl435_access`";
+$result = mysqli_query($conn, $query);
+
+while ($row = mysqli_fetch_assoc($result)) {
+    $ppa = $row['total_ppa'];
+    // calculate points by dividing total number of access policy by 1 
+    $points = ($ppa / 2 * 4);
+}
+
+// Add the points to the total points
+$totalPoints += $points;
+
+
+?>
+
 
 <input type="text" style="color: black; text-align: center;" class="points" name="points" value="<?php echo min($totalPoints, 5); ?>" readonly>  
 </div>
@@ -217,51 +226,54 @@ h2 {
                                   END OF HEADER POINTING SYSTEM 
  ============================================================================================= -->
 
+
   <div class="content">
     <br>
-    <h3>4.2.2 Proportion of graduates with teaching qualifications to 
-teach at primary level</h3>
-  <p>This is the total headcount number of graduates at all levels from your 
-institution who gained a qualification that entitled <br>them to teach at 
-primary school level.</p>
-    <!--remove muna pic 
-    <div class="image" style="width: 50px;"style="height: 50px;">
-            <img src="img/rs.png" alt="Image">
-        </div>
--->
+    <h3>4.3.5 Lifelong learning access policy</h3>
+  <p>A policy that ensures that access to these activities is accessible to all,regardless of ethnicity, religion, disability, immigration <br>
+   status or gender.</p>
+
 
   </div>
-<!--============================================================================================= 
+   <!--============================================================================================= 
                                   START OF FORM
 ============================================================================================= -->
  <div class="card">
 <div class="contentform">
   <form method="POST" >
 
-    <!-- FOR Total number of LET passers -->
-<!--   <p><?php echo $percentage?>% of graduates who acquired a license have teaching 
-qualifications to teach at primary level.</p> -->
 
-<div class="form-group"><i class="fa fa-bar-chart"></i>
-      <label for="total_number" class="text-center ">Total number of LET passers</label>
-      <input type="number" class="form-control" id="lettotal" name="lettotal"required>
+
+    <div class="form-group"><i class="fa fa-address-book-o"></i>
+      <label for="cost">Total number of students who are 50 years old and above</label>
+      <input type="number" class="form-control" id="" name="totalstud" >
     </div>
-    <div class="form-group"><i class="fa fa-area-chart"></i>
-      <label for="total">Total number of BSED LET passers</label>
-      <input type="number" class="form-control" id="bsedtotal" name="bsedtotal"  required>
+    <div class="form-group"><i class="	fa fa-bar-chart"></i>
+      <label for="cost">Percentage of the student population aged 50 years old and above</label>
+      <input type="number" class="form-control" id="" name="percent50above" placeholder="%" >
     </div>
-    <div class="form-group"><i class="	fa fa-book"></i>
-      <label for="total">Total number of BEED LET passers</label>
-      <input type="number" class="form-control" id="beedtotal" name="beedtotal" required>
+    <div class="form-group"><i class="fa fa-line-chart"></i>
+      <label for="cost">Total number of learning access policy</label>
+      <input type="number" class="form-control" id="" name="policy" >
     </div>
-    <div class="form-group"><i class="fa fa-drivers-license"></i>
-      <label for="total">Total number of BPED passers</label>
-      <input type="number" class="form-control" id="bpedtotal" name="bpedtotal" required>
+    <hr style="border-color: grey; margin-left:0%;">
+    <div class="form-group"><i class="fa fa-bookmark"></i>
+      <label for="title" class="text-center ">Title of the PPA</label>
+      <textarea class="form-control" id="title" name="title" rows="3" ></textarea>
     </div>
-    <div class="form-group "><i class="fa fa-graduation-cap"></i>
-      <label for="total">Total number of BTLED passers</label>
-      <input type="number" class="form-control" id="btledtotal" name="btledtotal" required>
-  </div>
+    <div class="form-group"><i class="fa fa-edit"></i>
+      <label for="desc">Short description of the PPA</label>
+      <textarea class="form-control" id="desc" name="desc" rows="5" ></textarea>
+    </div>
+    <div class="form-group"><i class="fa fa-dollar"></i>
+      <label for="cost">Total cost</label>
+      <input type="number" class="form-control" id="" name="cost" >
+    </div>
+    <div class="form-group"><i class="	fa fa-group"></i>
+      <label for="fund">Fund source</label>
+      <input type="text" class="form-control" id="" name="fund" >
+    </div>
+ 
   <div>
     <button type="submit" class="btn btn-primary  mb-3" id="submit" name="submit" >
       <i class="fa fa-send"></i>Submit</button>
@@ -292,25 +304,26 @@ qualifications to teach at primary level.</p> -->
                         START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
 ============================================================================================= -->
 <div class="table-container">
-  <h2>Graduate with qualification to teach at primary level</h2>           
+  <h2>Public resources</h2>           
   <table class="table table-bordered">
   <thead>
     <tr>
-    <!--  <th scope="col" style="width: 30px;">#</th>  -->
-      <th scope="col" style="width: 50px;">LET passers</th>
-      <th scope="col" style="width: 50px;">BSED passers</th>
-      <th scope="col" style="width: 50px;">BEED passers</th>
-      <th scope="col" style="width: 50px;">BPED passers</th>
-      <th scope="col" style="width: 50px;">BTLED passers</th>
-      <th scope="col" style="width: 100px;">Graduates with license & can teach at primary level.</th>
-      <th scope="col" style="width: 40px;">Points</th>
-      <th scope="col"colspan="2"  style="width: 70px;">Action</th>
+  <!--    <th scope="col" style="width: 30px;">#</th> -->
+     <th scope="col" style="width: 80px;">50 years old & above</th>
+      <th scope="col" style="width: 30px;">Percentage</th>
+      <th scope="col" style="width: 30px;">Policy</th>
+      <th scope="col" style="width: 80px;">Title of PPA</th>
+      <th scope="col" style="width: 100px;">Description</th>
+      <th scope="col" style="width: 50px;">Total Cost</th>
+      <th scope="col" style="width: 50px;">Fund Source</th>
+   <!--   <th scope="col" style="width: 50px;">Points</th>  -->
+      <th scope="col"colspan="2"  style="width: 50px;">Action</th>
     </tr>
   </thead>
     <tbody>
     <?php
-            include "includes/config.php";     // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE
-            $query = "SELECT * FROM `tbl422_let`ORDER BY `ID` DESC"; // SQL query to fetch all table data
+            include "includes/config.php";
+            $query = "SELECT * FROM `tbl435_access` ORDER BY `ID` DESC"; // SQL query to fetch all table data
             $result = mysqli_query($conn, $query); // sending the query to the database
 
             if (!$result) {
@@ -318,67 +331,37 @@ qualifications to teach at primary level.</p> -->
             }
             // Displaying all the data retrieved from the database using a while loop
             while ($row = mysqli_fetch_assoc($result)) {
-              $id = $row['ID'];
-                $lettotal = $row['let total number'];
-                $bsedtotal = $row['bsed total number'];
-                $beedtotal = $row['beed total number'];
-                $bpedtotal = $row['bped total number'];
-                $btledtotal = $row['btled total number'];
-               
-                 // Calculate percentages get the value from tbl4.2.1
-                 $query ="SELECT SUM(`Acquired`) AS total FROM tbl421_licensure  WHERE `program`='CTE'" ;
-                 
-                // Execute the query
-                $rslt = $conn->query($query);
-                // Check if the query was successful
-if ($rslt) {
-  // Fetch the result into an associative array
-  $row = $rslt->fetch_assoc();
-  
-  // Access the 'total' column from the result
-  $acquiredTotal = $row['total'];
-  $percentage = number_format(($lettotal/$acquiredTotal* 100),2);
-  // Use $acquiredTotal in your update query for another table (tbl422_let in this example)
-  $updateQuery = "UPDATE `tbl422_let` SET  `percentage` = '$percentage'";
-  
-  // Execute the update query
-  $updateResult = $conn->query($updateQuery);
-  
-  if (!$updateResult) {
-      echo "Error updating table: " . $conn->error;
-  }
-
-}
- if ($percentage >=70) {
-                    $points = 5;
-                }
-                  else{
-                    $points = 0;
-                  }
-               
-
+             $id= $row['ID'];
+              $totalstud = $row['50above'];
+              $percent = $row['50abovePercentage'];
+              $policy = $row['totalaccess'];
+             $title = $row['title'];
+             $desc = $row['description'];
+              $cost = $row['cost'];
+              $fund = $row['fund'];
+    
                 echo "<tr>";
-             //   echo "<td>{$id}</td>";
-                echo "<td>{$lettotal}</td>";
-                echo "<td>{$bsedtotal}</td>";
-                echo "<td>{$beedtotal}</td>";
-                echo "<td>{$bpedtotal}</td>";
-                echo "<td>{$btledtotal}</td>";
-                echo "<td>{$percentage}% </td>";
-                echo "<td>$points</td>"; 
+                echo "<td>{$totalstud}</td>";
+                echo "<td>{$percent}%</td>";
+                echo "<td>{$policy}</td>"; 
+                echo "<td>{$title}</td>";
+                echo "<td>{$desc}</td>";
+                echo "<td>Php {$cost}</td>";
+                echo "<td>{$fund}</td>";
+              //  echo "<td>$points</td>"; 
             
 
                 echo "<td style='width:100px'>
-                          <a href='edit/edit4.2.2.php?update&passer_id={$id}' class='btn btn-primary'>
+                          <a href='edit/edit4.3.5.php?update&access_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>
-                          <a href='delete/delete4.2.2.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete/delete4.3.5.php?delete={$id}' class='btn btn-danger'>
                           <i class='fa fa-trash'></i>
                       </a>
                       </td>";
 
             /*    echo "<td class='text-center'>
-                          <a href='delete_4.1.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete4.3.1.php?delete={$id}' class='btn btn-danger'>
                               <i class='fa fa-trash'></i>
                           </a>
                       </td>";
@@ -390,6 +373,7 @@ if ($rslt) {
   </table>
 </div>
 
+
 <!--============================================================================================= 
                                 END OF TABLE
 ============================================================================================= -->
@@ -398,7 +382,6 @@ if ($rslt) {
 //                           this is js for sidebar panel
 // DONT REMOVE IT. MAKE SURE TO INCLUDE IT TO ALL YOUR FILES   !!!!!!!!!!
 //============================================================================================= -->
-
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>

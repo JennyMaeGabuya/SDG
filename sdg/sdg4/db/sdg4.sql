@@ -158,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `tbl431_resources` (
   `total_number` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost` int NOT NULL,
+  `cost` decimal(10,2) NOT NULL,
   `fund` varchar(255) NOT NULL,
   PRIMARY KEY (`total_number`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -205,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `tbl433_vocational` (
   `total_number` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost` int NOT NULL,
+  `cost` decimal(10,2) NOT NULL,
   `fund` varchar(255) NOT NULL,
   PRIMARY KEY (`total_number`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -255,7 +255,7 @@ CREATE TABLE IF NOT EXISTS `tbl435_access` (
   `totalPPAS` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost` int NOT NULL,
+  `cost`decimal(10,2) NOT NULL,
   `fund` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

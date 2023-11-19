@@ -105,6 +105,7 @@ h2 {
     margin-right: 50px;
     margin-bottom: 50px;
     margin-top: 20px;
+    height:auto;
   }
   .form-control{
     margin-right: 50px;
@@ -299,7 +300,7 @@ h2 {
     <tbody>
     <?php
             include "includes/config.php";   // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
-            $query = "SELECT * FROM `tbl4_1`"; // SQL query to fetch all table data
+            $query = "SELECT * FROM `tbl4_1` ORDER BY `total_research` DESC"; // SQL query to fetch all table data
             $result = mysqli_query($conn, $query); // sending the query to the database
 
             if (!$result) {

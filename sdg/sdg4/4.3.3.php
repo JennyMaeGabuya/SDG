@@ -96,11 +96,12 @@ h2 {
   }
  
   .card{
+    width: 64%;
     margin-left: 350px;
-    margin-right: 120px;
-    margin-bottom: 70px;
-    margin-top: 20px;
-    height: auto;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-top: 20px; 
+    height:auto;
 
   }
   .content>p{
@@ -213,7 +214,7 @@ h2 {
     <br>
     <h3>4.3.3 Vocational training events</h3>
   <p>Host events at the university that are open to the general public. 
-These are short courses for people who are not attending the 
+These are short courses for people who are <br> not attending the 
 university.</p>
 
 

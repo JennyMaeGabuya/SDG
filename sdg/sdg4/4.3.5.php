@@ -99,12 +99,12 @@ h2 {
   }
  
   .card{
+    width: 64%;
     margin-left: 350px;
-    margin-right: 120px;
-    margin-bottom: 70px;
-    margin-top: 20px;
-    height: auto;
-    width: auto;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-top: 20px; 
+    height:auto;
 
   }
   .content>p{
@@ -143,6 +143,9 @@ h2 {
     margin-right: 50px;
     width:64%;
     overflow-x: auto; 
+  }
+  .table{
+    font-size: 13px;
   }
   .h3text{
     justify-content:center;
@@ -310,12 +313,12 @@ $totalPoints += $points;
     <tr>
   <!--    <th scope="col" style="width: 30px;">#</th> -->
      <th scope="col" style="width: 80px;">50 years old & above</th>
-      <th scope="col" style="width: 30px;">Percentage</th>
+      <th scope="col" style="width: 45px;">Percentage</th>
       <th scope="col" style="width: 30px;">Policy</th>
       <th scope="col" style="width: 80px;">Title of PPA</th>
       <th scope="col" style="width: 100px;">Description</th>
       <th scope="col" style="width: 50px;">Total Cost</th>
-      <th scope="col" style="width: 50px;">Fund Source</th>
+      <th scope="col" style="width: 80px;">Fund Source</th>
    <!--   <th scope="col" style="width: 50px;">Points</th>  -->
       <th scope="col"colspan="2"  style="width: 50px;">Action</th>
     </tr>

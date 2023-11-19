@@ -57,7 +57,13 @@ if (isset($_POST['submit'])) {
   font-family: "Lato", sans-serif;
   background-color: white;
 }
-
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto; 
+}
 /* Main content */
 .main {
   margin-left: 250px; /* Same as the width of the sidenav */
@@ -101,32 +107,29 @@ h2 {
   }
  
   .card{
+    width: 73%;
     margin-left: 300px;
     margin-right: 50px;
     margin-bottom: 50px;
-    margin-top: 20px;
+    margin-top: 20px; 
     height:auto;
   }
   .form-control{
-    margin-right: 50px;
+  
     display: block;
-    width: 60%;
+    width: 90%;
     height: 30px;
+  
   }
-  .container{
+  .contentform{
     margin-top: 30px;
-    margin-left: 110px;
     margin-bottom:30px;
-    margin-right:50px;
     justify-content: center;
     align-items: center;
+    margin-left: auto;
+    margin-right: 50px;
+  width: 80%; 
   }
-  /* remove muna pic 
-.image{
-  width: 50px;
-  height: 50px;
-}
-  */
   .table-container{
     margin-left: 300px;
     margin-right: 50px;
@@ -135,7 +138,9 @@ h2 {
   }
   .h3text{
     justify-content:center;
-    margin-left: 300px;
+    margin: auto;
+    align-items: center;
+
   }
   .points{
     box-shadow: grey;
@@ -224,12 +229,11 @@ h2 {
                                   START OF FORM
 ============================================================================================= -->
  <div class="card">
+ <div class="contentform">
+  <form method="POST">
+   <h3 class="h3text text-center">Research</h3>
 
- <div class="container mt-3 d-flex">
-  <form method="POST" class="flex-grow-1">
-  <h3 class="h3text">Research</h3>
-
-  <!--  <div class="mb-2 mt-2"><i class="fa fa-search"></i>
+  <!-- <div class="mb-2 mt-2"><i class="fa fa-search"></i>
       <label for="total_number">Total number of research on early years and lifelong education</label>
       <input type="number" class="form-control" id="total_number"  name="total_number" required>
     </div>  -->
@@ -255,7 +259,7 @@ h2 {
       <label for="citations">Source</label>
       <textarea class="form-control" id="source"  name="source"required></textarea>
     </div>
-    <button type="submit" class="btn btn-primary mb-3" name="submit"><i class="fa fa-send"></i>Submit</button>
+    <button type="submit" class="btn btn-primary mt-3 mb-3" name="submit"><i class="fa fa-send"></i>Submit</button>
     <script type="text/javascript">
     <?php
     if (isset($successMessage)) {
@@ -269,7 +273,7 @@ h2 {
     }
     ?>
 </script>
-    <button type="reset" class="btn btn-danger mb-3" name="cancel"><i class="fa fa-times-circle"></i> Cancel</button>
+    <button type="reset" class="btn btn-danger mt-3 mb-3" name="cancel"><i class="fa fa-times-circle"></i> Cancel</button>
   </form>
   </div>
 </div>

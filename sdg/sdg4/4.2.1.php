@@ -106,6 +106,7 @@ if (isset($_POST['submit'])) {
         }
 
         .card {
+            width:73%;
             margin-left: 300px;
             margin-right: 50px;
             margin-bottom: 50px;
@@ -114,20 +115,22 @@ if (isset($_POST['submit'])) {
         }
 
         .form-control {
-            margin-right: 30px;
+         
     display: block;
-    width: 60%;
+    width: 100%;
     height: 30px;
-    margin-right: 30px;
+    padding: 10px;
         }
 
-        .container {
+        .contentform {
             margin-top: 30px;
-            margin-left: 110px;
-            margin-bottom: 30px;
-            margin-right: 50px;
-            justify-content: center;
-            align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:30px;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+
         }
 
 
@@ -139,8 +142,9 @@ if (isset($_POST['submit'])) {
         }
 
         .h3text {
-            justify-content: center;
-            margin-left: 300px;
+            justify-content:center;
+    margin-bottom: 10px;
+    align-items: center;
         }
 
         .points {
@@ -212,16 +216,16 @@ if (isset($_POST['submit'])) {
 ============================================================================================= -->
     <div class="card">
 
-        <div class="container mt-3 d-flex">
-            <form method="POST" class="flex-grow-1">
-                <h3 class="h3text" style="margin: 20px; padding-left: 180px;">Licensure Examination Statistics</h3>
+        <div class="contentform">
+            <form method="POST">
+                <h3 class="h3text text-center">Licensure Examination Statistics</h3>
 
-                <div class="mb-2 mt-2"><i class="fa fa-book"></i>
+                <div class="mb-2"><i class="fa fa-book"></i>
                     <label for="program">Program: </label>
                     <input type="text" class="form-control" id="program" name="program" required>
                 </div>
 
-                <div class="mb-2 mt-2"><i class="fa fa-search"></i>
+                <div class="mb-2"><i class="fa fa-search"></i>
                     <label for="eligible_total">Total number of graduates who are eligible for licensure examination: </label>
                     <input type="number" class="form-control" id="eligible_total" name="eligible_total" required>
                 </div>
@@ -232,7 +236,7 @@ if (isset($_POST['submit'])) {
                     <input type="number" class="form-control" id="took_exam" name="took_exam" required></textarea>
                 </div>
 
-                <div class="mb-2 mt-2"><i class="fa fa-check"></i>
+                <div class="mb-2"><i class="fa fa-check"></i>
                     <label for="acquired">Total number of graduates who acquired a license:</label>
                     <input type="number" class="form-control" id="acquired" name="acquired" required>
                 </div>

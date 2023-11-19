@@ -107,11 +107,12 @@ if (isset($_POST['submit'])) {
     }
 
     .card {
-      margin-left: 350px;
-      margin-right: 120px;
-      margin-bottom: 70px;
-      margin-top: 20px;
-      height: auto;
+      width: 64%;
+    margin-left: 350px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-top: 20px; 
+    height:auto;
 
     }
 

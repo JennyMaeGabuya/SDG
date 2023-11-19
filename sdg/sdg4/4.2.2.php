@@ -98,11 +98,12 @@ h2 {
   }
  
   .card{
-    margin-left: 350px;
-    margin-right: 120px;
-    margin-bottom: 70px;
-    margin-top: 20px;
-    height: auto;
+           width:64%;
+            margin-left: 350px;
+            margin-right: auto;
+            margin-bottom: 50px;
+            margin-top: 20px;
+            height:auto;
 
   }
   .content>p{
@@ -122,10 +123,13 @@ h2 {
   }
   .contentform{
     margin-top: 30px;
-    margin-left: 100px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom:30px;
     justify-content: center;
     align-items: center;
+    padding:10px;
+    width: 65%;
     
   }
 .btn{

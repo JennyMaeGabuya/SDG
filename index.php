@@ -68,7 +68,7 @@
 
 <div class="third-layer">
 <a href="sdg/sdg14/sdg.php"><button class="sdg" id="sdg14" name="sdg14" style=" background-color: lightblue;"></button></a>
-<a href="sdg/sdg15/sdg.php"><button class="sdg" id="sdg15" name="sdg15" style=" background-color: lightgreen;"></button></a>
+<a href="sdg/sdg15/index.php"><button class="sdg" id="sdg15" name="sdg15" style=" background-color: lightgreen;"></button></a>
 <a href="sdg/sdg16/sdg.php"><button class="sdg" id="sdg16" name="sdg16" style=" background-color: darkgreen;"></button></a>
 <a href="sdg/sdg17/sdg.php"><button class="sdg" id="sdg17" name="sdg17" style=" background-color: lightblue;"></button></a>
 <a href="includes/slideshow.php"><button class="sdg" id="sdg18" name="sdg18" style=" background-color: lightblue;"><h1>SEE MORE</h1></button></a>

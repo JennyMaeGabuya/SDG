@@ -3,9 +3,9 @@
 $host = 'localhost';  // server 
 $user = 'root';   
 $pass = "";   
-$database = 'sdg12';   //Database Name  
+$database = 'sdg3';   //Database Name  
 
-// establishing connection
+// establishing connection//  
   $conn = mysqli_connect($host,$user,$pass,$database);   
 
  // for displaying an error msg in case the connection is not established

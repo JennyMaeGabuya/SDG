@@ -103,7 +103,7 @@ h2 {
     margin-left: 300px; /* Same as the width of the sidenav */
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 0px 10px;
-  color: #C31F33;
+  color: rgb(86,192,43);
   }
  
   .card{
@@ -153,7 +153,7 @@ h2 {
 <!--============================================================================================= 
                                   START OF HEADER POINTING SYSTEM 
 ============================================================================================= -->
-<div class="main" style="background-color:#62EE56;">
+<div class="main" style="background-color:rgb(86,192,43);">
   <h2>SDG 15 LIFE ON LAND</h2>
   <div class="input-container">
     <p>Points</p>

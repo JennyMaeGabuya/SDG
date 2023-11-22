@@ -291,7 +291,7 @@ qualifications to teach at primary level.</p> -->
       <th scope="col" style="width: 50px;">Total Cost</th>
       <th scope="col" style="width: 80px;">Fund Source</th>
    <!--   <th scope="col" style="width: 50px;">Points</th>  -->
-      <th scope="col"colspan="2"  style="width: 60px;">Action</th>
+      <th scope="col"colspan="2" class ="text-center" style="width: 60px;">Action</th>
     </tr>
   </thead>
     <tbody>
@@ -332,12 +332,12 @@ qualifications to teach at primary level.</p> -->
                // echo "<td>{$id}</td>";
                 echo "<td>{$title}</td>";
                 echo "<td>{$desc}</td>";
-                echo "<td>Php{$cost}</td>";
+                echo "<td>Php {$cost}</td>";
                 echo "<td>{$fund}</td>";
               //  echo "<td>$points</td>"; 
             
 
-                echo "<td style='width:100px'>
+                echo "<td class ='text-center' style='width:100px'>
                           <a href='edit/edit4.3.1.php?update&ppa_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>

@@ -306,7 +306,7 @@ if (isset($_POST['submit'])) {
           <th scope="col" style="width: 150px;">Description</th>
           <th scope="col" style="width: 75px;">Total Cost</th>
           <th scope="col" style="width: 100px;">Fund Source</th>
-          <th scope="col" colspan="2" style="width: 100px;">Action</th>
+          <th scope="col" colspan="2" class ="text-center" style="width: 100px;">Action</th>
         </tr>
       </thead>
 
@@ -333,7 +333,7 @@ if (isset($_POST['submit'])) {
           echo "<td>Php {$cost}</td>";
           echo "<td>{$fund}</td>";
 
-          echo "<td style='width:100px'>
+          echo "<td class ='text-center' style='width:100px'>
                           <a href='edit/edit_4.3.4.php?update&outreach_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>

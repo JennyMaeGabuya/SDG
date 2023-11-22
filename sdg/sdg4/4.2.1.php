@@ -288,7 +288,7 @@ if (isset($_POST['submit'])) {
                     <th scope="col" style="width: 50px;">Percent Took Exam</th>
                     <th scope="col" style="width: 50px;">Percent Acquired License</th>
                     <th scope="col" style="width: 50px;">Percent Failed</th>
-                    <th scope="col" colspan="2" style="width: 100px;">Action</th>
+                    <th scope="col" colspan="2" class ="text-center" style="width: 100px;">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -338,7 +338,8 @@ if (isset($_POST['submit'])) {
                     echo "<td>{$percent_took_exam} %</td>";
                     echo "<td>{$percent_acquired} %</td>";
                     echo "<td>{$percent_failed} %</td>";
-                    echo "<td style='width:100px'>
+
+                    echo "<td class ='text-center' style='width:100px'>
                           <a href='edit/edit_4.2.1.php?update&licensure_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>

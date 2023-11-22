@@ -298,7 +298,7 @@ h2 {
       <th scope="col" style="width: 100px;">Total Citations</th>
       <th scope="col" style="width: 150px;">Source</th>
       <th scope="col" style="width: 50px;">Points</th>
-      <th scope="col"colspan="2"  style="width: 100px;">Action</th>
+      <th scope="col"colspan="2" class ="text-center" style="width: 100px;">Action</th>
     </tr>
   </thead>
     <tbody>
@@ -341,7 +341,7 @@ h2 {
                 echo "<td>$ptsR</td>"; 
             
 
-                echo "<td style='width:100px'>
+                echo "<td class ='text-center' style='width:100px'>
                           <a href='edit/edit_4_1.php?update&research_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>

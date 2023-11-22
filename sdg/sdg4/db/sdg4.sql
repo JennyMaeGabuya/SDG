@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 17, 2023 at 10:06 AM
+-- Generation Time: Nov 22, 2023 at 01:36 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -54,43 +54,18 @@ INSERT INTO `tbl4_1` (`total_research`, `title`, `author`, `year`, `total_citati
 DROP TABLE IF EXISTS `tbl44_firstgen`;
 CREATE TABLE IF NOT EXISTS `tbl44_firstgen` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `total_number` int NOT NULL,
-  `male` int NOT NULL,
-  `female` int NOT NULL,
-  `percentage` int NOT NULL,
+  `firstgen` int NOT NULL,
+  `firstyear` int NOT NULL,
+  `firstgenfirstyear` int NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Table structure for table `tbl44_firstgen_firstyear`
+-- Dumping data for table `tbl44_firstgen`
 --
 
-DROP TABLE IF EXISTS `tbl44_firstgen_firstyear`;
-CREATE TABLE IF NOT EXISTS `tbl44_firstgen_firstyear` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `total_number` int NOT NULL,
-  `male` int NOT NULL,
-  `female` int NOT NULL,
-  `percentage` int NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl44_firstyear`
---
-
-DROP TABLE IF EXISTS `tbl44_firstyear`;
-CREATE TABLE IF NOT EXISTS `tbl44_firstyear` (
-  `ID` int NOT NULL AUTO_INCREMENT,
-  `total_number` int NOT NULL,
-  `male` int NOT NULL,
-  `female` int NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+INSERT INTO `tbl44_firstgen` (`ID`, `firstgen`, `firstyear`, `firstgenfirstyear`) VALUES
+(2, 120, 250, 130);
 
 -- --------------------------------------------------------
 
@@ -137,15 +112,14 @@ CREATE TABLE IF NOT EXISTS `tbl422_let` (
   `btled total number` int NOT NULL,
   `percentage` int NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl422_let`
 --
 
 INSERT INTO `tbl422_let` (`ID`, `let total number`, `bsed total number`, `beed total number`, `bped total number`, `btled total number`, `percentage`) VALUES
-(1, 100, 100, 100, 100, 100, 92),
-(2, 330, 70, 70, 90, 100, 92);
+(3, 320, 80, 100, 60, 80, 89);
 
 -- --------------------------------------------------------
 
@@ -168,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `tbl431_resources` (
 --
 
 INSERT INTO `tbl431_resources` (`total_number`, `title`, `description`, `cost`, `fund`) VALUES
-(2, 'Free courses leading to certificates or awards', 'Open courseware: Offer free access to course materials, lectures, and assignments for their undergraduate and graduate-level courses through their OpenCourseWare (OCW) programs. Anyone can access these materials without needing to enroll in a course or pa', 5000, 'Non-Government Organization');
+(2, 'Free courses leading to certificates or awards', 'Open courseware: Offer free access to course materials, lectures, and assignments for their undergraduate and graduate-level courses through their OpenCourseWare (OCW) programs. Anyone can access these materials without needing to enroll in a course or pa', '5000.00', 'Non-Government Organization');
 
 -- --------------------------------------------------------
 
@@ -215,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `tbl433_vocational` (
 --
 
 INSERT INTO `tbl433_vocational` (`total_number`, `title`, `description`, `cost`, `fund`) VALUES
-(1, 'Executive education programme', 'Programs that are usually offered by universities and business schools and are designed to be flexible and convenient for working professionals.', 25000, 'Batangas State University Lipa Campus TNEU');
+(1, 'Executive education programme', 'Programs that are usually offered by universities and business schools and are designed to be flexible and convenient for working professionals.', '25000.00', 'Batangas State University Lipa Campus TNEU');
 
 -- --------------------------------------------------------
 
@@ -252,13 +226,19 @@ CREATE TABLE IF NOT EXISTS `tbl435_access` (
   `50above` int NOT NULL,
   `50abovePercentage` int NOT NULL,
   `totalaccess` int NOT NULL,
-  `totalPPAS` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost`decimal(10,2) NOT NULL,
+  `cost` decimal(10,2) NOT NULL,
   `fund` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl435_access`
+--
+
+INSERT INTO `tbl435_access` (`ID`, `50above`, `50abovePercentage`, `totalaccess`, `title`, `description`, `cost`, `fund`) VALUES
+(1, 24, 30, 1, 'ggdgdhdhd', 'ssnbcvbdhddhjs', '3000.00', 'Batangas State University Lipa Campus');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

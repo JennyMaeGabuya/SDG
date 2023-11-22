@@ -320,7 +320,7 @@ $totalPoints += $points;
       <th scope="col" style="width: 50px;">Total Cost</th>
       <th scope="col" style="width: 80px;">Fund Source</th>
    <!--   <th scope="col" style="width: 50px;">Points</th>  -->
-      <th scope="col"colspan="2"  style="width: 50px;">Action</th>
+      <th scope="col"colspan="2" class="text-center"  style="width: 50px;">Action</th>
     </tr>
   </thead>
     <tbody>
@@ -354,7 +354,7 @@ $totalPoints += $points;
               //  echo "<td>$points</td>"; 
             
 
-                echo "<td style='width:100px'>
+                echo "<td class ='text-center' style='width:100px'>
                           <a href='edit/edit4.3.5.php?update&access_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>

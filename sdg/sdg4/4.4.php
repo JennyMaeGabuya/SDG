@@ -1,21 +1,19 @@
 <!--============================================================================================= 
                       INSERT DATA TO DB ONCE SUBMIT BUTTON WAS CLICKED
 ============================================================================================= -->
-
 <?php
 if (isset($_POST['submit'])) {
   // Get form data
-  $title = $_POST['event_title'];
-  $description = $_POST['event_description'];
-  $cost = $_POST['total_cost'];
-  $fund = $_POST['fund_source'];
+  $firstgen = $_POST['firstgen'];
+  $firstyear = $_POST['firstyear'];
+  $firstgenfirstyear = $_POST['firstgenfirstyear'];
 
-  include "includes/config.php"; // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
+  include "includes/config.php";  // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
 
 
   // SQL query to insert data
-  $sql = "INSERT INTO `tbl432_events` ( `event_title`, `event_description`, `total_cost`, `fund_source`) 
-  VALUES ('$title', '$description', '$cost','$fund')";
+  $sql = "INSERT INTO `tbl44_firstgen` ( `firstgen`, `firstyear`, `firstgenfirstyear`) 
+  VALUES ('$firstgen', '$firstyear', '$firstgenfirstyear')";
 
   if ($conn->query($sql) === TRUE) {
     // The dat was successfully entered
@@ -35,7 +33,7 @@ if (isset($_POST['submit'])) {
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SDG 4.3.2 | Public events (lifelong learning) </title>
+  <title>SDG 4.3.4 | Educational outreach activities ... (extension activities) </title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href=css/sidebar.css>
@@ -198,29 +196,36 @@ if (isset($_POST['submit'])) {
 
 <body>
   <?php include('sidebar.php'); ?>
-
-  <!--============================================================================================= 
+<!--============================================================================================= 
                                   START OF HEADER POINTING SYSTEM 
 ============================================================================================= -->
 
-  <div class="main">
+  <div class="main"style="background-color:#C31F33;">
     <h2>SDG 4 QUALITY EDUCATION</h2>
     <div class="input-container">
       <p>Points</p>
 
-      <?php                            //========================================================= 
-      include "includes/config.php";  // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE
-      $query = "SELECT Count(*) AS total FROM `tbl432_events`"; // SQL query to fetch all table data
+      <?php
+      include "includes/config.php";  // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
+      $query = "SELECT *  FROM `tbl44_firstgen`"; // SQL query to fetch all table data
       $result = mysqli_query($conn, $query); // sending the query to the database
 
       $totalPoints = 0;
 
       while ($row = mysqli_fetch_assoc($result)) {
-        $total = $row['total'];
-        $totalno = $total;
+        $firstgen = $row['firstgen'];
+        $firstyear = $row['firstyear'];
+        $firstgenfirstyear = $row['firstgenfirstyear'];
+
+        //assign data to variables
+        $first_year = $firstyear;
+        $first_gen = $firstgen;
+        $firstgen_firstyear = $firstgenfirstyear;
+
+        $percent = $firstgen_firstyear/  $first_year *100;
 
         // calculate points by dividing total number of PPAs by 2 and multiply by 5
-        $points = ($totalno / 2 * 5);
+        $points = ($percent / 10* 25);
 
 
         // Add the points  to the total points
@@ -228,53 +233,47 @@ if (isset($_POST['submit'])) {
       }
       ?>
 
-      <input type="text" style="color: black; text-align: center;" class="points" name="points" value="<?php echo min($totalPoints, 5); ?>" readonly>
+      <input type="text" style="color: black; text-align: center;" class="points" name="points" value="<?php echo min($totalPoints, 25); ?>" readonly>
     </div>
   </div>
 
-<!--============================================================================================= 
+ <!--============================================================================================= 
                                   END OF HEADER POINTING SYSTEM 
  ============================================================================================= -->
 
   <div class="content">
     <br>
-    <h3>4.3.2 Public events (lifelong learning)</h3>
-    <p>Host educational events a university that are open to the general public.</p>
-
-    <!--remove muna pic 
-    <div class="image" style="width: 50px;"style="height: 50px;">
-            <img src="img/rs.png" alt="Image">
-        </div>
--->
+    <h3>4.4 Proportion of first-generation students</h3>
 
   </div>
-   <!--============================================================================================= 
+    <!--============================================================================================= 
                                   START OF FORM
 ============================================================================================= -->
   <div class="card">
     <div class="contentform">
       <form method="POST">
-
-        <div class="form-group"><i class="fa fa-bookmark"></i>
-          <label for="event_title" class="text-center ">Title of the PPA</label>
-          <textarea class="form-control" id="event_title" name="event_title" rows="3" required></textarea>
+      <div class="form-group"><i class="fa fa-dollar"></i>
+          <label for="cost">Total number of first year students</label>
+          <input type="number" class="form-control" id="" name="firstyear" required>
         </div>
-
-        <div class="form-group"><i class="fa fa-edit"></i>
-          <label for="event_description">Short description of the PPA</label>
-          <textarea class="form-control" id="event_description" name="event_description" rows="5" required></textarea>
+      <div class="form-group"><i class="fa fa-dollar"></i>
+          <label for="cost">Total number of first-generation students</label>
+          <input type="number" class="form-control" id="firstgen" name="firstgen" required>
         </div>
-
-        <div class="form-group"><i class="fa fa-dollar"></i>
-          <label for="total_cost">Total cost</label>
-          <input type="number" class="form-control" id="total_cost" name="total_cost" required>
+        <div class="form-group"><i class="	fa fa-group"></i>
+          <label for="fund">Total number of first-generation students in first year level</label>
+          <input type="number" class="form-control" id="fund" name="firstgenfirstyear" required>
+        </div>
+     <!--   <div class="form-group"><i class="fa fa-dollar"></i>
+          <label for="cost">Percentage of the student population are first-generation students</label>
+          <input type="number" class="form-control" id="cost" name="percentagefirstgen" required>
         </div>
 
         <div class="form-group"><i class="	fa fa-group"></i>
-          <label for="fund_source">Fund source</label>
-          <input type="text" class="form-control" id="fund_source" name="fund_source" required>
+          <label for="fund"> Percnetage of first year students are first-generation students</label>
+          <input type="number" class="form-control" id="fund" name="fund" required>
         </div>
-
+    -->
         <div>
         <button type="submit" class="btn btn-primary mb-3" name="submit"><i class="fa fa-send"></i> Submit</button>
         <button type="reset" class="btn btn-danger mb-3" name="cancel"><i class="fa fa-times-circle"></i> Cancel</button>
@@ -297,30 +296,24 @@ if (isset($_POST['submit'])) {
       </form>
     </div>
   </div>
-
-  <!--============================================================================================= 
-                                END OF FORM
-============================================================================================= -->
-
 <!--============================================================================================= 
                         START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
 ============================================================================================= -->
   <div class="table-container">
-    <h2>Public events</h2>
+    <h2>Proportion of first-generation students</h2>
     <table class="table table-bordered">
       <thead>
-          <th scope="col" style="width: 150px;">Title of PPA</th>
-          <th scope="col" style="width: 150px;">Description</th>
-          <th scope="col" style="width: 75px;">Total Cost</th>
-          <th scope="col" style="width: 100px;">Fund Source</th>
-          <th scope="col" colspan="2"class ="text-center" style="width: 50px;">Action</th>
+          <th scope="col" style="width: 60px;">first-generation</th>
+          <th scope="col" style="width: 100px;">first year</th>
+          <th scope="col" style="width: 150px;">first-generation students in first year</th>
+          <th scope="col" colspan="2" class="text-center" style="width: 60px;">Action</th>
         </tr>
       </thead>
 
       <tbody>
         <?php
-        include "includes/config.php";
-        $query = "SELECT * FROM `tbl432_events`ORDER BY `ID` DESC"; // SQL query to fetch all table data
+        include "includes/config.php";  // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
+        $query = "SELECT * FROM `tbl44_firstgen`ORDER BY `ID` DESC"; // SQL query to fetch all table data
         $result = mysqli_query($conn, $query); // sending the query to the database
 
         if (!$result) {
@@ -329,22 +322,29 @@ if (isset($_POST['submit'])) {
         // Displaying all the data retrieved from the database using a while loop
         while ($row = mysqli_fetch_assoc($result)) {
           $id = $row['ID'];
-          $title = $row['event_title'];
-          $description = $row['event_description'];
-          $cost = $row['total_cost'];
-          $fund = $row['fund_source'];
+          $firstgen = $row['firstgen'];
+          $firstyear = $row['firstyear'];
+          $firstgenfirstyear = $row['firstgenfirstyear'];
+  
+          //assign data to variables
+          $first_year = $firstyear;
+          $first_gen = $firstgen;
+          $firstgen_firstyear = $firstgenfirstyear;
+  
+          $percentfirstyearfirstgen = $firstgen_firstyear/  $first_year *100;
+          $percentfirstgen = $first_gen/  $first_year *100;
+         
 
           echo "<tr>";
-          echo "<td>{$title}</td>";
-          echo "<td>{$description}</td>";
-          echo "<td>Php {$cost}</td>";
-          echo "<td>{$fund}</td>";
+          echo "<td>{$first_year} Students</td>";
+          echo "<td>{$first_gen} Students ($percentfirstgen%)</td>";
+          echo "<td> {$firstgen_firstyear} Students ($percentfirstyearfirstgen%)</td>";
 
           echo "<td class ='text-center' style='width:100px'>
-                          <a href='edit/edit_4.3.2.php?update&event_id={$id}' class='btn btn-primary'>
+                          <a href='edit/edit4.4.php?update&stud_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>
-                          <a href='delete/delete_4.3.2.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete/delete4.4.php?delete={$id}' class='btn btn-danger'>
                           <i class='fa fa-trash'></i>
                       </a>
                       </td>";
@@ -353,10 +353,6 @@ if (isset($_POST['submit'])) {
       </tbody>
     </table>
   </div>
-<!--============================================================================================= 
-                                END OF TABLE
-============================================================================================= -->
-
 <!--============================================================================================= 
 //                           this is js for sidebar panel
 // DONT REMOVE IT. MAKE SURE TO INCLUDE IT TO ALL YOUR FILES   !!!!!!!!!!

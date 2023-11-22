@@ -308,7 +308,7 @@ qualifications to teach at primary level.</p> -->
       <th scope="col" style="width: 50px;">BTLED passers</th>
       <th scope="col" style="width: 100px;">Graduates with license & can teach at primary level.</th>
       <th scope="col" style="width: 40px;">Points</th>
-      <th scope="col"colspan="2"  style="width: 70px;">Action</th>
+      <th scope="col"colspan="2" class ="text-center" style="width: 70px;">Action</th>
     </tr>
   </thead>
     <tbody>
@@ -372,7 +372,7 @@ if ($rslt) {
                 echo "<td>$points</td>"; 
             
 
-                echo "<td style='width:100px'>
+                echo "<td class ='text-center' style='width:100px'>
                           <a href='edit/edit4.2.2.php?update&passer_id={$id}' class='btn btn-primary'>
                               <i class='fa fa-edit'></i> 
                           </a>

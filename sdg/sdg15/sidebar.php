@@ -18,24 +18,30 @@
 </style>
 
   <b><a href="../../index.php">Home</a></b>
-  <a href="index.php">SDG 4: Quality Education</a>
+  <a href="index.php">SDG 15: Life on land</a>
   <a href="15.1.php">15.1</a>
   <button class="dropdown-btn">15.2 
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="">4.2.1 Respective Field</a>
-    <a href="">4.2.2 Primary Level</a>
+    <a href="15.2.1.php">15.2.1 Respective Field</a>
+    <a href="15.2.1.1.php">15.2.1.1 Primary Level</a>
+    <a href="15.2.1.2.php">15.2.1.2 Primary Level</a>
   </div>
-  <button class="dropdown-btn">4.3 Learning Measures
+  <button class="dropdown-btn">15.3 Learning Measures
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href=".php">4.3.1 Public Resources</a>
-    <a href=".php">4.3.2 Public Events</a>
-    <a href=".php">4.3.3 Vocational Events</a>
-    <a href=".php">4.3.4 Outreach Activity</a>
-    <a href=".php">4.3.5 Learning Access</a>
+    <a href="15.3.1.php">15.3.1 Public Resources</a>
+    <a href="15.3.2.php">15.3.2 Public Events</a>
   </div>
-  <a href=".php">4.4 First-Generation ... </a>
+  <button class="dropdown-btn">15.4 Learning Measures
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="15.4.1.php">15.4.1 Public Resources</a>
+    <a href="15.4.2.php">15.4.2 Public Events</a>
+    <a href="15.4.3.php">15.4.3 Public Events</a>
+  </div>
+  <a href="15.5.1.php">15.5.1 First-Generation ... </a>
 </div>

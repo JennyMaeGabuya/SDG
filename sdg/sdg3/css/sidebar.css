@@ -30,21 +30,21 @@
   /* On mouse-over */
   .sidenav a:hover, .dropdown-btn:hover {
     color: #f1f1f1;
-    background-color: #4C9F38;
+    background-color: #93b28b;
     text-decoration: none; 
 
   }
   
 /* Add an active class to the active dropdown button */
 .active {
-    background-color: #4C9F38;
+    background-color: #a3da95;
     color: white;
   }
   
   /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
   .dropdown-container {
     display: none;
-    background-color: #4C9F38;
+    background-color: #b5dfaa;
     padding-left: 8px;
 
   }

@@ -16,7 +16,6 @@
     display: block;
 }
 </style>
-
   <b><a href="../../index.php">Home</a></b>
   <a href="index.php">SDG 3: Good Health And Well-Being</a>
   <a href="4.1.php">3.1.1 Research on health... </a>

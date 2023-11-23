@@ -12,4 +12,5 @@ $database = 'sdg3';   //Database Name
   if (!$conn) {                                             
     die("Connection failed: " . mysqli_connect_error());     
   }
+  
 ?>

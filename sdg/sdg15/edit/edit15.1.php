@@ -35,7 +35,8 @@ if(isset($_GET['research_id']))
     $source = strtoupper($_POST['source']);
 
       // SQL query to update the data in user table where the id = $userid 
-        $query ="UPDATE `tbl15_1_landecosystem` SET `title` = '{$title}', `author` = '{$author}',`year` = '{$year}',`total_citation` = '{$total_citation}',`source` = '{$source}' WHERE `total_research`= $research_id";
+        $query ="UPDATE `tbl15_1_landecosystem` SET `title` = '{$title}', `author` = '{$author}',`year` = '{$year}',`total_citation` = '{$total_citation}',`source` = '{$source}' 
+        WHERE `ID`= $research_id";
         $update = mysqli_query($conn, $query);
         $successMessage = "You have successfully updated data";
     }

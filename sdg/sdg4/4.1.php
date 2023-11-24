@@ -162,47 +162,35 @@ h2 {
     include "includes/config.php";   // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE
                                      //========================================================== 
 
-    $query = "SELECT Count(*) AS total  FROM `tbl4_1`"; // SQL query to fetch all table data
+    $query = "SELECT source, COUNT(*) AS total FROM `tbl4_1` GROUP BY source"; // SQL query to fetch all table data
     $result = mysqli_query($conn, $query); // sending the query to the database
 
-
-    while ($row = mysqli_fetch_assoc($result)) {
-        $total = $row['total'];
-       $totalno= $total;
-
-       $query = "SELECT * FROM `tbl4_1`"; // SQL query to fetch all table data
-       $result = mysqli_query($conn, $query); // sending the query to the database
-   
-       if (!$result) {
-         die("Error: " . mysqli_error($conn)); // Output the error message for debugging
-       }
-   
-       // Initializing total points outside the loop
-       $totalPoints = 0;
-   
-       // Displaying all the data retrieved from the database using a while loop
-       while ($row = mysqli_fetch_assoc($result)) {
-         $source = $row['source'];
-   
-         // Define source for different categories
-         $src = "SCOPUS";
-         $osrc = "WEB OF SCIENCE";
-   
-     
-       }
-       $ptsR = 0; // Initialize points for the current research
-   
-       // Check if the source matches SCOPUS or WEB OF SCIENCE
-       if ($source === $src || $source === $osrc) {
-         $ptsR = $totalno * 25;
-       } else {
-         $ptsR = $totalno * 10;
-       }
+    if (!$result) {
+      die("Error: " . mysqli_error($conn));
+  }
+      // Initializing total points outside the loop
+ $totalPoints = 0;
  
-       // Add the points for the current research to the total points
-       $totalPoints += $ptsR;
-    }
-
+ while ($row = mysqli_fetch_assoc($result)) {
+     $y = $row['source'];
+     $x = $row['total'];
+ 
+          // Define source for different categories
+          $src = "SCOPUS";
+          $osrc = "WEB OF SCIENCE";
+ 
+          $ptsR = 0; // Initialize points for the current research
+    
+          // Check if the source matches SCOPUS or WEB OF SCIENCE
+          if ($y=== $src || $y === $osrc) {
+            $ptsR = $x * 25;
+          } else {
+            $ptsR = $x * 10;
+          }
+           // Add the points for the current research to the total points
+           $totalPoints += $ptsR;
+ }
+ 
   
     ?>
 

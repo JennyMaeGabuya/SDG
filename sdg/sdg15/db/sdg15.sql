@@ -107,10 +107,9 @@ CREATE TABLE IF NOT EXISTS `tbl15_3_endagered` (
 -- Table structure for table `tbl15_4_ecosystem`
 --
 
-DROP TABLE IF EXISTS `tbl15_4_ecosystem`;
-CREATE TABLE IF NOT EXISTS `tbl15_4_ecosystem` (
+DROP TABLE IF EXISTS `tbl1543_ecosystem`;
+CREATE TABLE IF NOT EXISTS `tbl15_43_ecosystem` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `total_number` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `cost` decimal(10,2) NOT NULL,
@@ -124,10 +123,9 @@ CREATE TABLE IF NOT EXISTS `tbl15_4_ecosystem` (
 -- Table structure for table `tbl15_4_events`
 --
 
-DROP TABLE IF EXISTS `tbl15_4_events`;
-CREATE TABLE IF NOT EXISTS `tbl15_4_events` (
+DROP TABLE IF EXISTS `tbl15_41_events`;
+CREATE TABLE IF NOT EXISTS `tbl15_41_events` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `total_number` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `cost` decimal(10,2) NOT NULL,
@@ -141,8 +139,8 @@ CREATE TABLE IF NOT EXISTS `tbl15_4_events` (
 -- Table structure for table `tbl15_4_food`
 --
 
-DROP TABLE IF EXISTS `tbl15_4_food`;
-CREATE TABLE IF NOT EXISTS `tbl15_4_food` (
+DROP TABLE IF EXISTS `tbl15_42_food`;
+CREATE TABLE IF NOT EXISTS `tbl15_42_food` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `total_policies` int NOT NULL,
   `totalPPAS` int NOT NULL,

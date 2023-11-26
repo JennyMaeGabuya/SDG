@@ -11,7 +11,7 @@ if (isset($_GET['event_id'])) {
 }
 
 // SQL query to select all the data from the table where event_id = $event_id
-$query = "SELECT * FROM tbl15_4_events WHERE ID = $event_id";
+$query = "SELECT * FROM tbl15_41_events WHERE ID = $event_id";
 $result = mysqli_query($conn, $query);
 while ($row = mysqli_fetch_assoc($result)) {
 
@@ -19,7 +19,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     $title = $row['title'];
     $description = $row['description'];
     $cost = $row['cost'];
-    $fund = $row['source'];
+    $fund = $row['fund'];
 }
 
   //============================================================================================= 
@@ -33,7 +33,8 @@ if (isset($_POST['update'])) {
     $fund = $_POST['fund'];
 
     // SQL query to update the data in user table where the total_number = $ppa_id 
-    $query = "UPDATE tbl15_4_events SET  title = '{$title}', description = '{$description}', cost = '{$cost}', source = '{$fund}' WHERE `ID`= $event_id";
+    $query = "UPDATE tbl15_41_events SET  `title` = '{$title}', `description` = '{$description}', `cost` = '{$cost}', `fund` = '{$fund}'
+     WHERE `ID`= $event_id";
     $update = mysqli_query($conn, $query);
     $successMessage = "You have successfully Updated data";
 }

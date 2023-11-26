@@ -12,7 +12,7 @@ if (isset($_GET['delete'])) {
     // Check if the user has confirmed the deletion
     if (isset($_GET['confirm']) && $_GET['confirm'] == 'true') {
         // SQL query to delete data from the "order" table where id = $userid
-        $query = "DELETE FROM tbl15_4_events WHERE ID = {$deleteid}";
+        $query = "DELETE FROM tbl15_41_events WHERE ID = {$deleteid}";
         $delete_query = mysqli_query($conn, $query);
         echo "<script type='text/javascript'>alert(' data deleted successfully!')</script>";
         header("Location: ../15.4.1.php");

@@ -326,6 +326,9 @@ if (isset($_POST['submit'])) {
                         </div>
                     </fieldset>
 
+                    <button type="submit" class="btn btn-primary mb-3 me-1" name="submit">
+                    <i class="fa fa-send"></i> Submit
+                </button>
                 </form>
 
                 <?php
@@ -340,10 +343,6 @@ if (isset($_POST['submit'])) {
                 </script>";
                 }
                 ?>
-
-                <button type="submit" class="btn btn-primary mb-3 me-1" name="submit">
-                    <i class="fa fa-send"></i> Submit
-                </button>
 
                 <button type="reset" class="btn btn-danger mb-3" name="cancel">
                     <i class="fa fa-times-circle"></i> Cancel
@@ -361,63 +360,68 @@ if (isset($_POST['submit'])) {
     <!--============================================================================================= 
                         START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
 ============================================================================================= -->
-    <div class="table-container">
-        <h2 class="text-center">Sustainable Land Practices</h2>
-        <table class="table table-bordered" style="margin: auto;width:56%;">
-            <thead>
-                <tr>
-                    <th scope="col" style="width: 70px;">Total Students</th>
-                    <th scope="col" style="width: 70px;">Male Gardening Space</th>
-                    <th scope="col" style="width: 70px;">Female Gardening Space</th>
-                    <th scope="col" style="width: 20px;"> % Gardening Space</th>
-                    <th scope="col" style="width: 70px;">Male Vertical Gardening Space</th>
-                    <th scope="col" style="width: 70px;">Female Vertical Gardening Space</th>
-                    <th scope="col" style="width: 20px;"> % Vertical Gardening</th>
-                    <th scope="col" colspan="2" class="text-center" style="width: 40px;">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                include "includes/config.php";
+<div class="table-container">
+    <h2 class="text-center">Sustainable Land Practices</h2>
+    <table class="table table-bordered" style="margin: auto;width:56%;">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 100px;">Total Students</th>
+                <th scope="col" style="width: 100px;">Students with Gardening Space</th>
+                <th scope="col" style="width: 50px;"> % Gardening Space</th>
+                <th scope="col" style="width: 100px;">Students with Vertical Gardening Space</th>
+                <th scope="col" style="width: 50px;"> % Vertical Gardening</th>
+                <th scope="col" colspan="2" class="text-center" style="width: 40px;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            include "includes/config.php";
 
-                $query = "SELECT * FROM `tbl15_2_student` ORDER BY `ID` DESC"; // Fetching data from tbl15_2_student table
-                $result = mysqli_query($conn, $query);
+            $query = "SELECT * FROM `tbl15_2_student` ORDER BY `ID` DESC"; // Fetching data from tbl15_2_student table
+            $result = mysqli_query($conn, $query);
 
-                if (!$result) {
-                    die("Error: " . mysqli_error($conn));
-                }
+            if (!$result) {
+                die("Error: " . mysqli_error($conn));
+            }
 
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $totalStudents = $row['total_students'];
-                    $maleGardening = $row['mgardening'];
-                    $femaleGardening = $row['fgardening'];
-                    $maleVertical = $row['mvertical'];
-                    $femaleVertical = $row['fvertical'];
+            while ($row = mysqli_fetch_assoc($result)) {
+                $totalStudents = $row['total_students'];
+                $maleGardening = $row['mgardening'];
+                $femaleGardening = $row['fgardening'];
+                $maleVertical = $row['mvertical'];
+                $femaleVertical = $row['fvertical'];
 
-                    // Calculate total students involved in gardening and vertical gardening
-                    $totalGardeningStudents = $maleGardening + $femaleGardening;
-                    $totalVerticalStudents = $maleVertical + $femaleVertical;
+                // Calculate total students involved in gardening and vertical gardening
+                $totalGardeningStudents = $maleGardening + $femaleGardening;
+                $totalVerticalStudents = $maleVertical + $femaleVertical;
 
-                    echo "<tr>";
-                    echo "<td>{$totalStudents}</td>";
-                    echo "<td>{$maleGardening}</td>";
-                    echo "<td>{$femaleGardening}</td>";
-                    echo "<td>" . round(($totalGardeningStudents / $totalStudents) * 100, 2) . "%</td>";
-                    echo "<td>{$maleVertical}</td>";
-                    echo "<td>{$femaleVertical}</td>";
-                    echo "<td>" . round(($totalVerticalStudents / $totalStudents) * 100, 2) . "%</td>";
-                    echo "</tr>";
+                echo "<tr>";
+                echo "<td>{$totalStudents}</td>";
 
-                    /* echo "<td>$points</td>";
+                // Calculate and display total students with gardening spaces and percentage
+                $totalStudentsWithGardening = $maleGardening + $femaleGardening;
+                $percentageStudentsWithGardening = round(($totalStudentsWithGardening / $totalStudents) * 100, 2);
+                echo "<td>{$totalStudentsWithGardening}</td>";
+                echo "<td>{$percentageStudentsWithGardening}%</td>";
 
-                    echo "<td class='text-center' style='width:40px'>
+                // Calculate and display total students with vertical gardening spaces and percentage
+                $totalStudentsWithVerticalGardening = $maleVertical + $femaleVertical;
+                $percentageStudentsWithVerticalGardening = round(($totalStudentsWithVerticalGardening / $totalStudents) * 100, 2);
+                echo "<td>{$totalStudentsWithVerticalGardening}</td>";
+                echo "<td>{$percentageStudentsWithVerticalGardening}%</td>";
+
+                echo "</tr>";
+
+                    // echo "<td>$points</td>";
+
+                    /* echo "<td class='text-center' style='width:40px'>
                 <a href='edit/edit15.4.1.php?update&event_id={$id}' style='width:30px;'>
                     <i class='fa fa-edit'></i>
                 </a>
                 <a href='delete/delete15.4.1.php?delete={$id}' style='width:30px;color:red;'>
                     <i class='fa fa-trash'></i>
                 </a>
-            </td>";   */
+            </td>";  */
                 }
                 ?>
             </tbody>

@@ -65,8 +65,8 @@ CREATE TABLE IF NOT EXISTS `tbl15_2_measuresslp` (
   `totalNumber_slp` int NOT NULL,
   `title_PPA` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost` int NOT NULL,
-  `fund` int NOT NULL,
+  `cost` decimal(10,2) NOT NULL,
+  `fund` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -82,8 +82,8 @@ CREATE TABLE IF NOT EXISTS `tbl15_3_` (
   `total_number` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost` int NOT NULL,
-  `fund` int NOT NULL,
+  `cost` decimal(10,2) NOT NULL,
+  `fund` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -113,8 +113,8 @@ CREATE TABLE IF NOT EXISTS `tbl15_4_ecosystem` (
   `total_number` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost` int NOT NULL,
-  `fund` int NOT NULL,
+  `cost` decimal(10,2) NOT NULL,
+  `fund` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -130,8 +130,8 @@ CREATE TABLE IF NOT EXISTS `tbl15_4_events` (
   `total_number` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost` int NOT NULL,
-  `fund` int NOT NULL,
+  `cost` decimal(10,2) NOT NULL,
+  `fund` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -148,8 +148,8 @@ CREATE TABLE IF NOT EXISTS `tbl15_4_food` (
   `totalPPAS` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost` int NOT NULL,
-  `fund` int NOT NULL,
+  `cost` decimal(10,2) NOT NULL,
+  `fund` varchar(255) NOT NULL,
   `evidence` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -163,11 +163,10 @@ CREATE TABLE IF NOT EXISTS `tbl15_4_food` (
 DROP TABLE IF EXISTS `tbl15_5_1_biodiversity`;
 CREATE TABLE IF NOT EXISTS `tbl15_5_1_biodiversity` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `total_number` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `cost` int NOT NULL,
-  `fund` int NOT NULL,
+  `cost` decimal(10,2) NOT NULL,
+  `fund` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;

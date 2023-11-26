@@ -9,11 +9,25 @@
 
 .sidenav {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
 }
 
 /* Show the nested dropdown when hovering over the parent link */
 .dropdown-container:hover .nested-dropdown {
     display: block;
+}
+.sidenav a, .dropdown-btn {  /* for menu*/
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(32, 30, 30);
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
 }
 </style>
 
@@ -41,7 +55,7 @@
   <div class="dropdown-container">
     <a href="15.4.1.php">15.4.1 Public Resources</a>
     <a href="15.4.2.php">15.4.2 Public Events</a>
-    <a href="15.4.3.php">15.4.3 Public Events</a>
+    <a href="15.4.3.php">15.4.3 Maintain and extend ...</a>
   </div>
-  <a href="15.5.1.php">15.5.1 First-Generation ... </a>
+  <a href="15.5.1.php">15.5.1 Biodiversity ... </a>
 </div>

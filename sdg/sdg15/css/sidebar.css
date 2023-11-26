@@ -58,7 +58,7 @@
   /* Some media queries for responsiveness */
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav a {font-size: 16px;}   
   }
   img{
     width:250px;
@@ -71,3 +71,16 @@
   .header {
     background-color: #62EE56;
   }
+  .sidenav a, .dropdown-btn {  /* for menu*/
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    color: rgb(32, 30, 30);
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}

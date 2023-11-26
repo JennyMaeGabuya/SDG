@@ -12,6 +12,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
+  
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: white;
@@ -56,7 +57,6 @@ h2{
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-
 </style>
 </head>
 <body>
@@ -68,12 +68,12 @@ h2{
 <?php include('imageslide.php'); ?>
 </div>
 <div class="card">
-<p>Sustainable Development Goal 4 (SDG 4) is the education goal
-The 2030 Agenda for Sustainable Development is “a plan of action for people, planet and prosperity”.
- It comprises of 17 Sustainable Development Goals (SDGs). These goals are indivisible and encompass economic, 
- social and environmental dimensions.
-SDG 4 focuses on education and aims to “ensure inclusive and equitable quality education and promote lifelong learning opportunities for all." </p>
-
+<p>United Nations Sustainable Development Goal (SDG) 15 aims to protect, restore, and promote the conservation 
+  and sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and
+   reverse land degradation and biodiversity loss. Land degradation is a major threat to sustainable development, 
+   as it can lead to food insecurity, water scarcity, climate change, and the loss of biodiversity. 
+   SDG 15 calls for action to protect and restore land ecosystems, including forests, grasslands, and wetlands. 
+   It also calls for the sustainable management of forests and the halting of desertification.
 </div>
 </div>
 

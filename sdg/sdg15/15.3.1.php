@@ -214,10 +214,10 @@ if (isset($_POST['submit'])) {
 
       while ($row = mysqli_fetch_assoc($result)) {
         $total = $row['total'];
-        $totalno = $total;
+        $x = $total;
 
         // calculate points by dividing total number of PPAs by 2 and multiply by 10
-        $points = ($totalno / 2 * 10);
+        $points = ($x / 2 * 10);
 
 
         // Add the points  to the total points

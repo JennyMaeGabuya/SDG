@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
 
 /* Main content */
 .main {
-  margin-left: 250px; /* Same as the width of the sidenav */
+ /* margin-left: 250px;  Same as the width of the sidenav */
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 0px 10px;
   color: #FCF5ED;
@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) {
     background-color: #51C417;
     font-family: Verdana, sans-serif;
     font-weight: bolder;
- 
+      /* ==========================================just added */
 }
 .points{
     width: 60px;
@@ -89,16 +89,17 @@ h2 {
     margin-right: 10px;
   }
   .content{
-    margin-left: 300px; /* Same as the width of the sidenav */
+ /* Same as the width of the sidenav */
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 0px 10px;
   color: #C31F33;
+  margin-left: 80px;
   }
  
   .card{
     width: 64%;
     margin-left: 350px;
-    margin-right: 50px;
+   
     margin-bottom: 50px;
     margin-top: 20px; 
     height:auto;
@@ -120,7 +121,7 @@ h2 {
   }
   .contentform{
     margin-top: 30px;
-    margin-left: 100px;
+    margin-left: 50px;
     margin-bottom:30px;
     justify-content: center;
     align-items: center;
@@ -130,21 +131,15 @@ h2 {
     margin-bottom: 10px;
 
 }
-  /* remove muna pic 
-.image{
-  width: 50px;
-  height: 50px;
-}
-  */
+
   .table-container{
-    margin-left: 350px;
-    margin-right: 50px;
-    width:64%;
+    margin-right: 20px;
+    width:50%;
     overflow-x: auto; 
   }
   .h3text{
     justify-content:center;
-    margin-left: 300px;
+    
   }
   .points{
     box-shadow: grey;
@@ -168,6 +163,44 @@ h2 {
     }
 
 /* endddd */
+
+/* ==========================================just added===================================================== */
+/* Centering content and responsiveness */
+.card {
+  width: 55%; /* Adjust card width */
+  margin: 60px auto; /* Center the card and provide space */
+  font-size: 17px;
+}
+
+.table-container {
+  width: 100%; /* Adjust table container width */
+  margin: 20px auto; /* Center the table and provide space */
+  overflow-x: auto; /* Enable horizontal scrolling on smaller screens if needed */
+  font-size: 17px;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 90%; /* Adjust card width for smaller screens */
+    margin: 10px auto; /* Adjust margin for smaller screens */
+    font-size: 13px;
+  }
+
+  .table-container {
+    width: 90%; /* Adjust table container width for smaller screens */
+    margin: 10px auto;
+    font-size: 13px;
+  }
+  .content{
+ /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  color: #C31F33;
+  margin-left: 5px;
+  }
+}
+
 </style>
 
 <body>
@@ -178,7 +211,7 @@ h2 {
                                   START OF HEADER POINTING SYSTEM 
 ============================================================================================= -->
 <div class="main">
-  <h2>SDG 15 LIFE ON LAND</h2>
+  <h2 class="text-center">SDG 15 LIFE ON LAND</h2>
   <div class="input-container">
     <p>Points</p>
 
@@ -213,9 +246,9 @@ h2 {
 
   <div class="content">
     <br>
-    <h3>15.5.1 Biodiversity in the community</h3>
+    <h3 class="text-center">15.5.1 Biodiversity in the community</h3>
 
-  </div>
+  
    <!--============================================================================================= 
                                   START OF FORM
 ============================================================================================= -->
@@ -270,8 +303,8 @@ h2 {
                         START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
 ============================================================================================= -->
 <div class="table-container">
-  <h2>Biodiversity in the community</h2>           
-  <table class="table table-bordered">
+  <h2 class="text-center">Biodiversity in the community</h2>           
+  <table class="table table-bordered" style="margin: auto;width:56%;">
   <thead>
     <tr>
   <!--    <th scope="col" style="width: 30px;">#</th> -->
@@ -280,7 +313,7 @@ h2 {
       <th scope="col" style="width: 50px;">Total Cost</th>
       <th scope="col" style="width: 80px;">Fund Source</th>
    <!--   <th scope="col" style="width: 50px;">Points</th>  -->
-      <th scope="col"colspan="2" class ="text-center" style="width: 60px;">Action</th>
+      <th scope="col"colspan="2" class ="text-center" style="width: 40px;">Action</th>
     </tr>
   </thead>
     <tbody>
@@ -309,11 +342,11 @@ h2 {
               //  echo "<td>$points</td>"; 
             
 
-                echo "<td class ='text-center' style='width:100px'>
-                          <a href='edit/edit15.5.1.php?update&ppa_id={$id}' class='btn btn-primary'>
+                echo "<td class ='text-center' style='width:50px'>
+                          <a href='edit/edit15.5.1.php?update&ppa_id={$id}'style='width:30px;'>
                               <i class='fa fa-edit'></i> 
                           </a>
-                          <a href='delete/delete15.5.1.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete/delete15.5.1.php?delete={$id}' style='width:30px;color:red;'>
                           <i class='fa fa-trash'></i>
                       </a>
                       </td>";
@@ -323,7 +356,7 @@ h2 {
   </table>
 </div>
 
-
+</div>
 <!--============================================================================================= 
                                 END OF TABLE
 ============================================================================================= -->
@@ -355,6 +388,8 @@ for (i = 0; i < dropdown.length; i++) {
 
 </script>
 
+<script>
+</script>
 </body>
 </html> 
 

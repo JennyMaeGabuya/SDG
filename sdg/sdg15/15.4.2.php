@@ -236,7 +236,7 @@ while ($row = mysqli_fetch_assoc($result)) {
   <div class="form-group"><i class="fa fa-dollar"></i>
       <label for="cost">Total number of policies ensuring that food on campus is sustainably 
 farmed</label>
-      <input type="number" class="form-control" id="" name="policies" required>
+      <input type="number" class="form-control" id="" name="policies" >
     </div>        
     <div class="form-group"><i class="fa fa-bookmark"></i>
       <label for="title" class="text-center ">Title of the PPA</label>

@@ -35,7 +35,7 @@
   <a href="index.php">SDG 15: Life on land</a>
   <a href="15.1.php">15.1 Research on Land </a>
   <a href="15.2.php">15.2 land Practices</a>
-  <a href="15.3.php">15.3 Endangered Flora </a>
+  <a href="15.3.php">15.3 Endangered Flora/Fauna </a>
   <button class="dropdown-btn">15.4 Sustainable use of land
     <i class="fa fa-caret-down"></i>
   </button>

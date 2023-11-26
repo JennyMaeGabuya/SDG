@@ -21,7 +21,7 @@ if (isset($_GET['delete'])) {
         echo "<script>
               var confirmed = confirm('Are you sure you want to delete this record?');
               if (confirmed) {
-                  window.location.href = 'delete_15.4.1.php?delete=$deleteid&confirm=true';
+                  window.location.href = 'delete15.4.1.php?delete=$deleteid&confirm=true';
               } else {
                   window.location.href = '../15.4.1.php';
               }

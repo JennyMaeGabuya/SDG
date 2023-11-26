@@ -61,33 +61,69 @@ if (isset($_POST['update'])) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <style>
-        .card {
-            margin-left: 350px;
-            margin-right: 350px;
-            margin-bottom: 50px;
-            margin-top: 20px;
-            background-color: white;
-            box-shadow: 0px 20px 20px rgba(0.1, 0.1, 0.1, 0.1);
+.card{
+    margin-bottom: 50px;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0px 20px 20px rgba(0.1, 0.1, 0.1, 0.1);
+    width: auto;
+    height: auto;
+  }
+.form-group{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+}
+h3{
+    text-align: center;
+}
+.btn-primary {
+    margin-left: 50px;
+}
+.btn-danger {
+    margin-left: 5px;
+}
+.contentform{
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom:30px;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .form-control{
+    margin-right: 30px;
+    display: block;
+    width: 88%;
+    height: 30px;
+  }
+
+@media (min-width: 576px) {
+            .card {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 540px;
+            }
         }
 
-        .form-group {
-            margin-left: 50px;
-            margin-right: 50px;
-            margin-bottom: 10px;
+        @media (min-width: 768px) {
+            .card {
+                max-width: 700px;
+            }
         }
 
-        h3 {
-            text-align: center;
+        @media (min-width: 792px) {
+            .card {
+                max-width: 700px;
+            }
         }
 
-        .btn-primary {
-            margin-left: 50px;
+        @media (min-width: 1200px) {
+            .card {
+                max-width: 700px;
+            }
         }
-
-        .btn-danger {
-            margin-left: 5px;
-        }
-    </style>
+</style>
 </head>
 
 <body>

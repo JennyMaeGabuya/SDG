@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-<style>
+  <style>
     body {
   font-family: "Lato", sans-serif;
   background-color: white;
@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
 
 /* Main content */
 .main {
-  margin-left: 250px; /* Same as the width of the sidenav */
+ /* margin-left: 250px;  Same as the width of the sidenav */
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 0px 10px;
   color: #FCF5ED;
@@ -66,7 +66,7 @@ if (isset($_POST['submit'])) {
     background-color: #51C417;
     font-family: Verdana, sans-serif;
     font-weight: bolder;
- 
+      /* ==========================================just added */
 }
 .points{
     width: 60px;
@@ -90,23 +90,26 @@ h2 {
     margin-right: 10px;
   }
   .content{
-    margin-left: 300px; /* Same as the width of the sidenav */
-  font-size: 20px; /* Increased text to enable scrolling */
+ /* Same as the width of the sidenav */
+  font-size: 17px; /* Increased text to enable scrolling */
   padding: 0px 10px;
   color: #C31F33;
+  margin-left: 80px;
   }
  
   .card{
-    width: 64%;
+    width: 70%;
     margin-left: 350px;
-    margin-right: 50px;
+   font-size: 17px;
     margin-bottom: 50px;
     margin-top: 20px; 
     height:auto;
   }
   .content>p{
-    text-align: justify;
+    text-align: center;
     justify-content: justify-content;
+    font-size: 14px;
+    margin: auto;
   }
   .form-control{
     margin-right: 30px;
@@ -121,7 +124,7 @@ h2 {
   }
   .contentform{
     margin-top: 30px;
-    margin-left: 100px;
+    margin-left: 50px;
     margin-bottom:30px;
     justify-content: center;
     align-items: center;
@@ -131,21 +134,15 @@ h2 {
     margin-bottom: 10px;
 
 }
-  /* remove muna pic 
-.image{
-  width: 50px;
-  height: 50px;
-}
-  */
+
   .table-container{
-    margin-left: 350px;
-    margin-right: 50px;
-    width:64%;
+    margin-right: 20px;
+    width:70%;
     overflow-x: auto; 
   }
   .h3text{
     justify-content:center;
-    margin-left: 300px;
+    
   }
   .points{
     box-shadow: grey;
@@ -169,6 +166,44 @@ h2 {
     }
 
 /* endddd */
+
+/* ==========================================just added===================================================== */
+/* Centering content and responsiveness */
+.card {
+  width: 55%; /* Adjust card width */
+  margin: 60px auto; /* Center the card and provide space */
+  font-size: 16px;
+}
+
+.table-container {
+  width: 100%; /* Adjust table container width */
+  margin: 20px auto; /* Center the table and provide space */
+  overflow-x: auto; /* Enable horizontal scrolling on smaller screens if needed */
+  font-size: 15px;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 90%; /* Adjust card width for smaller screens */
+    margin: 10px auto; /* Adjust margin for smaller screens */
+    font-size: 13px;
+  }
+
+  .table-container {
+    width: 90%; /* Adjust table container width for smaller screens */
+    margin: 10px auto;
+    font-size: 13px;
+  }
+  .content{
+ /* Same as the width of the sidenav */
+  font-size: 16px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  color: #C31F33;
+  margin-left: 5px;
+  }
+}
+
 </style>
 
 <body>
@@ -179,7 +214,7 @@ h2 {
                                   START OF HEADER POINTING SYSTEM 
 ============================================================================================= -->
 <div class="main">
-  <h2>SDG 15 LIFE ON LAND</h2>
+  <h2 class="text-center">SDG 15 LIFE ON LAND</h2>
   <div class="input-container">
     <p>Points</p>
 
@@ -214,10 +249,10 @@ h2 {
 
   <div class="content">
     <br>
-    <h3>15.4.1 Events about sustainable use of land</h3>
-       <p>Support or organize events aimed to promote conservation and 
+    <h3 class="text-center">15.4.1 Events about sustainable use of land</h3>
+       <p>Support or organize events aimed to promote conservation <br>and 
 sustainable utilization of the land, including forests and wild land.</p>     
-  </div>
+ 
    <!--============================================================================================= 
                                   START OF FORM
 ============================================================================================= -->
@@ -272,8 +307,8 @@ sustainable utilization of the land, including forests and wild land.</p>
                         START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
 ============================================================================================= -->
 <div class="table-container">
-  <h2> Events</h2>           
-  <table class="table table-bordered">
+  <h2 class="text-center"> Events</h2>           
+  <table class="table table-bordered" style="margin: auto;width:56%;">
   <thead>
     <tr>
   <!--    <th scope="col" style="width: 30px;">#</th> -->
@@ -282,7 +317,7 @@ sustainable utilization of the land, including forests and wild land.</p>
       <th scope="col" style="width: 50px;">Total Cost</th>
       <th scope="col" style="width: 100px;">Fund Source</th>
    <!--   <th scope="col" style="width: 50px;">Points</th>  -->
-      <th scope="col"colspan="2" class ="text-center" style="width: 100px;">Action</th>
+      <th scope="col"colspan="2" class ="text-center" style="width: 40px;">Action</th>
     </tr>
   </thead>
     <tbody>
@@ -311,11 +346,11 @@ sustainable utilization of the land, including forests and wild land.</p>
               //  echo "<td>$points</td>"; 
             
 
-                echo "<td class ='text-center' style='width:100px'>
-                          <a href='edit/edit15.4.1.php?update&event_id={$id}' class='btn btn-primary'>
+                echo "<td class ='text-center' style='width:40px'>
+                          <a href='edit/edit15.4.1.php?update&event_id={$id}' style='width:30px;'>
                               <i class='fa fa-edit'></i> 
                           </a>
-                          <a href='delete/delete15.4.1.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete/delete15.4.1.php?delete={$id}'style='width:30px;color:red;'>
                           <i class='fa fa-trash'></i>
                       </a>
                       </td>";
@@ -324,7 +359,7 @@ sustainable utilization of the land, including forests and wild land.</p>
     </tbody>
   </table>
 </div>
-
+</div>
 
 <!--============================================================================================= 
                                 END OF TABLE

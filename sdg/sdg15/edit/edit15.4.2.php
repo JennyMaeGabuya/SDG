@@ -64,14 +64,14 @@ if(isset($_GET['ppa_id'])) //the ppa_id came from 15.4.3.php which was declared 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-<style>
+  <style>
 .card{
-    margin-left: 350px;
-    margin-right: 350px;
     margin-bottom: 50px;
     margin-top: 20px;
     background-color: white;
     box-shadow: 0px 20px 20px rgba(0.1, 0.1, 0.1, 0.1);
+    width: auto;
+    height: auto;
   }
 .form-group{
     margin-left: 50px;
@@ -87,6 +87,46 @@ h3{
 .btn-danger {
     margin-left: 5px;
 }
+.contentform{
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom:30px;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .form-control{
+    margin-right: 30px;
+    display: block;
+    width: 88%;
+    height: 30px;
+  }
+
+@media (min-width: 576px) {
+            .card {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .card {
+                max-width: 700px;
+            }
+        }
+
+        @media (min-width: 792px) {
+            .card {
+                max-width: 700px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .card {
+                max-width: 700px;
+            }
+        }
 </style>
 </head>
 <body>

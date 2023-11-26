@@ -21,7 +21,7 @@ body {
 /* Main content */
 .main1 {
   margin-top: 50px;
-  margin-left: 250px; /* Same as the width of the sidenav */
+ /* Same as the width of the sidenav */
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 0px 10px;
   color: black;
@@ -37,6 +37,8 @@ body {
     margin-left: 30px;
     margin-bottom: 60px;
     margin-top: 50px;
+    width: auto;
+    height: auto;
     
   }
   
@@ -49,7 +51,6 @@ body {
   }
 
 h2{
-  margin-left:250px;
   margin-top: 0;
       background-color: #56c02b; 
       color: #fff; 
@@ -57,13 +58,41 @@ h2{
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 90%; /* Adjust card width for smaller screens */
+    margin: 10px auto; /* Adjust margin for smaller screens */
+    font-size: 13px;
+  }
+
+  .table-container {
+    width: 95%; /* Adjust table container width for smaller screens */
+    margin: 3px auto;
+    font-size: 13px;
+  }
+  .content{
+ /* Same as the width of the sidenav */
+  font-size: 16px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  color: #C31F33;
+  margin-left: 5px;
+  }
+  img{
+    width:100%;
+    margin-top: 60px;
+    height:150px;
+  }
+}
+
 </style>
 </head>
 <body>
+  <div class="index" >
 <h2>SDG 15 LIFE ON LAND</h2>
 <?php include('sidebar.php'); ?>
 
-<div class="main1">
+<div class="main1 text-center" >
 <div class="slider">
 <?php include('imageslide.php'); ?>
 </div>
@@ -76,7 +105,7 @@ h2{
    It also calls for the sustainable management of forests and the halting of desertification.
 </div>
 </div>
-
+</div>
 <link rel="stylesheet" href= css/sidebar.css>
 
 <script>

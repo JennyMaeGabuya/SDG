@@ -7,7 +7,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color:#51C417;  /* color of sdg 15 */
+    background-color:#56c02b;  /* color of sdg 15 */
     overflow-x: hidden;
     padding-top: 20px;
   }
@@ -69,7 +69,7 @@
   }
 
   .header {
-    background-color: #62EE56;
+    background-color: #56c02b;
   }
   .sidenav a, .dropdown-btn {  /* for menu*/
     padding: 6px 8px 6px 16px;

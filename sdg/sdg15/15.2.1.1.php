@@ -261,28 +261,7 @@ if (isset($_POST['submit'])) {
         <h2 class="h2head text-center">SDG 15 LIFE ON LAND</h2>
         <div class="input-container">
             <p>Points</p>
-
-            <?php
-            include "includes/config.php";
-            $query = "SELECT Count(*) AS total FROM `tbl15_41_events`"; // SQL query to fetch all table data
-            $result = mysqli_query($conn, $query); // sending the query to the database
-
-            $totalPoints = 0;
-
-            while ($row = mysqli_fetch_assoc($result)) {
-                $total = $row['total'];
-                $x = $total;
-
-                // calculate points by dividing total number of PPAs by 2 and multiply by 5
-                $points = ($x / 2 * 15);
-
-
-                // Add the points  to the total points
-                $totalPoints += $points;
-            }
-            ?>
-
-            <input type="text" style="color: black; text-align: center;" class="points" name="points" value="<?php echo min($totalPoints, 15); ?>" readonly>
+            <input type="text" style="color: black; text-align: center;" class="points" name="points" placeholder="NA" readonly>
         </div>
     </div>
 
@@ -293,7 +272,7 @@ if (isset($_POST['submit'])) {
 
     <div class="content">
         <br>
-        <h3 class="text-center">15.2.1 Measures That Promote Sustainable Land Practices</h3>
+        <h3 class="text-center">15.2.1.1 Measures That Promote Sustainable Land Practices</h3>
         <p>Have programs, projects or activities that promotes sustainable<br> land practices </p>
 
         <!--============================================================================================= 

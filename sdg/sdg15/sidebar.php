@@ -1,11 +1,11 @@
 <style>
-    /* Hamburger icon styles */
-    .hamburger {
-        display: none;
-        /* Initially hide the hamburger icon */
+      /* Hamburger icon styles */
+      .hamburger {
+        display: none; /* Initially hide the hamburger icon */
         cursor: pointer;
         padding: 10px;
     }
+
 
     /* Media query for smaller screens */
     @media screen and (max-width: 768px) {
@@ -36,7 +36,7 @@
         <div class="hamburger" onclick="toggleSidebar()">
             &#9776; <!-- Hamburger icon -->
         </div>
-        <img src="img/15.png" class="img logo" alt="logo" style="margin-top: 50px;">
+        <img src="img/15.png" class="img logo" alt="logo" style="margin-top: 30px;">
         <b><a href="../../index.php">Home</a></b>
         <a href="index.php">SDG 15: Life on Land</a>
         <a href="15.1.php">15.1 Research on Land</a>

@@ -86,9 +86,7 @@
     cursor: pointer;
     outline: none;
 }
-/* Styles for the hamburger button */
 .hamburger {
-  display: block;
   position: fixed;
   top: 10px;
   left: 20px;
@@ -98,7 +96,12 @@
   font-size: 24px;
   cursor: pointer;
 }
-
+/* Media query for larger screens */
+@media screen and (min-width: 768px) {
+  .hamburger {
+      display: none; /* Hide the hamburger on larger screens */
+  }
+}
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
   .sidenav {
@@ -122,6 +125,16 @@
   .content.active {
       margin-left: 250px; /* Adjust content margin when sidebar is active */
   }
+  img{
+    width:100%;
+    margin-top: 100px;
+    height:150px;
+    margin: auto;
+  
+  }
+  .logo {
+    margin-top: 60px; 
+}
 }
 
 

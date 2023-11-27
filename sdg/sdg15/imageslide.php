@@ -14,6 +14,7 @@ img {vertical-align: middle;}
   max-width: 500px;
   position: relative;
   margin: auto;
+  height:auto;
 }
 
 /* Caption text */

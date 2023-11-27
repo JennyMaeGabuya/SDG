@@ -77,6 +77,9 @@ if (isset($_POST['submit'])) {
     height: 40px;
     border-radius: 15px;
   }
+  .h2head{
+      margin-left: 200px;
+    }
 p{
     margin: 20px;
     font-size: 16px;
@@ -97,7 +100,7 @@ h2 {
  /* Same as the width of the sidenav */
   font-size: 17px; /* Increased text to enable scrolling */
   padding: 0px 10px;
-  color: #C31F33;
+  color: black;
   margin-left: 80px;
   }
  
@@ -202,7 +205,7 @@ h2 {
  /* Same as the width of the sidenav */
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 0px 10px;
-  color: #C31F33;
+  color: black;
   margin-left: 5px;
   }
   img{
@@ -214,7 +217,8 @@ h2 {
   
     margin: 10px auto;
     font-size: 15px;
-    font-weight: bold;
+    font-weight: bolder;
+   margin-left: 20px; 
 }
 }
 

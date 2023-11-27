@@ -80,7 +80,9 @@ if (isset($_POST['submit'])) {
             height: 40px;
             border-radius: 15px;
         }
-
+        .h2head{
+      margin-left: 200px;
+    }
         p {
             margin: 20px;
             font-size: 16px;
@@ -105,7 +107,7 @@ if (isset($_POST['submit'])) {
             font-size: 17px;
             /* Increased text to enable scrolling */
             padding: 0px 10px;
-            color: #C31F33;
+            color: black;
             margin-left: 80px;
         }
 
@@ -233,7 +235,7 @@ if (isset($_POST['submit'])) {
                 font-size: 16px;
                 /* Increased text to enable scrolling */
                 padding: 0px 10px;
-                color: #C31F33;
+                color: black;
                 margin-left: 5px;
             }
 
@@ -241,7 +243,8 @@ if (isset($_POST['submit'])) {
 
                 margin: 10px auto;
                 font-size: 15px;
-                font-weight: bold;
+                font-weight: bolder;
+   margin-left: 20px; 
             }
         }
     </style>
@@ -359,7 +362,7 @@ if (isset($_POST['submit'])) {
 
             </form>
         </div>
-    </div>
+    
     <!--============================================================================================= 
                                 END OF FORM
 ============================================================================================= -->
@@ -367,9 +370,9 @@ if (isset($_POST['submit'])) {
     <!--============================================================================================= 
                         START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
 ============================================================================================= -->
-    <div class="table-container">
+    <div class="text-center table-container">
         <h2 class="text-center">Sustainable Land Practices</h2>
-        <table class="table table-bordered" style="margin: auto;width:56%;">
+        <table class=" text-center table table-bordered" style="margin: auto;width:56%;">
             <thead>
                 <tr>
                     <!--    <th scope="col" style="width: 30px;">#</th> -->

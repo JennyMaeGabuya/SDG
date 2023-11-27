@@ -76,7 +76,9 @@ if (isset($_POST['submit'])) {
       height: 40px;
       border-radius: 15px;
     }
-
+    .h2head{
+      margin-left: 200px;
+    }
     p {
       margin: 20px;
       font-size: 16px;
@@ -101,7 +103,7 @@ if (isset($_POST['submit'])) {
       font-size: 17px;
       /* Increased text to enable scrolling */
       padding: 0px 10px;
-      color: #C31F33;
+      color: black;
       margin-left: 80px;
     }
 
@@ -229,7 +231,7 @@ if (isset($_POST['submit'])) {
         font-size: 16px;
         /* Increased text to enable scrolling */
         padding: 0px 10px;
-        color: #C31F33;
+        color: black;
         margin-left: 5px;
       }
 
@@ -244,7 +246,8 @@ if (isset($_POST['submit'])) {
   
   margin: 10px auto;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: bolder;
+   margin-left: 20px; 
 }
     }
   </style>

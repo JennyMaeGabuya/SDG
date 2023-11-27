@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
       font-size: 20px;
       /* Increased text to enable scrolling */
       padding: 0px 10px;
-      color: #C31F33;
+      color: black;
       margin-left: 80px;
     }
 
@@ -153,7 +153,9 @@ if (isset($_POST['submit'])) {
 
     .h3text {
       justify-content: center;
-
+    }
+    .h2head{
+      margin-left: 200px;
     }
 
     .points {
@@ -226,14 +228,16 @@ if (isset($_POST['submit'])) {
         font-size: 20px;
         /* Increased text to enable scrolling */
         padding: 0px 10px;
-        color: #C31F33;
+        color: black;
         margin-left: 5px;
       }
       .h2head {
   
   margin: 10px auto;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: bolder;
+   margin-left: 20px;   
+
 }
     }
   </style>

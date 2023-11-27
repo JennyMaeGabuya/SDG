@@ -11,59 +11,97 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: white;
-}
-
-/* Main content */
-.main1 {
-  margin-top: 50px;
-  margin-left: 250px; /* Same as the width of the sidenav */
-  font-size: 20px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-  color: black;
-  font-family:Arial, Helvetica, sans-serif;
-}
+  <style>
   
-/* Make the image fully responsive */
-  .card{
-    border-radius: 10px;
-    box-shadow: 0 6px 10px rgba(0,0,0,.1);
-    transition: .3s transform cubic-bezier(.4,0,.2,1),.3s box-shadow;
-    margin-right: 60px;
-    margin-left: 30px;
-    margin-bottom: 60px;
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+  }
+  
+  /* Main content */
+  .main1 {
     margin-top: 50px;
+   /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-left: 300px;
+  
+  }
+  .h2head{
+      margin-left: 250px;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+  /* Make the image fully responsive */
+    .card{
+      border-radius: 10px;
+      box-shadow: 0 6px 10px rgba(0,0,0,.1);
+      transition: .3s transform cubic-bezier(.4,0,.2,1),.3s box-shadow;
+      margin-right: 60px;
+      margin-left: 20px;
+      margin-bottom: 60px;
+      margin-top: 50px;
+      width: auto;
+      height: auto;
+      
+    }
     
+    p{
+      margin: 20px;
+      padding: 20px;
+      font-size: large;
+      text-align: justify;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+  
+  h2{
+    margin-top: 0;
+        background-color: #C31F33; 
+        color: #fff; 
+        padding: 10px; 
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   
-  p{
-    margin: 20px;
-    padding: 20px;
-    font-size: large;
-    text-align: justify;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  /* Media query for smaller screens */
+  @media only screen and (max-width: 768px) {
+    .card {
+      width: 90%; /* Adjust card width for smaller screens */
+      margin: 10px auto; /* Adjust margin for smaller screens */
+      font-size: 13px;
+    }
+  
+    p{
+      font-size: 13px;
+    }
+    .main1 {
+  
+    font-size: 13px; /* Increased text to enable scrolling */
+    width: 90%; /* Adjust card width for smaller screens */
+      margin: 10px auto; /* Adjust margin for smaller screens */
+      font-size: 13px;
   }
+    img{
+      width:100%;
+      margin-top: 60px;
+      height:150px;
+    }
+    .h2head {
+  
+  margin: 10px auto;
+   margin-left: 10px;   
 
-h2{
-  margin-left:250px;
-  margin-top: 0;
-      background-color: #C31F33; 
-      color: #fff; 
-      padding: 10px; 
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
-
-</style>
+  }
+  
+  </style>
 </head>
 <body>
-<h2>SDG 4 QUALITY EDUCATION</h2>
+<div class="index" >
+<h2 class="h2head text-center">SDG 4 QUALITY EDUCATION</h2>
 <?php include('sidebar.php'); ?>
 
-<div class="main1">
+<div class="main1 text-center">
 <div class="slider">
 <?php include('imageslide.php'); ?>
 </div>
@@ -76,7 +114,7 @@ SDG 4 focuses on education and aims to “ensure inclusive and equitable quality
 
 </div>
 </div>
-
+</div>
 <link rel="stylesheet" href= css/sidebar.css>
 
 <script>

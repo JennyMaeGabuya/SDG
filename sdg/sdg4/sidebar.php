@@ -1,6 +1,3 @@
-<div class="sidenav">
-    <img src="img/sdg.png" class="img" alt="logo" >
-    
 <style>
     .nested-dropdown {
     display: none;
@@ -15,7 +12,44 @@
 .dropdown-container:hover .nested-dropdown {
     display: block;
 }
+      /* Hamburger icon styles */
+      .hamburger {
+        display: none; /* Initially hide the hamburger icon */
+        cursor: pointer;
+        padding: 10px;
+    }
+
+
+    /* Media query for smaller screens */
+    @media screen and (max-width: 768px) {
+        .sidenav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            transition: left 0.3s ease;
+            background-color: #C31F33;
+        }
+
+        .sidenav.active {
+            left: 0;
+            background-color: #C31F33;
+        }
+
+        /* Show the hamburger icon when the screen size is small */
+        .hamburger {
+            display: block;
+        }
+    }
 </style>
+</head>
+
+<body>
+<div class="sidenav">
+<div class="hamburger" onclick="toggleSidebar()">
+            &#9776; <!-- Hamburger icon -->
+        </div>
+    <img src="img/sdg.png" class="img logo " alt="logo" >
 
   <b><a href="../../index.php">Home</a></b>
   <a href="index.php">SDG 4: Quality Education</a>
@@ -39,3 +73,10 @@
   </div>
   <a href="4.4.php">4.4 First-Generation ... </a>
 </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidenav');
+            sidebar.classList.toggle('active');
+        }
+    </script>

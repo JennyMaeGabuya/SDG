@@ -52,149 +52,180 @@ if (isset($_POST['submit'])) {
 
   <style>
     body {
-      font-family: "Lato", sans-serif;
-      background-color: white;
+  font-family: "Lato", sans-serif;
+  background-color: white;
+}
+
+/* Main content */
+.main {
+ /* margin-left: 250px;  Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  color: #FCF5ED;
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #51C417;
+    font-family:  Arial, Helvetica, sans-serif;
+    font-weight:bolder;
+      /* ==========================================just added */
+}
+.points{
+    width: 60px;
+    height: 40px;
+    border-radius: 15px;
+  }
+  .h2head{
+      margin-left: 200px;
+
     }
+p{
+    margin: 20px;
+    font-size: 16px;
+}
+h2 {
+    flex: 1; /* Allow h2 to grow to take available space */
+  }
 
-    /* Main content */
-    .main {
-      margin-left: 250px;
-      /* Same as the width of the sidenav */
-      font-size: 20px;
-      /* Increased text to enable scrolling */
-      padding: 0px 10px;
-      color: #FCF5ED;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #C31F33;
-      font-family: Verdana, sans-serif;
-      font-weight: bolder;
+  .input-container {
+    display: flex;
+    align-items: center;
+  }
 
-    }
-
-    .points {
-      width: 60px;
-      height: 40px;
-      border-radius: 15px;
-    }
-
-    p {
-      margin: 20px;
-      font-size: 16px;
-    }
-
-    h2 {
-      flex: 1;
-      /* Allow h2 to grow to take available space */
-    }
-
-    .input-container {
-      display: flex;
-      align-items: center;
-    }
-
-    p {
-      margin-right: 10px;
-    }
-
-    .content {
-      margin-left: 300px;
-      /* Same as the width of the sidenav */
-      font-size: 20px;
-      /* Increased text to enable scrolling */
-      padding: 0px 10px;
-      color: #C31F33;
-    }
-
-    .card {
-      width: 64%;
+  p {
+    margin-right: 10px;
+  }
+  .content{
+ /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  color: #C31F33;
+  margin-left: 80px;
+  }
+ 
+  .card{
+    width: 70%;
     margin-left: 350px;
-    margin-right: 50px;
+    font-size: 17px;
     margin-bottom: 50px;
     margin-top: 20px; 
     height:auto;
+  }
+  .content>p{
+    text-align: justify;
+    justify-content: justify-content;
+    font-size: 17px;
+  }
+  .form-control{
+    margin-right: 30px;
+    display: block;
+    width: 88%;
+    height: 30px;
+  }
+  .form-row{
 
-    }
+    height: 30px;
+    
+  }
+  .contentform{
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom:30px;
+    justify-content: center;
+    align-items: center;
+    
+  }
+.btn{
+    margin-bottom: 10px;
 
-    .content>p {
-      text-align: justify;
-      justify-content: justify-content;
-    }
-
-    .form-control {
-      margin-right: 30px;
-      display: block;
-      width: 88%;
-      height: 30px;
-    }
-
-    .form-row {
-
-      height: 30px;
-
-    }
-
-    .contentform {
-      margin-top: 30px;
-      margin-left: 100px;
-      margin-bottom: 30px;
-      justify-content: center;
-      align-items: center;
-
-    }
-
-    .btn {
-      margin-bottom: 10px;
-
-    }
-
-    /* remove muna pic 
-.image{
-  width: 50px;
-  height: 50px;
 }
-  */
-    .table-container {
-      margin-left: 350px;
-      margin-right: 50px;
-      width: 64%;
-      overflow-x: auto;
-    }
 
-    .h3text {
-      justify-content: center;
-      margin-left: 300px;
-    }
-
-    .points {
-      box-shadow: grey;
-    }
-
-    .fields {
-      border-bottom: solid 1px #e9d6d6;
-      margin-right: 25px;
-    }
-
-    /* css for confrim button */
-    .button-container {
-      display: flex;
-      align-items: center;
-      /* Align items vertically */
+  .table-container{
+    margin-right: 20px;
+    width:70%;
+    overflow-x: auto; 
+    font-size: 10px;
+  }
+  .table{
+    font-size: 14px;
+  }
+  .h3text{
+    justify-content:center;
+    
+  }
+  .points{
+    box-shadow: grey;
+  }
+.fields{
+    border-bottom: solid 1px #e9d6d6;
+    margin-right: 25px;
+}
+/* css for confrim button */
+.button-container {
+        display: flex;
+        align-items: center; /* Align items vertically */
     }
 
     .btn {
-      margin-right: 10px;
-      /* Adjust margin as needed */
+        margin-right: 10px; /* Adjust margin as needed */
     }
 
     .confirmation-text {
-      margin: 0;
-      /* Remove default margin for the paragraph */
+        margin: 0; /* Remove default margin for the paragraph */
     }
 
-    /* endddd */
-  </style>
+/* endddd */
+
+/* ==========================================just added===================================================== */
+/* Centering content and responsiveness */
+.card {
+  width: 55%; /* Adjust card width */
+  margin: 60px auto; /* Center the card and provide space */
+  font-size: 16px;
+}
+
+.table-container {
+  width: 100%; /* Adjust table container width */
+  margin: 20px auto; /* Center the table and provide space */
+  overflow-x: auto; /* Enable horizontal scrolling on smaller screens if needed */
+  font-size: 16px;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 90%; /* Adjust card width for smaller screens */
+    margin: 10px auto; /* Adjust margin for smaller screens */
+    font-size: 13px;
+  }
+
+  .table-container {
+    width: 90%; /* Adjust table container width for smaller screens */
+    margin: 10px auto;
+    font-size: 13px;
+  }
+  .content{
+ /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  color: #C31F33;
+  margin-left: 5px;
+  }
+  img{
+    width:100%;
+    margin-top: 60px;
+    height:150px;
+  }
+  .h2head {
+  
+    margin: 10px auto;
+    font-size: 15px;
+    font-weight: bolder;
+   margin-left: 20px; 
+}
+}
+
+</style>
 
 <body>
   <?php include('sidebar.php'); ?>
@@ -203,8 +234,8 @@ if (isset($_POST['submit'])) {
                                   START OF HEADER POINTING SYSTEM 
 ============================================================================================= -->
 
-  <div class="main">
-    <h2>SDG 4 QUALITY EDUCATION</h2>
+  <div class="main" style="background-color:#C31F33;">
+    <h2 class="h2head text-center">SDG 4 QUALITY EDUCATION</h2>
     <div class="input-container">
       <p>Points</p>
 
@@ -238,14 +269,9 @@ if (isset($_POST['submit'])) {
 
   <div class="content">
     <br>
-    <h3>4.3.2 Public events (lifelong learning)</h3>
-    <p>Host educational events a university that are open to the general public.</p>
+    <h3 class=" text-center">4.3.2 Public events (lifelong learning)</h3>
+    <p class=" text-center">Host educational events a university that are open to the general public.</p>
 
-    <!--remove muna pic 
-    <div class="image" style="width: 50px;"style="height: 50px;">
-            <img src="img/rs.png" alt="Image">
-        </div>
--->
 
   </div>
    <!--============================================================================================= 
@@ -306,8 +332,8 @@ if (isset($_POST['submit'])) {
                         START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
 ============================================================================================= -->
   <div class="table-container">
-    <h2>Public events</h2>
-    <table class="table table-bordered">
+    <h2 class="text-center">Public events</h2>
+    <table class="table table-bordered"  style="margin: auto;width:56%;">
       <thead>
           <th scope="col" style="width: 150px;">Title of PPA</th>
           <th scope="col" style="width: 150px;">Description</th>
@@ -340,11 +366,11 @@ if (isset($_POST['submit'])) {
           echo "<td>Php {$cost}</td>";
           echo "<td>{$fund}</td>";
 
-          echo "<td class ='text-center' style='width:100px'>
-                          <a href='edit/edit_4.3.2.php?update&event_id={$id}' class='btn btn-primary'>
+          echo "<td class ='text-center' style='width:50px'>
+                          <a href='edit/edit_4.3.2.php?update&event_id={$id}' style='width:45px;'>
                               <i class='fa fa-edit'></i> 
                           </a>
-                          <a href='delete/delete_4.3.2.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete/delete_4.3.2.php?delete={$id}' style='width:45px;color:red;'>
                           <i class='fa fa-trash'></i>
                       </a>
                       </td>";

@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-<style>
+  <style>
     body {
   font-family: "Lato", sans-serif;
   background-color: white;
@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
 
 /* Main content */
 .main {
-  margin-left: 250px; /* Same as the width of the sidenav */
+ /* margin-left: 250px;  Same as the width of the sidenav */
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 0px 10px;
   color: #FCF5ED;
@@ -66,15 +66,19 @@ if (isset($_POST['submit'])) {
     justify-content: space-between;
     align-items: center;
     background-color: #C31F33;
-    font-family: Verdana, sans-serif;
-    font-weight: bolder;
- 
+    font-family:  Arial, Helvetica, sans-serif;
+    font-weight:bolder;
+      /* ==========================================just added */
 }
 .points{
     width: 60px;
     height: 40px;
     border-radius: 15px;
   }
+  .h2head{
+      margin-left: 200px;
+
+    }
 p{
     margin: 20px;
     font-size: 16px;
@@ -92,42 +96,40 @@ h2 {
     margin-right: 10px;
   }
   .content{
-    margin-left: 300px; /* Same as the width of the sidenav */
+ /* Same as the width of the sidenav */
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 0px 10px;
   color: #C31F33;
+  margin-left: 80px;
   }
  
   .card{
-    width: 64%;
+    width: 70%;
     margin-left: 350px;
-    margin-right: 50px;
+    font-size: 17px;
     margin-bottom: 50px;
     margin-top: 20px; 
     height:auto;
-
   }
   .content>p{
     text-align: justify;
     justify-content: justify-content;
+    font-size: 17px;
   }
   .form-control{
     margin-right: 30px;
     display: block;
-    width: 95%;
+    width: 88%;
     height: 30px;
-    margin-right: 30px;
   }
   .form-row{
 
     height: 30px;
     
   }
-
   .contentform{
     margin-top: 30px;
     margin-left: 50px;
-    margin-right: 50px;
     margin-bottom:30px;
     justify-content: center;
     align-items: center;
@@ -139,17 +141,17 @@ h2 {
 }
 
   .table-container{
-    margin-left: 350px;
-    margin-right: 50px;
-    width:64%;
+    margin-right: 20px;
+    width:70%;
     overflow-x: auto; 
+    font-size: 10px;
   }
   .table{
-    font-size: 13px;
+    font-size: 14px;
   }
   .h3text{
     justify-content:center;
-    margin-left: 300px;
+    
   }
   .points{
     box-shadow: grey;
@@ -174,6 +176,55 @@ h2 {
 
 /* endddd */
 
+/* ==========================================just added===================================================== */
+/* Centering content and responsiveness */
+.card {
+  width: 55%; /* Adjust card width */
+  margin: 60px auto; /* Center the card and provide space */
+  font-size: 16px;
+}
+
+.table-container {
+  width: 100%; /* Adjust table container width */
+  margin: 20px auto; /* Center the table and provide space */
+  overflow-x: auto; /* Enable horizontal scrolling on smaller screens if needed */
+  font-size: 16px;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 90%; /* Adjust card width for smaller screens */
+    margin: 10px auto; /* Adjust margin for smaller screens */
+    font-size: 13px;
+  }
+
+  .table-container {
+    width: 90%; /* Adjust table container width for smaller screens */
+    margin: 10px auto;
+    font-size: 13px;
+  }
+  .content{
+ /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  color: #C31F33;
+  margin-left: 5px;
+  }
+  img{
+    width:100%;
+    margin-top: 60px;
+    height:150px;
+  }
+  .h2head {
+  
+    margin: 10px auto;
+    font-size: 15px;
+    font-weight: bolder;
+   margin-left: 20px; 
+}
+}
+
 </style>
 
 <body>
@@ -184,7 +235,7 @@ h2 {
                                   START OF HEADER POINTING SYSTEM 
 ============================================================================================= -->
 <div class="main">
-  <h2>SDG 4 QUALITY EDUCATION</h2>
+  <h2 class="h2head text-center">SDG 4 QUALITY EDUCATION</h2>
   <div class="input-container">
     <p>Points</p>
 
@@ -232,12 +283,13 @@ $totalPoints += $points;
 
   <div class="content">
     <br>
-    <h3>4.3.5 Lifelong learning access policy</h3>
-  <p>A policy that ensures that access to these activities is accessible to all,regardless of ethnicity, religion, disability, immigration <br>
+    <h3 class=" text-center">4.3.5 Lifelong learning access policy</h3>
+  <p class=" text-center">A policy that ensures that access to these activities is accessible to all,regardless of ethnicity,<br>
+  religion, disability, immigration
    status or gender.</p>
 
 
-  </div>
+ 
    <!--============================================================================================= 
                                   START OF FORM
 ============================================================================================= -->
@@ -307,8 +359,8 @@ $totalPoints += $points;
                         START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
 ============================================================================================= -->
 <div class="table-container">
-  <h2>Public resources</h2>           
-  <table class="table table-bordered">
+  <h2 class="text-center">Public resources</h2>           
+  <table class="table table-bordered" style="margin: auto;width:56%;">
   <thead>
     <tr>
   <!--    <th scope="col" style="width: 30px;">#</th> -->
@@ -354,11 +406,11 @@ $totalPoints += $points;
               //  echo "<td>$points</td>"; 
             
 
-                echo "<td class ='text-center' style='width:100px'>
-                          <a href='edit/edit4.3.5.php?update&access_id={$id}' class='btn btn-primary'>
+                echo "<td class ='text-center' style='width:60px'>
+                          <a href='edit/edit4.3.5.php?update&access_id={$id}' style='width:45px;'>
                               <i class='fa fa-edit'></i> 
                           </a>
-                          <a href='delete/delete4.3.5.php?delete={$id}' class='btn btn-danger'>
+                          <a href='delete/delete4.3.5.php?delete={$id}' style='width:45px;color:red;'>
                           <i class='fa fa-trash'></i>
                       </a>
                       </td>";
@@ -375,7 +427,7 @@ $totalPoints += $points;
     </tbody>
   </table>
 </div>
-
+</div>
 
 <!--============================================================================================= 
                                 END OF TABLE

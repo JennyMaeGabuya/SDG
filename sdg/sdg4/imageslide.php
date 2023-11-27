@@ -35,7 +35,12 @@ img {vertical-align: middle;}
   position: absolute;
   top: 0;
 }
-
+img{
+width: 250px;
+    margin-top: 100px;
+    height: 350px;
+    margin: auto;
+}
 /* The dots/bullets/indicators */
 .dot {
   height: 15px;
@@ -74,18 +79,18 @@ img {vertical-align: middle;}
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <img src="img/sdg.png" style="width:100%">
+  <img src="img/sdg.png" style="width:100%;height: 350px;">
 </div>
 
 <div class="mySlides fade">
-  <img src="img/1.jpg" style="width:100%">
+  <img src="img/1.jpg" style="width:100%;height: 350px;">
 </div>
 
 <div class="mySlides fade">
-  <img src="img/educ.jpg" style="width:100%">
+  <img src="img/educ.jpg" style="width:100%;height: 350px;">
 </div>
 <div class="mySlides fade">
-  <img src="img/pic.jpg" style="width:100%">
+  <img src="img/pic.jpg" style="width:100%;height: 350px;">
 </div>
 </div>
 <br>

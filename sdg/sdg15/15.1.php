@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
     justify-content: space-between;
     align-items: center;
     background-color: #51C417;
-    font-family: Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
       /* ==========================================just added */
 }

@@ -26,6 +26,8 @@ body {
   padding: 0px 10px;
   color: black;
   font-family:Arial, Helvetica, sans-serif;
+  margin-left: 300px;
+
 }
   
 /* Make the image fully responsive */
@@ -34,7 +36,7 @@ body {
     box-shadow: 0 6px 10px rgba(0,0,0,.1);
     transition: .3s transform cubic-bezier(.4,0,.2,1),.3s box-shadow;
     margin-right: 60px;
-    margin-left: 30px;
+    margin-left: 20px;
     margin-bottom: 60px;
     margin-top: 50px;
     width: auto;
@@ -67,17 +69,17 @@ h2{
   }
 
   p{
-
     font-size: 13px;
-   
   }
-  .content{
- /* Same as the width of the sidenav */
-  font-size: 16px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-  color: #C31F33;
-  margin-left: 5px;
-  }
+  .main1 {
+
+  font-size: 13px; /* Increased text to enable scrolling */
+  width: 90%; /* Adjust card width for smaller screens */
+    margin: 10px auto; /* Adjust margin for smaller screens */
+    font-size: 13px;
+
+
+}
   img{
     width:100%;
     margin-top: 60px;

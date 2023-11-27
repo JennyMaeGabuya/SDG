@@ -236,6 +236,12 @@ if (isset($_POST['submit'])) {
                 color: #C31F33;
                 margin-left: 5px;
             }
+            .h2head {
+  
+  margin: 10px auto;
+  font-size: 15px;
+  font-weight: bold;
+}
         }
     </style>
 
@@ -247,7 +253,7 @@ if (isset($_POST['submit'])) {
                                   TITINGNAN KO PA MUNA YUNG SUNOD
 
     <div class="main">
-        <h2 class="text-center">SDG 15 LIFE ON LAND</h2>
+        <h2 class="h2head text-center">SDG 15 LIFE ON LAND</h2>
         <div class="input-container">
             <p>Points</p>
 

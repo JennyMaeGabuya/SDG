@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 26, 2023 at 02:03 PM
+-- Generation Time: Nov 27, 2023 at 07:45 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -48,27 +48,74 @@ INSERT INTO `tbl15_1_landecosystem` (`ID`, `title`, `author`, `year`, `total_cit
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl15_2_measuresslp`
+-- Table structure for table `tbl15_2_employee`
 --
 
-DROP TABLE IF EXISTS `tbl15_2_measuresslp`;
-CREATE TABLE IF NOT EXISTS `tbl15_2_measuresslp` (
+DROP TABLE IF EXISTS `tbl15_2_employee`;
+CREATE TABLE IF NOT EXISTS `tbl15_2_employee` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `total_number` int NOT NULL,
-  `male` int NOT NULL,
-  `female` int NOT NULL,
-  `percentage` int NOT NULL,
-  `total_numberVertical` int NOT NULL,
-  `male_vertical` int NOT NULL,
-  `female_vertical` int NOT NULL,
-  `percentage_vertical` int NOT NULL,
-  `totalNumber_slp` int NOT NULL,
-  `title_PPA` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `cost` decimal(10,2) NOT NULL,
-  `fund` varchar(255) NOT NULL,
+  `total_employees` int DEFAULT NULL,
+  `emp_mgardening` int DEFAULT NULL,
+  `emp_fgardening` int DEFAULT NULL,
+  `emp_mvertical` int DEFAULT NULL,
+  `emp_fvertical` int DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl15_2_employee`
+--
+
+INSERT INTO `tbl15_2_employee` (`ID`, `total_employees`, `emp_mgardening`, `emp_fgardening`, `emp_mvertical`, `emp_fvertical`) VALUES
+(2, 4500, 100, 200, 300, 400);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl15_2_student`
+--
+
+DROP TABLE IF EXISTS `tbl15_2_student`;
+CREATE TABLE IF NOT EXISTS `tbl15_2_student` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `total_students` int DEFAULT NULL,
+  `mgardening` int DEFAULT NULL,
+  `fgardening` int DEFAULT NULL,
+  `mvertical` int DEFAULT NULL,
+  `fvertical` int DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl15_2_student`
+--
+
+INSERT INTO `tbl15_2_student` (`ID`, `total_students`, `mgardening`, `fgardening`, `mvertical`, `fvertical`) VALUES
+(7, 4500, 100, 200, 300, 450);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl15_2_sustainable`
+--
+
+DROP TABLE IF EXISTS `tbl15_2_sustainable`;
+CREATE TABLE IF NOT EXISTS `tbl15_2_sustainable` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `sustainable_practices` int DEFAULT NULL,
+  `ppa_title` varchar(100) DEFAULT NULL,
+  `ppa_description` text,
+  `total_cost` decimal(10,2) DEFAULT NULL,
+  `fund_source` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl15_2_sustainable`
+--
+
+INSERT INTO `tbl15_2_sustainable` (`ID`, `sustainable_practices`, `ppa_title`, `ppa_description`, `total_cost`, `fund_source`) VALUES
+(4, 2, 'PLANTING TREES AS A HABIT', 'A SEEDLING PLANTING TO HELP THE ENVIRONMENT', '25000.00', 'DEPARTMENT OF AGRICULTURE');
 
 -- --------------------------------------------------------
 

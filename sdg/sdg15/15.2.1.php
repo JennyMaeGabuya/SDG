@@ -5,10 +5,10 @@
 if (isset($_POST['submit'])) {
     // Get form data
     $total = $_POST["sustainablePractices"];
-    $title = $_POST['ppaTitle'];
-    $desc = $_POST['ppaDescription'];
+    $title = strtoupper($_POST['ppaTitle']);
+    $desc = strtoupper($_POST['ppaDescription']);
     $cost = $_POST['totalCost'];
-    $fund = $_POST['fundSource'];
+    $fund = strtoupper($_POST['fundSource']);
 
     include "includes/config.php"; // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
 

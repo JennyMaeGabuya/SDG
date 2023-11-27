@@ -66,10 +66,10 @@ h2{
     font-size: 13px;
   }
 
-  .table-container {
-    width: 95%; /* Adjust table container width for smaller screens */
-    margin: 3px auto;
+  p{
+
     font-size: 13px;
+   
   }
   .content{
  /* Same as the width of the sidenav */
@@ -89,7 +89,7 @@ h2{
 </head>
 <body>
   <div class="index" >
-<h2>SDG 15 LIFE ON LAND</h2>
+<h2 class="text-center">SDG 15 LIFE ON LAND</h2>
 <?php include('sidebar.php'); ?>
 
 <div class="main1 text-center" >

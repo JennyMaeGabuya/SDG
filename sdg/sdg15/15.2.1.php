@@ -2,34 +2,31 @@
                       INSERT DATA TO DB ONCE SUBMIT BUTTON WAS CLICKED
 ============================================================================================= -->
 <?php
-include "includes/config.php"; // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
-
 if (isset($_POST['submit'])) {
-    // Get user inputs
-    $totalStudents = $_POST['totalStudents'];
-    $maleSpaceForGardening = $_POST['maleSpaceForGardening'];
-    $femaleSpaceForGardening = $_POST['femaleSpaceForGardening'];
-    $maleSpaceForVerticalGardening = $_POST['maleSpaceForVerticalGardening'];
-    $femaleSpaceForVerticalGardening = $_POST['femaleSpaceForVerticalGardening'];
+    // Get form data
+    $total = $_POST["sustainablePractices"];
+    $title = $_POST['ppaTitle'];
+    $desc = $_POST['ppaDescription'];
+    $cost = $_POST['totalCost'];
+    $fund = $_POST['fundSource'];
 
-    // Insert data into the database
-    $sql = "INSERT INTO tbl15_2_student (total_students, mgardening, fgardening, mvertical, fvertical)
-            VALUES ('$totalStudents', '$maleSpaceForGardening', '$femaleSpaceForGardening', '$maleSpaceForVerticalGardening', '$femaleSpaceForVerticalGardening')";
+    include "includes/config.php"; // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
+
+
+    // SQL query to insert data
+    $sql = "INSERT INTO `tbl15_2_sustainable` (`sustainable_practices`, `ppa_title`, `ppa_description`, `total_cost`, `fund_source`) 
+  VALUES ('$total','$title','$desc','$cost','$fund')";
 
     if ($conn->query($sql) === TRUE) {
+        // The dat was successfully entered
         $successMessage = "You have successfully entered data";
-        // Display success message using JavaScript alert
-        echo "<script>
-                swal({
-                    title: 'Success',
-                    text: '$successMessage',
-                    icon: 'success',
-                    button: 'OK'
-                });
-            </script>";
     } else {
+        // There was an error in the SQL query
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
+
+    // Close the connection
+    $conn->close();
 }
 ?>
 
@@ -260,27 +257,33 @@ if (isset($_POST['submit'])) {
     ============================================================================================= -->
 
     <div class="main">
-        <h2 class="h2head text-center">SDG 15 LIFE ON LAND</h2>
+        <h2 class=" h2head text-center">SDG 15 LIFE ON LAND</h2>
         <div class="input-container">
             <p>Points</p>
 
             <?php
-            include "includes/config.php";
-            $query = "SELECT Count(*) AS total FROM `tbl15_41_events`"; // SQL query to fetch all table data
-            $result = mysqli_query($conn, $query); // sending the query to the database
+            // Check if the form has been submitted and 'sustainablePractices' is set
+            if (isset($_POST['submit']) && isset($_POST['sustainablePractices'])) {
+                $x = $_POST['sustainablePractices'];
+                $points = ($x / 2) * 15;
+                $totalPoints = min($points, 15);
+            } else {
+                // Default total points calculation based on database values
+                include "includes/config.php";
+                $query = "SELECT COUNT(*) AS total FROM `tbl15_2_sustainable`"; // SQL query to fetch all table data
+                $result = mysqli_query($conn, $query); // sending the query to the database
 
-            $totalPoints = 0;
+                $totalPoints = 0;
 
-            while ($row = mysqli_fetch_assoc($result)) {
-                $total = $row['total'];
-                $x = $total;
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $x = $row['total'];
 
-                // calculate points by dividing total number of PPAs by 2 and multiply by 5
-                $points = ($x / 2 * 15);
+                    // calculate points by dividing total number of PPAs by 2 and multiply by 15
+                    $points = ($x / 2) * 15;
 
-
-                // Add the points  to the total points
-                $totalPoints += $points;
+                    // Add the points to the total points
+                    $totalPoints += $points;
+                }
             }
             ?>
 
@@ -308,57 +311,53 @@ if (isset($_POST['submit'])) {
                     <fieldset>
                         <legend>Sustainable Practices Details</legend>
 
-                        <div class="form-group">
+                        <div class="form-group"><i class="fa fa-user"></i>
                             <label>Total number of sustainable practices implemented</label>
                             <input type="number" class="form-control" name="sustainablePractices" required>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group"><i class="fa fa-bookmark"></i>
                             <label>Title of the PPA</label>
                             <input type="text" class="form-control" name="ppaTitle" required>
                         </div>
 
-                        <div class="form-group">
-                            <label>Short Description</label>
+                        <div class="form-group"><i class="fa fa-edit"></i>
+                            <label>Short Description of the PPA</label>
                             <textarea class="form-control" name="ppaDescription" rows="4" required></textarea>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group"><i class="fa fa-dollar"></i>
                             <label>Total Cost</label>
                             <input type="number" step="0.01" class="form-control" name="totalCost" required>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group"><i class="	fa fa-group"></i>
                             <label>Fund Source</label>
                             <input type="text" class="form-control" name="fundSource" required>
                         </div>
                     </fieldset>
 
-                    <button type="submit" class="btn btn-primary mb-3 me-1" name="submit">
-                        <i class="fa fa-send"></i> Submit
-                    </button>
+                    <div>
+                        <button type="submit" class="btn btn-primary  mb-3" id="submit" name="submit">
+                            <i class="fa fa-send"></i> Submit</button>
+                        <script type="text/javascript">
+                            <?php
+                            if (isset($successMessage)) {
 
-                    <?php
-                    if (isset($successMessage)) {
-                        echo "<script>
-                    swal({
-                        title: 'Success',
-                        text: '$successMessage',
-                        icon: 'success',
-                        button: 'OK'
-                    });
-                </script>";
-                    }
-                    ?>
-
-                    <button type="reset" class="btn btn-danger mb-3" name="cancel">
-                        <i class="fa fa-times-circle"></i> Cancel
-                    </button>
+                                echo "swal({
+            title: 'Success',
+            text: '$successMessage',
+            icon: 'success',
+            button: 'OK'
+        });";
+                            }
+                            ?>
+                        </script>
+                        <button type="reset" class="btn btn-danger mb-3" name="cancel"><i class="fa fa-times-circle"></i> Cancel</button>
+                    </div><br>
 
                 </form>
-            </div><br>
-
-            </form>
+            </div>
         </div>
 
         <!--============================================================================================= 
@@ -374,13 +373,13 @@ if (isset($_POST['submit'])) {
                 <thead>
                     <tr>
                         <!--    <th scope="col" style="width: 30px;">#</th> -->
-                        <th scope="col" style="width: 10px;">Students</th>
-                        <th scope="col" style="width: 50px;">Gardening</th>
-                        <th scope="col" style="width: 10px;">% Gardening Space</th>
-                        <th scope="col" style="width: 50px;">Vertical Gardening</th>
-                        <th scope="col" style="width: 10px;">% Vertical Space</th>
+                        <th scope="col" style="width: 10px;">Sustainable Practices</th>
+                        <th scope="col" style="width: 10px;">Title of PPA</th>
+                        <th scope="col" style="width: 130px;">Description</th>
+                        <th scope="col" style="width: 50px;">Total Cost</th>
+                        <th scope="col" style="width: 80px;">Fund Source</th>
                         <!--   <th scope="col" style="width: 50px;">Points</th>  -->
-                        <th scope="col" colspan="2" class="text-center" style="width: 50px;">Action</th>
+                        <th scope="col" colspan="2" class="text-center" style="width: 60px;">Action</th>
                     </tr>
                 </thead>
 
@@ -388,7 +387,7 @@ if (isset($_POST['submit'])) {
                     <?php
                     include "includes/config.php";
 
-                    $query = "SELECT * FROM `tbl15_2_student` ORDER BY `ID` DESC"; // Fetching data from tbl15_2_student table
+                    $query = "SELECT * FROM `tbl15_2_sustainable` ORDER BY `ID` DESC"; // Fetching data from tbl15_2_sustainable table
                     $result = mysqli_query($conn, $query);
 
                     if (!$result) {
@@ -397,38 +396,24 @@ if (isset($_POST['submit'])) {
 
                     while ($row = mysqli_fetch_assoc($result)) {
                         $id = $row['ID'];
-                        $totalStudents = $row['total_students'];
-                        $maleGardening = $row['mgardening'];
-                        $femaleGardening = $row['fgardening'];
-                        $maleVertical = $row['mvertical'];
-                        $femaleVertical = $row['fvertical'];
+                        $total = $row['sustainable_practices'];
+                        $title = $row['ppa_title'];
+                        $desc = $row['ppa_description'];
+                        $cost = $row['total_cost'];
+                        $fund = $row['fund_source'];
 
-                        // Calculate total students involved in gardening and vertical gardening
-                        $totalGardeningStudents = $maleGardening + $femaleGardening;
-                        $totalVerticalStudents = $maleVertical + $femaleVertical;
-
-                        echo "</tr>";
-                        echo "<td>{$totalStudents}</td>";
-
-                        // Calculate and display total students with gardening spaces and percentage
-                        $totalStudentsWithGardening = $maleGardening + $femaleGardening;
-                        $percentageStudentsWithGardening = round(($totalStudentsWithGardening / $totalStudents) * 100, 2);
-                        echo "<td>{$totalStudentsWithGardening}</td>";
-                        echo "<td>{$percentageStudentsWithGardening}%</td>";
-
-                        // Calculate and display total students with vertical gardening spaces and percentage
-                        $totalStudentsWithVerticalGardening = $maleVertical + $femaleVertical;
-                        $percentageStudentsWithVerticalGardening = round(($totalStudentsWithVerticalGardening / $totalStudents) * 100, 2);
-                        echo "<td>{$totalStudentsWithVerticalGardening}</td>";
-                        echo "<td>{$percentageStudentsWithVerticalGardening}%</td>";
-
-                        // echo "<td>$points</td>";
+                        echo "<tr>";
+                        echo "<td>{$total} &nbsp; Implemented</td>";
+                        echo "<td>{$title}</td>";
+                        echo "<td>{$desc}</td>";
+                        echo "<td>Php {$cost}</td>";
+                        echo "<td>{$fund}</td>";
 
                         echo "<td class='text-center' style='width:40px'>
-                    <a href='edit/edit15.2.1.1.php?update&studid={$id}' style='width:30px;'>
+                    <a href='edit/edit15.2.1.php?update&sid={$id}' style='width:30px;'>
                         <i class='fa fa-edit'></i>
                     </a>
-                    <a href='delete/delete15.2.1.1.php?delete={$id}' style='width:30px;color:red;'>
+                    <a href='delete/delete15.2.1.php?delete={$id}' style='width:30px;color:red;'>
                         <i class='fa fa-trash'></i>
                     </a>
             </td>";

@@ -411,7 +411,7 @@ if (isset($_POST['submit'])) {
                     <a href='edit/edit15.2.1.2.php?update&empid={$id}' style='width:30px;'>
                         <i class='fa fa-edit'></i>
                     </a>
-                    <a href='delete/delete15.2.1.1.php?delete={$id}' style='width:30px;color:red;'>
+                    <a href='delete/delete15.2.1.2.php?delete={$id}' style='width:30px;color:red;'>
                         <i class='fa fa-trash'></i>
                     </a>
             </td>";

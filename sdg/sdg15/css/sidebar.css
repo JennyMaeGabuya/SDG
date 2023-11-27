@@ -31,13 +31,12 @@
   .sidenav a:hover, .dropdown-btn:hover {
     color: #f1f1f1;
     background-color: #83E352;
-    text-decoration: none; 
-
+    text-decoration: none;
   }
   
 /* Add an active class to the active dropdown button */
 .active {
-    background-color:rgb(98, 199, 67);
+    background-color:#56c02b;
     color: white;
   }
   
@@ -114,6 +113,7 @@
 
   .sidenav.active {
       left: 0; /* Show the sidebar when active */
+      background-color: #56c02b;
   }
 
   /* Additional styles for the content to adjust when the sidebar is active */

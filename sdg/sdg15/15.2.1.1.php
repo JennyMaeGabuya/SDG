@@ -156,8 +156,9 @@ if (isset($_POST['submit'])) {
             margin-right: 20px;
             width: 70%;
             overflow-x: auto;
+            margin-left: 400px;
         }
-
+      
         .h3text {
             justify-content: center;
 
@@ -210,6 +211,7 @@ if (isset($_POST['submit'])) {
             /* Enable horizontal scrolling on smaller screens if needed */
             font-size: 15px;
         }
+      
 
         /* Media query for smaller screens */
         @media only screen and (max-width: 768px) {
@@ -358,7 +360,7 @@ if (isset($_POST['submit'])) {
 
             </form>
         </div>
-    </div>
+    
     <!--============================================================================================= 
                                 END OF FORM
 ============================================================================================= -->
@@ -366,9 +368,9 @@ if (isset($_POST['submit'])) {
     <!--============================================================================================= 
                         START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
 ============================================================================================= -->
-<div class="table-container">
+<div class="text-center table-container">
     <h2 class="text-center">Sustainable Land Practices</h2>
-    <table class="table table-bordered" style="margin: auto;width:56%;">
+    <table class="  table table-bordered" style="margin: auto;width:55%;">
         <thead>
             <tr>
                 <th scope="col" style="width: 100px;">Total Students</th>
@@ -434,7 +436,7 @@ if (isset($_POST['submit'])) {
         </table>
     </div>
     </div>
-
+   
     <!--============================================================================================= 
                                 END OF TABLE
 ============================================================================================= -->

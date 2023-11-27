@@ -15,10 +15,12 @@
             top: 0;
             left: -100%;
             transition: left 0.3s ease;
+            background-color: #56c02b;
         }
 
         .sidenav.active {
             left: 0;
+            background-color: #56c02b;
         }
 
         /* Show the hamburger icon when the screen size is small */

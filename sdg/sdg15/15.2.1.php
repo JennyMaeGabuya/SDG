@@ -262,30 +262,24 @@ if (isset($_POST['submit'])) {
             <p>Points</p>
 
             <?php
-            // Check if the form has been submitted and 'sustainablePractices' is set
-            if (isset($_POST['submit']) && isset($_POST['sustainablePractices'])) {
-                $x = $_POST['sustainablePractices'];
-                $points = ($x / 2) * 15;
-                $totalPoints = min($points, 15);
-            } else {
-                // Default total points calculation based on database values
-                include "includes/config.php";
-                $query = "SELECT COUNT(*) AS total FROM `tbl15_2_sustainable`"; // SQL query to fetch all table data
-                $result = mysqli_query($conn, $query); // sending the query to the database
+      include "includes/config.php";
+      $query = "SELECT Count(*) AS total FROM `tbl15_2_sustainable`"; // SQL query to fetch all table data
+      $result = mysqli_query($conn, $query); // sending the query to the database
 
-                $totalPoints = 0;
+      $totalPoints = 0;
 
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $x = $row['total'];
+      while ($row = mysqli_fetch_assoc($result)) {
+        $total = $row['total'];
+        $x = $total;
 
-                    // calculate points by dividing total number of PPAs by 2 and multiply by 15
-                    $points = ($x / 2) * 15;
+        // calculate points by dividing total number of PPAs by 2 and multiply by 5
+        $points = ($x / 2) * 15;
 
-                    // Add the points to the total points
-                    $totalPoints += $points;
-                }
-            }
-            ?>
+
+        // Add the points  to the total points
+        $totalPoints += $points;
+      }
+      ?>
 
             <input type="text" style="color: black; text-align: center;" class="points" name="points" value="<?php echo min($totalPoints, 15); ?>" readonly>
         </div>

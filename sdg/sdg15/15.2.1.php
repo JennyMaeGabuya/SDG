@@ -4,7 +4,6 @@
 <?php
 if (isset($_POST['submit'])) {
     // Get form data
-    $total = $_POST["sustainablePractices"];
     $title = strtoupper($_POST['ppaTitle']);
     $desc = strtoupper($_POST['ppaDescription']);
     $cost = $_POST['totalCost'];
@@ -14,8 +13,8 @@ if (isset($_POST['submit'])) {
 
 
     // SQL query to insert data
-    $sql = "INSERT INTO `tbl15_2_sustainable` (`sustainable_practices`, `ppa_title`, `ppa_description`, `total_cost`, `fund_source`) 
-  VALUES ('$total','$title','$desc','$cost','$fund')";
+    $sql = "INSERT INTO `tbl15_2_sustainable` (`ppa_title`, `ppa_description`, `total_cost`, `fund_source`) 
+  VALUES ('$title','$desc','$cost','$fund')";
 
     if ($conn->query($sql) === TRUE) {
         // The dat was successfully entered
@@ -305,11 +304,6 @@ if (isset($_POST['submit'])) {
                     <fieldset>
                         <legend>Sustainable Practices Details</legend>
 
-                        <div class="form-group"><i class="fa fa-user"></i>
-                            <label>Total number of sustainable practices implemented</label>
-                            <input type="number" class="form-control" name="sustainablePractices" required>
-                        </div>
-
                         <div class="form-group"><i class="fa fa-bookmark"></i>
                             <label>Title of the PPA</label>
                             <input type="text" class="form-control" name="ppaTitle" required>
@@ -390,14 +384,13 @@ if (isset($_POST['submit'])) {
 
                     while ($row = mysqli_fetch_assoc($result)) {
                         $id = $row['ID'];
-                        $total = $row['sustainable_practices'];
                         $title = $row['ppa_title'];
                         $desc = $row['ppa_description'];
                         $cost = $row['total_cost'];
                         $fund = $row['fund_source'];
 
                         echo "<tr>";
-                        echo "<td>{$total} &nbsp; Implemented</td>";
+                        echo "<td>{$id} &nbsp; Implemented</td>";
                         echo "<td>{$title}</td>";
                         echo "<td>{$desc}</td>";
                         echo "<td>Php {$cost}</td>";

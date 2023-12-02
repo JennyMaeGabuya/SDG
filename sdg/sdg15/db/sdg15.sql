@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 27, 2023 at 07:45 PM
+-- Generation Time: Dec 02, 2023 at 03:41 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -102,20 +102,21 @@ INSERT INTO `tbl15_2_student` (`ID`, `total_students`, `mgardening`, `fgardening
 DROP TABLE IF EXISTS `tbl15_2_sustainable`;
 CREATE TABLE IF NOT EXISTS `tbl15_2_sustainable` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `sustainable_practices` int DEFAULT NULL,
   `ppa_title` varchar(100) DEFAULT NULL,
   `ppa_description` text,
   `total_cost` decimal(10,2) DEFAULT NULL,
   `fund_source` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl15_2_sustainable`
 --
 
-INSERT INTO `tbl15_2_sustainable` (`ID`, `sustainable_practices`, `ppa_title`, `ppa_description`, `total_cost`, `fund_source`) VALUES
-(4, 2, 'PLANTING TREES AS A HABIT', 'A SEEDLING PLANTING TO HELP THE ENVIRONMENT', '25000.00', 'DEPARTMENT OF AGRICULTURE');
+INSERT INTO `tbl15_2_sustainable` (`ID`, `ppa_title`, `ppa_description`, `total_cost`, `fund_source`) VALUES
+(1, 'PLANTING TREES AS A HABIT', 'PLANTING SEEDLINGS IS A SIMPLE GESTURE TO HELP THE ENVIRONMENT BUT HAVE A GREAT IMPACT.', '25000.00', 'DEPARTMENT OF AGRICULTURE'),
+(2, 'PLANTING BARAKO', 'PLANTING TREES FOR THE FUTURE GENERATION.', '35000.00', 'DEPARTMENT OF AGRICULTURE'),
+(3, 'SEEDS OF OUR DEEDS', 'PLANTING ACTIVITY IN OUR COMMUNITY TO PROMOTE PLANTING.', '50000.00', 'DEPARTMENT OF AGRICULTURE');
 
 -- --------------------------------------------------------
 

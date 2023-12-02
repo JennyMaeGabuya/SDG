@@ -14,7 +14,6 @@ $result = mysqli_query($conn, $query);
 while ($row = mysqli_fetch_assoc($result)) {
 
     //the data inside [''] are the columns in db
-    $total = $row['sustainable_practices'];
     $title = $row['ppa_title'];
     $desc = $row['ppa_description'];
     $cost = $row['total_cost'];
@@ -26,14 +25,13 @@ while ($row = mysqli_fetch_assoc($result)) {
 //============================================================================================= -->         
 //Processing form data when form is submitted/ when update button is clicked
 if (isset($_POST['update'])) {
-    $total = $_POST["sustainablePractices"];
     $title = strtoupper($_POST['ppaTitle']);
     $desc = strtoupper($_POST['ppaDescription']);
     $cost = $_POST['totalCost'];
     $fund = strtoupper($_POST['fundSource']);
 
     // SQL query to update the data in user table where the total_number = $ppa_id 
-    $query = "UPDATE `tbl15_2_sustainable` SET   `sustainable_practices` = '{$total}', `ppa_title` = '{$title}', `ppa_description` = '{$desc}', `total_cost` = '{$cost}', `fund_source` = '{$fund}'
+    $query = "UPDATE `tbl15_2_sustainable` SET  `ppa_title` = '{$title}', `ppa_description` = '{$desc}', `total_cost` = '{$cost}', `fund_source` = '{$fund}'
          WHERE `ID`= $id";
     $update = mysqli_query($conn, $query);
     $successMessage = "You have successfully Updated data";
@@ -143,11 +141,6 @@ if (isset($_POST['update'])) {
 
             <fieldset>
                 <legend>Sustainable Practices Details</legend>
-
-                <div class="form-group"><i class="fa fa-user"></i>
-                    <label>Total number of sustainable practices implemented</label>
-                    <input type="number" class="form-control" name="sustainablePractices" required value="<?php echo htmlspecialchars($total); ?>">
-                </div>
 
                 <div class="form-group"><i class="fa fa-bookmark"></i>
                     <label>Title of the PPA</label>

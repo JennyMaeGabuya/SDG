@@ -409,7 +409,7 @@ h2 {
                     echo "<td>{$percent_failed} %</td>";
 
                     echo "<td class ='text-center' style='width:100px'>
-                          <a href='edit/edit_4.2.1.php?update&licensure_id={$id}' style='width:45px;color:red;'>
+                          <a href='edit/edit_4.2.1.php?update&licensure_id={$id}' style='width:45px;'>
                               <i class='fa fa-edit'></i> 
                           </a>
                           <a href='delete/delete_4.2.1.php?delete={$id}' style='width:45px;color:red;'>

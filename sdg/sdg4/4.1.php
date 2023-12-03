@@ -77,15 +77,21 @@ if (isset($_POST['submit'])) {
     border-radius: 15px;
   }
   .h2head{
-      margin-left: 200px;
+    margin-left: 250px; /* Adjust this value to your preferred margin */
+  font-family: Arial, Helvetica, sans-serif;
 
     }
 p{
     margin: 20px;
     font-size: 16px;
 }
-h2 {
+h2.h2head {
     flex: 1; /* Allow h2 to grow to take available space */
+  margin-top: 0;
+  background-color: #C31F33;
+  color: #fff;
+  padding: 10px;
+ 
   }
 
   .input-container {
@@ -150,10 +156,7 @@ h2 {
   .table{
     font-size: 14px;
   }
-  .h3text{
-    justify-content:center;
-    
-  }
+  
   .points{
     box-shadow: grey;
   }
@@ -174,7 +177,9 @@ h2 {
     .confirmation-text {
         margin: 0; /* Remove default margin for the paragraph */
     }
-
+.h3table{
+  margin-left: 280px;
+}
 /* endddd */
 
 /* ==========================================just added===================================================== */
@@ -220,10 +225,21 @@ h2 {
   .h2head {
   
     margin: 10px auto;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bolder;
-   margin-left: 20px; 
+   margin-left: 35px; 
 }
+.h3table{
+  margin: 10px auto;
+    font-size: 20px;
+   margin-left: 20px;
+}
+.title{
+  margin: 10px auto;
+    font-size: 20px;
+   margin-left: 20px;
+}
+
 }
 
 </style>
@@ -236,7 +252,7 @@ h2 {
                                   START OF HEADER POINTING SYSTEM 
 ============================================================================================= -->
 <div class="main" style="background-color:#C31F33;">
-  <h2 class="h2head text-center">SDG 4 QUALITY EDUCATION</h2>
+  <h2 class="h2head">SDG 4 QUALITY EDUCATION</h2>
   <div class="input-container">
     <p>Points</p>
 
@@ -286,14 +302,14 @@ h2 {
 
   <div class="content">
     <br>
-    <h3 class="text-center">4.1 Research on early years and lifelong learning education</h3>
+    <h3 class="title text-center">4.1 Research on early years and lifelong learning education</h3>
   <!--============================================================================================= 
                                   START OF FORM
 ============================================================================================= -->
 <div class="card">
  <div class="contentform">
   <form method="POST">
-   <h3 class="h3text text-center">Research</h3>
+  
 
   <!-- <div class="mb-2 mt-2"><i class="fa fa-search"></i>
       <label for="total_number">Total number of research on early years and lifelong education</label>
@@ -348,7 +364,22 @@ h2 {
 ============================================================================================= -->
 
 <div class="table-container">
-  <h2 class="text-center">Researches</h2>           
+  <h2 class="h3table">Researches</h2>   
+  <?php                              //==========================================================       
+    include "includes/config.php";   // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE
+                                     //========================================================== 
+
+    $query = "SELECT source, COUNT(*) AS total FROM `tbl4_1`"; // SQL query to fetch all table data
+    $result = mysqli_query($conn, $query); // sending the query to the database
+
+    if (!$result) {
+      die("Error: " . mysqli_error($conn));
+  }
+ 
+ while ($row = mysqli_fetch_assoc($result)) {
+     $x = $row['total'];}
+     ?>
+  <p class="h3table">Total Number of research on early years and lifelong education: <?php echo $x ?></p>        
   <table class="table table-bordered" style="margin: auto;width:56%;">
   <thead>
     <tr>

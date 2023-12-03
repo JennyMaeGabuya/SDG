@@ -73,15 +73,21 @@ if (isset($_POST['submit'])) {
     border-radius: 15px;
   }
   .h2head{
-      margin-left: 200px;
+    margin-left: 250px; /* Adjust this value to your preferred margin */
+  font-family: Arial, Helvetica, sans-serif;
 
     }
 p{
     margin: 20px;
     font-size: 16px;
 }
-h2 {
+h2.h2head {
     flex: 1; /* Allow h2 to grow to take available space */
+  margin-top: 0;
+  background-color: #C31F33;
+  color: #fff;
+  padding: 10px;
+ 
   }
 
   .input-container {
@@ -146,10 +152,7 @@ h2 {
   .table{
     font-size: 14px;
   }
-  .h3text{
-    justify-content:center;
-    
-  }
+  
   .points{
     box-shadow: grey;
   }
@@ -170,7 +173,9 @@ h2 {
     .confirmation-text {
         margin: 0; /* Remove default margin for the paragraph */
     }
-
+.h3table{
+  margin-left: 280px;
+}
 /* endddd */
 
 /* ==========================================just added===================================================== */
@@ -216,10 +221,21 @@ h2 {
   .h2head {
   
     margin: 10px auto;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bolder;
-   margin-left: 20px; 
+   margin-left: 35px; 
 }
+.h3table{
+  margin: 10px auto;
+    font-size: 20px;
+   margin-left: 20px;
+}
+.title{
+  margin: 10px auto;
+    font-size: 20px;
+   margin-left: 20px;
+}
+
 }
 
 </style>
@@ -232,7 +248,7 @@ h2 {
                                   START OF HEADER POINTING SYSTEM 
 ============================================================================================= -->
 <div class="main" style="background-color:#C31F33;">
-  <h2 class="h2head text-center">SDG 4 QUALITY EDUCATION</h2>
+  <h2 class="h2head ">SDG 4 QUALITY EDUCATION</h2>
   <div class="input-container">
     <p>Points</p>
 
@@ -335,7 +351,7 @@ qualifications to teach at primary level.</p> -->
                         START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
 ============================================================================================= -->
 <div class="table-container">
-  <h2 class="text-center">Public resources</h2>           
+  <h2 class="h3table">Public resources</h2>           
   <table class="table table-bordered"  style="margin: auto;width:56%;">
   <thead>
     <tr>

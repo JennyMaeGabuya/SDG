@@ -73,15 +73,21 @@ if (isset($_POST['submit'])) {
     border-radius: 15px;
   }
   .h2head{
-      margin-left: 200px;
+    margin-left: 250px; /* Adjust this value to your preferred margin */
+  font-family: Arial, Helvetica, sans-serif;
 
     }
 p{
     margin: 20px;
     font-size: 16px;
 }
-h2 {
+h2.h2head {
     flex: 1; /* Allow h2 to grow to take available space */
+  margin-top: 0;
+  background-color: #C31F33;
+  color: #fff;
+  padding: 10px;
+ 
   }
 
   .input-container {
@@ -146,10 +152,7 @@ h2 {
   .table{
     font-size: 14px;
   }
-  .h3text{
-    justify-content:center;
-    
-  }
+  
   .points{
     box-shadow: grey;
   }
@@ -170,7 +173,9 @@ h2 {
     .confirmation-text {
         margin: 0; /* Remove default margin for the paragraph */
     }
-
+.h3table{
+  margin-left: 280px;
+}
 /* endddd */
 
 /* ==========================================just added===================================================== */
@@ -216,10 +221,21 @@ h2 {
   .h2head {
   
     margin: 10px auto;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bolder;
-   margin-left: 20px; 
+   margin-left: 35px; 
 }
+.h3table{
+  margin: 10px auto;
+    font-size: 20px;
+   margin-left: 20px;
+}
+.title{
+  margin: 10px auto;
+    font-size: 20px;
+   margin-left: 20px;
+}
+
 }
 
 </style>
@@ -231,7 +247,7 @@ h2 {
                                   START OF HEADER POINTING SYSTEM 
 ============================================================================================= -->
 <div class="main" style="background-color:#C31F33;">
-  <h2 class="h2head text-center">SDG 4 QUALITY EDUCATION</h2>
+  <h2 class="h2head ">SDG 4 QUALITY EDUCATION</h2>
   <div class="input-container">
     <p>Points</p>
 
@@ -266,8 +282,8 @@ h2 {
   <div class="content">
     <br>
     <h3 class="text-center">4.3.3 Vocational training events</h3>
-  <p class="text-center">Host events at the university that are open to the general public. 
-These are short courses for people who are <br> not attending the 
+  <p class="text-center">Host events at the university that are open to the general public. <br>
+These are short courses for people who are not attending the 
 university.</p>
 
 
@@ -330,7 +346,7 @@ qualifications to teach at primary level.</p> -->
                         START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
 ============================================================================================= -->
 <div class="table-container">
-  <h2 class=" text-center">Public events</h2>           
+  <h2 class="h3table">Public events</h2>           
   <table class="table table-bordered" style="margin: auto;width:56%;">
   <thead>
     <tr>
@@ -386,7 +402,7 @@ qualifications to teach at primary level.</p> -->
               //  echo "<td>$points</td>"; 
             
 
-                echo "<td class ='text-center' style='width:60px'>
+                echo "<td class ='text-center ' style='width:60px'>
                           <a href='edit/edit4.3.3.php?update&ppa_id={$id}' style='width:45px;'>
                               <i class='fa fa-edit'></i> 
                           </a>

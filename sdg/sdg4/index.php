@@ -29,10 +29,7 @@
     margin-left: 300px;
   
   }
-  .h2head{
-      margin-left: 250px;
-      font-family:Arial, Helvetica, sans-serif;
-    }
+
   /* Make the image fully responsive */
     .card{
       border-radius: 10px;
@@ -55,14 +52,21 @@
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
   
-  h2{
-    margin-top: 0;
-        background-color: #C31F33; 
-        color: #fff; 
-        padding: 10px; 
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  
+    h2 {
+  margin-top: 0;
+  background-color: #C31F33;
+  color: #fff;
+  padding: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.h2head {
+  margin-left: 250px; /* Adjust this value to your preferred margin */
+  font-family: Arial, Helvetica, sans-serif;
+}
+.top{
+  background-color: #C31F33;
+  width: 100%;
+}
   /* Media query for smaller screens */
   @media only screen and (max-width: 768px) {
     .card {
@@ -87,10 +91,11 @@
       height:150px;
     }
     .h2head {
-  
   margin: 10px auto;
    margin-left: 10px;   
-
+   justify-content: center;
+   text-align: center;
+font-size: large;
 }
   }
   
@@ -98,7 +103,10 @@
 </head>
 <body>
 <div class="index" >
-<h2 class="h2head text-center">SDG 4 QUALITY EDUCATION</h2>
+  <div class="top">
+  <h2 class="h2head">SDG 4 QUALITY EDUCATION</h2>
+  </div>
+
 <?php include('sidebar.php'); ?>
 
 <div class="main1 text-center">

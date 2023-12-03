@@ -105,6 +105,7 @@ INSERT INTO `tbl421_licensure` (`ID`, `Program`, `EligibleTotal`, `TookExam`, `A
 DROP TABLE IF EXISTS `tbl422_let`;
 CREATE TABLE IF NOT EXISTS `tbl422_let` (
   `ID` int NOT NULL AUTO_INCREMENT,
+  `total_student` INT NOT NULL,
   `let total number` int NOT NULL,
   `bsed total number` int NOT NULL,
   `beed total number` int NOT NULL,

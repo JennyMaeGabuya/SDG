@@ -5,6 +5,7 @@
 <?php 
 if (isset($_POST['submit'])) {
   // Get form data
+  $studtotal=  $_POST['studtotal'];
   $lettotal = $_POST['lettotal'];
   $bsedtotal = $_POST['bsedtotal'];
   $beedtotal = $_POST['beedtotal'];
@@ -14,8 +15,8 @@ if (isset($_POST['submit'])) {
   include "includes/config.php";
 
   // SQL query to insert data
-  $sql = "INSERT INTO `tbl422_let` (`let total number`, `bsed total number`, `beed total number`, `bped total number`, `btled total number`) 
-  VALUES ('$lettotal','$bsedtotal','$beedtotal','$bpedtotal','$btledtotal')";
+  $sql = "INSERT INTO `tbl422_let` (`total_student`,`let total number`, `bsed total number`, `beed total number`, `bped total number`, `btled total number`) 
+  VALUES ('$studtotal', '$lettotal','$bsedtotal','$beedtotal','$bpedtotal','$btledtotal')";
 
   if ($conn->query($sql) === TRUE) {
       // The dat was successfully entered
@@ -75,15 +76,21 @@ teach at primary level</title>
     border-radius: 15px;
   }
   .h2head{
-      margin-left: 200px;
+    margin-left: 250px; /* Adjust this value to your preferred margin */
+  font-family: Arial, Helvetica, sans-serif;
 
     }
 p{
     margin: 20px;
     font-size: 16px;
 }
-h2 {
+h2.h2head {
     flex: 1; /* Allow h2 to grow to take available space */
+  margin-top: 0;
+  background-color: #C31F33;
+  color: #fff;
+  padding: 10px;
+ 
   }
 
   .input-container {
@@ -136,9 +143,7 @@ h2 {
   }
 .btn{
     margin-bottom: 10px;
-
 }
-
   .table-container{
     margin-right: 20px;
     width:70%;
@@ -148,10 +153,7 @@ h2 {
   .table{
     font-size: 14px;
   }
-  .h3text{
-    justify-content:center;
-    
-  }
+  
   .points{
     box-shadow: grey;
   }
@@ -172,7 +174,12 @@ h2 {
     .confirmation-text {
         margin: 0; /* Remove default margin for the paragraph */
     }
-
+.h3table{
+  margin-left: 280px;
+}
+.title{
+  margin-left: 250px;
+}
 /* endddd */
 
 /* ==========================================just added===================================================== */
@@ -218,10 +225,17 @@ h2 {
   .h2head {
   
     margin: 10px auto;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bolder;
-   margin-left: 20px; 
+   margin-left: 35px; 
 }
+.h3table{
+  margin: 10px auto;
+    font-size: 20px;
+   margin-left: 20px;
+}
+
+
 }
 
 </style>
@@ -233,7 +247,7 @@ h2 {
   START OF HEADER POINTING SYSTEM 
 ============================================================================================= -->
 <div class="main" style="background-color:#C31F33;">
-  <h2 class="h2head text-center">SDG 4 QUALITY EDUCATION</h2>
+  <h2 class="h2head ">SDG 4 QUALITY EDUCATION</h2>
   <div class="input-container">
     <p>Points</p>
 
@@ -275,8 +289,8 @@ h2 {
     <br>
     <h3 class="text-center">4.2.2 Proportion of graduates with teaching qualifications to 
 teach at primary level</h3>
-  <p class="text-center">This is the total headcount number of graduates at all levels from your 
-institution who gained a qualification that entitled <br>them to teach at 
+  <p class=" text-center">This is the total headcount number of graduates at all levels from your 
+institution who <br> gained a qualification that entitled them to teach at 
 primary school level.</p>
 
 
@@ -289,7 +303,10 @@ primary school level.</p>
   <form method="POST" >
 
 
-
+  <div class="form-group"><i class="fa fa-bar-chart"></i>
+      <label for="total_number" class="text-center ">Total number of students</label>
+      <input type="number" class="form-control" id="lettotal" name="studtotal"required>
+    </div>
 <div class="form-group"><i class="fa fa-bar-chart"></i>
       <label for="total_number" class="text-center ">Total number of LET passers</label>
       <input type="number" class="form-control" id="lettotal" name="lettotal"required>
@@ -340,11 +357,12 @@ primary school level.</p>
                         START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
 ============================================================================================= -->
 <div class="table-container">
-  <h2 class=" text-center">Graduate with qualification to teach at primary level</h2>           
+  <h2 class=" h3table">Graduate with qualification to teach at primary level</h2>           
   <table class="table table-bordered"style="margin: auto;width:56%;">
   <thead>
     <tr>
     <!--  <th scope="col" style="width: 30px;">#</th>  -->
+    <th scope="col" style="width: 50px;">Students</th>
       <th scope="col" style="width: 50px;">LET passers</th>
       <th scope="col" style="width: 50px;">BSED passers</th>
       <th scope="col" style="width: 50px;">BEED passers</th>
@@ -367,6 +385,7 @@ primary school level.</p>
             // Displaying all the data retrieved from the database using a while loop
             while ($row = mysqli_fetch_assoc($result)) {
               $id = $row['ID'];
+              $studtotal = $row['total_student'];
                 $lettotal = $row['let total number'];
                 $bsedtotal = $row['bsed total number'];
                 $beedtotal = $row['beed total number'];
@@ -374,7 +393,7 @@ primary school level.</p>
                 $btledtotal = $row['btled total number'];
                
                  // Calculate percentages get the value from tbl4.2.1
-                 $query ="SELECT SUM(`Acquired`) AS total FROM tbl421_licensure  WHERE `program`='CTE'" ;
+                 $query ="SELECT SUM(`total_student`) AS total FROM tbl422_let " ;
                  
                 // Execute the query
                 $rslt = $conn->query($query);
@@ -407,6 +426,7 @@ if ($rslt) {
 
                 echo "<tr>";
              //   echo "<td>{$id}</td>";
+                echo "<td>{$studtotal}</td>"; 
                 echo "<td>{$lettotal}</td>";
                 echo "<td>{$bsedtotal}</td>";
                 echo "<td>{$beedtotal}</td>";

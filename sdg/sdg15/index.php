@@ -52,14 +52,20 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 
-h2{
+  h2 {
   margin-top: 0;
-      background-color: #56c02b; 
-      color: #fff; 
-      padding: 10px; 
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color:#51C417;
+  color: #fff;
+  padding: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
+.h2head {
+  margin-left: 250px; /* Adjust this value to your preferred margin */
+  font-family: Arial, Helvetica, sans-serif;
+}
+.top{
+  background-color: #51C417;
+  width: 100%;}
 /* Media query for smaller screens */
 @media only screen and (max-width: 768px) {
   .card {
@@ -77,21 +83,30 @@ h2{
   width: 90%; /* Adjust card width for smaller screens */
     margin: 10px auto; /* Adjust margin for smaller screens */
     font-size: 13px;
-
-
 }
   img{
     width:100%;
     margin-top: 60px;
     height:150px;
   }
+  .h2head {
+  margin: 10px auto;
+   margin-left: 10px;   
+   justify-content: center;
+   text-align: center;
+font-size: large;
+}
+
 }
 
 </style>
 </head>
 <body>
   <div class="index" >
-<h2 class="text-center">SDG 15 LIFE ON LAND</h2>
+    <div class="top">
+    <h2 class="h2head">SDG 15 LIFE ON LAND</h2>
+    </div>
+
 <?php include('sidebar.php'); ?>
 
 <div class="main1 text-center" >

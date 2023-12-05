@@ -50,197 +50,197 @@ if (isset($_POST['submit'])) {
 
   <style>
     body {
-      font-family: "Lato", sans-serif;
-      background-color: white;
-    }
+  font-family: "Lato", sans-serif;
+  background-color: white;
+}
 
-    /* Main content */
-    .main {
-      /* margin-left: 250px;  Same as the width of the sidenav */
-      font-size: 20px;
-      /* Increased text to enable scrolling */
-      padding: 0px 10px;
-      color: #FCF5ED;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #56c02b;
-      font-family: Verdana, sans-serif;
-      font-weight: bolder;
+/* Main content */
+.main {
+ /* margin-left: 250px;  Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  color: #FCF5ED;
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #51C417;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
       /* ==========================================just added */
+}
+.points{
+    width: 60px;
+    height: 40px;
+    border-radius: 15px;
+  }
+  .h2head{
+    margin-left: 250px; 
+  font-family: Arial, Helvetica, sans-serif;
     }
+    h2.h2head {
 
-    .points {
-      width: 60px;
-      height: 40px;
-      border-radius: 15px;
-    }
+  margin-top: 0;
 
-    p {
-      margin: 20px;
-      font-size: 16px;
-    }
+  color: #fff;
+  padding: 10px;
 
-    h2 {
-      flex: 1;
-      /* Allow h2 to grow to take available space */
-    }
+  }
+  .h3table{
+  margin-left: 280px;
+}
+p{
+    margin: 20px;
+    font-size: 16px;
+}
+h2 {
+    flex: 1; /* Allow h2 to grow to take available space */
+  }
 
-    .input-container {
-      display: flex;
-      align-items: center;
-    }
+  .input-container {
+    display: flex;
+    align-items: center;
+  }
 
-    p {
-      margin-right: 10px;
-    }
+  p {
+    margin-right: 10px;
+  }
+  .content{
+ /* Same as the width of the sidenav */
+  font-size: 17px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  color: black;
+  margin-left: 80px;
+  }
+ 
+  .card{
+    width: 70%;
+    margin-left: 350px;
+   font-size: 17px;
+    margin-bottom: 50px;
+    margin-top: 20px; 
+    height:auto;
+  }
+  .content>p{
+    text-align: justify;
+    justify-content: justify-content;
+    font-size: 17px;
+  }
+  .form-control{
+    margin-right: 30px;
+    display: block;
+    width: 88%;
+    height: 30px;
+  }
+  .form-row{
 
-    .content {
-      /* Same as the width of the sidenav */
-      font-size: 20px;
-      /* Increased text to enable scrolling */
-      padding: 0px 10px;
-      color: black;
-      margin-left: 80px;
-    }
+    height: 30px;
+    
+  }
+  .contentform{
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom:30px;
+    justify-content: center;
+    align-items: center;
+    
+  }
+.btn{
+    margin-bottom: 10px;
 
-    .card {
-      width: 64%;
-      margin-left: 350px;
+}
 
-      margin-bottom: 50px;
-      margin-top: 20px;
-      height: auto;
-    }
-
-    .content>p {
-      text-align: justify;
-      justify-content: justify-content;
-    }
-
-    .form-control {
-      margin-right: 30px;
-      display: block;
-      width: 88%;
-      height: 30px;
-    }
-
-    .form-row {
-
-      height: 30px;
-
-    }
-
-    .contentform {
-      margin-top: 30px;
-      margin-left: 50px;
-      margin-bottom: 30px;
-      justify-content: center;
-      align-items: center;
-
+  .table-container{
+    margin-right: 20px;
+    width:70%;
+    overflow-x: auto; 
+  }
+  .h3text{
+    justify-content:center;
+    
+  }
+  .points{
+    box-shadow: grey;
+  }
+.fields{
+    border-bottom: solid 1px #e9d6d6;
+    margin-right: 25px;
+}
+/* css for confrim button */
+.button-container {
+        display: flex;
+        align-items: center; /* Align items vertically */
     }
 
     .btn {
-      margin-bottom: 10px;
-
-    }
-
-    .table-container {
-      margin-right: 20px;
-      width: 50%;
-      overflow-x: auto;
-    }
-
-    .h3text {
-      justify-content: center;
-    }
-    .h2head{
-      margin-left: 200px;
-    }
-
-    .points {
-      box-shadow: grey;
-    }
-
-    .fields {
-      border-bottom: solid 1px #e9d6d6;
-      margin-right: 25px;
-    }
-
-    /* css for confrim button */
-    .button-container {
-      display: flex;
-      align-items: center;
-      /* Align items vertically */
-    }
-
-    .btn {
-      margin-right: 10px;
-      /* Adjust margin as needed */
+        margin-right: 10px; /* Adjust margin as needed */
     }
 
     .confirmation-text {
-      margin: 0;
-      /* Remove default margin for the paragraph */
+        margin: 0; /* Remove default margin for the paragraph */
     }
 
-    /* endddd */
+/* endddd */
 
-    /* ==========================================just added===================================================== */
-    /* Centering content and responsiveness */
-    .card {
-      width: 55%;
-      /* Adjust card width */
-      margin: 60px auto;
-      /* Center the card and provide space */
-      font-size: 17px;
-    }
-
-    .table-container {
-      width: 100%;
-      /* Adjust table container width */
-      margin: 20px auto;
-      /* Center the table and provide space */
-      overflow-x: auto;
-      /* Enable horizontal scrolling on smaller screens if needed */
-      font-size: 17px;
-    }
-
-    /* Media query for smaller screens */
-    @media only screen and (max-width: 768px) {
-      .card {
-        width: 90%;
-        /* Adjust card width for smaller screens */
-        margin: 10px auto;
-        /* Adjust margin for smaller screens */
-        font-size: 13px;
-      }
-
-      .table-container {
-        width: 90%;
-        /* Adjust table container width for smaller screens */
-        margin: 10px auto;
-        font-size: 13px;
-      }
-
-      .content {
-        /* Same as the width of the sidenav */
-        font-size: 20px;
-        /* Increased text to enable scrolling */
-        padding: 0px 10px;
-        color: black;
-        margin-left: 5px;
-      }
-      .h2head {
-  
-  margin: 10px auto;
-  font-size: 15px;
-  font-weight: bolder;
-   margin-left: 20px;   
-
+/* ==========================================just added===================================================== */
+/* Centering content and responsiveness */
+.card {
+  width: 55%; /* Adjust card width */
+  margin: 60px auto; /* Center the card and provide space */
+  font-size: 16px;
 }
-    }
-  </style>
+
+.table-container {
+  width: 100%; /* Adjust table container width */
+  margin: 20px auto; /* Center the table and provide space */
+  overflow-x: auto; /* Enable horizontal scrolling on smaller screens if needed */
+  font-size: 16px;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 90%; /* Adjust card width for smaller screens */
+    margin: 10px auto; /* Adjust margin for smaller screens */
+    font-size: 13px;
+  }
+
+  .table-container {
+    width: 90%; /* Adjust table container width for smaller screens */
+    margin: 10px auto;
+    font-size: 13px;
+  }
+  .content{
+ /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  color: black;
+  margin-left: 5px;
+  }
+  img{
+    width:100%;
+    margin-top: 60px;
+    height:150px;
+  }
+  .h2head {
+
+margin: 10px auto;
+font-size: 14px;
+font-weight: bolder;
+margin-left: 35px; 
+}
+.h3table{
+margin: 10px auto;
+font-size: 20px;
+margin-left: 20px;
+}
+.title{
+margin: 10px auto;
+font-size: 20px;
+margin-left: 20px;
+}
+}
+
+</style>
 
 <body>
   <?php include('sidebar.php'); ?>
@@ -250,7 +250,7 @@ if (isset($_POST['submit'])) {
                                   START OF HEADER POINTING SYSTEM 
 ============================================================================================= -->
   <div class="main">
-    <h2 class="h2head text-center">SDG 15 LIFE ON LAND</h2>
+    <h2 class="h2head ">SDG 15 LIFE ON LAND</h2>
     <div class="input-container">
       <p>Points</p>
 
@@ -285,7 +285,7 @@ if (isset($_POST['submit'])) {
 
   <div class="content">
     <br>
-    <h3 class="text-center">15.5.1 Biodiversity in the community</h3>
+    <h3 class=" title text-center">15.5.1 Biodiversity in the community</h3>
 
 
     <!--============================================================================================= 
@@ -342,7 +342,7 @@ if (isset($_POST['submit'])) {
                         START OF TABLE/ DISPLAY ALL RECORDS FROM DATABASE
 ============================================================================================= -->
     <div class="table-container">
-      <h2 class="text-center">Biodiversity in the community</h2>
+      <h2 class="h3table">Biodiversity in the community</h2>
       <table class="table table-bordered" style="margin: auto;width:56%;">
         <thead>
           <tr>

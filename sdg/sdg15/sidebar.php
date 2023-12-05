@@ -46,18 +46,18 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a href="15.2.1.php">15.2.1 Sustainable Land Practices Implemented</a>
+            <a href="15.2.1.php">15.2.1 Land Practices </a>
             <a href="15.2.1.1.php">15.2.1.1 Students</a>
             <a href="15.2.1.2.php">15.2.1.2 Employees</a>
         </div>
-        <a href="15.3.php">15.3 Endangered Flora/Fauna</a>
+        <a href="15.3.php">15.3 Endangered Species</a>
         <button class="dropdown-btn">15.4 Sustainable Use ..
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a href="15.4.1.php">15.4.1 Sustainable Use of Land</a>
+            <a href="15.4.1.php">15.4.1  Use of Land</a>
             <a href="15.4.2.php">15.4.2 Farmed Food</a>
-            <a href="15.4.3.php">15.4.3 Ecosystem's Biodiversity</a>
+            <a href="15.4.3.php">15.4.3 Biodiversity</a>
         </div>
         <a href="15.5.1.php">15.5.1 Biodiversity</a>
     </div>

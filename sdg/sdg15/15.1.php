@@ -78,8 +78,20 @@ if (isset($_POST['submit'])) {
     border-radius: 15px;
   }
   .h2head{
-      margin-left: 200px;
+    margin-left: 250px; 
+  font-family: Arial, Helvetica, sans-serif;
     }
+    h2.h2head {
+
+  margin-top: 0;
+
+  color: #fff;
+  padding: 10px;
+
+  }
+  .h3table{
+  margin-left: 280px;
+}
 p{
     margin: 20px;
     font-size: 16px;
@@ -214,11 +226,21 @@ h2 {
     height:150px;
   }
   .h2head {
-  
-    margin: 10px auto;
-    font-size: 15px;
-    font-weight: bolder;
-   margin-left: 20px; 
+
+margin: 10px auto;
+font-size: 14px;
+font-weight: bolder;
+margin-left: 35px; 
+}
+.h3table{
+margin: 10px auto;
+font-size: 20px;
+margin-left: 20px;
+}
+.title{
+margin: 10px auto;
+font-size: 20px;
+margin-left: 20px;
 }
 }
 
@@ -231,7 +253,7 @@ h2 {
                                   START OF HEADER POINTING SYSTEM 
 ============================================================================================= -->
 <div class="main" style="background-color:rgb(86,192,43);">
-  <h2 class=" h2head text-center">SDG 15 LIFE ON LAND</h2>
+  <h2 class=" h2head">SDG 15 LIFE ON LAND</h2>
   <div class="input-container">
     <p>Points</p>
 
@@ -280,7 +302,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
   <div class="content">
     <br>
-    <h3 class="text-center">15.1 Research on land ecosystems</h3>
+    <h3 class="title  text-center">15.1 Research on land ecosystems</h3>
  
 
   <!--============================================================================================= 
@@ -344,7 +366,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 ============================================================================================= -->
 
 <div class="table-container">
-  <h2 class="text-center">Researches</h2>           
+  <h2 class="h3table">Researches</h2>           
   <table class="table table-bordered" style="margin: auto;width:56%;">
   <thead>
     <tr>

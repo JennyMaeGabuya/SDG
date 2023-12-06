@@ -75,24 +75,36 @@ img {vertical-align: middle;}
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <img src="img/sdg.png" style="width:100%;height: 350px;">
+  <img src="img/sdg15.jpg" style="width:100%;height: 350px;">
 </div>
 
 <div class="mySlides fade">
-  <img src="img/15.jpg" style="width:100%;height: 350px;">
+  <img src="img/15.png" style="width:100%;height: 350px;">
 </div>
 
 <div class="mySlides fade">
-  <img src="img/educ.jpg" style="width:100%;height: 350px;">
+  <img src="img/im.jpg" style="width:100%;height: 350px;">
 </div>
 <div class="mySlides fade">
-  <img src="img/pic.jpg" style="width:100%;height: 350px;">
+  <img src="img/ima.png" style="width:100%;height: 350px;">
+</div>
+<div class="mySlides fade">
+  <img src="img/imag.jpg" style="width:100%;height: 350px;">
+</div>
+<div class="mySlides fade">
+  <img src="img/image.jpg" style="width:100%;height: 350px;">
+</div>
+<div class="mySlides fade">
+  <img src="img/images.png" style="width:100%;height: 350px;">
 </div>
 </div>
 <br>
 
 <div style="text-align:center">
   <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>
   <span class="dot"></span> 
   <span class="dot"></span> 
   <span class="dot"></span>

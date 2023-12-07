@@ -27,10 +27,10 @@ while ($row = mysqli_fetch_assoc($result)) {
 //============================================================================================= -->  
 //Processing form data when form is submitted/ when update button is clicked
 if (isset($_POST['update'])) {
-    $title = $_POST['title'];
-    $description = $_POST['description'];
+    $title = strtoupper($_POST['title']);
+    $description = strtoupper($_POST['description']);
     $cost = $_POST['cost'];
-    $fund = $_POST['fund'];
+    $fund = strtoupper($_POST['fund']);
 
     // SQL query to update the data in user table where the total_number = $ppa_id 
     $query = "UPDATE `tbl432_events` SET   `event_title` = '{$title}', `event_description` = '{$description}', `total_cost` = '{$cost}', `fund_source` = '{$fund}' WHERE `ID`= $event_id";

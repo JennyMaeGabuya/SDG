@@ -4,10 +4,10 @@
 <?php
 if (isset($_POST['submit'])) {
   // Get form data
-  $title = $_POST['title'];
-  $description = $_POST['description'];
+  $title = strtoupper($_POST['title']);
+  $description = strtoupper($_POST['description']);
   $cost = $_POST['cost'];
-  $fund = $_POST['fund'];
+  $fund = strtoupper($_POST['fund']);
 
   include "includes/config.php";  // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
 

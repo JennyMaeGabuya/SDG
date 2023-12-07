@@ -32,10 +32,10 @@ if(isset($_GET['access_id'])) //the access_id came from 4.3.5.php which was decl
     $totalstud = $_POST['totalstud'];
     $percent50above = $_POST['percent50above'];
     $policy = $_POST['policy'];
-    $title = $_POST['title'];
-    $desc = $_POST['desc'];
+    $title = strtoupper($_POST['title']);
+    $desc = strtoupper($_POST['desc']);
     $cost = $_POST['cost'];
-    $fund = $_POST['fund'];
+    $fund = strtoupper($_POST['fund']);
 
       // SQL query to update the data in user table where the total_number = $ppa_id 
         $query ="UPDATE `tbl435_access` SET  `50above` = '{$totalstud}',`50abovePercentage` = '{$percent50above}',`totalaccess` = '{$policy}', `title` = '{$title}', `description` = '{$desc}', `cost` = '{$cost}',`fund` = '{$fund}' 

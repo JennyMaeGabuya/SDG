@@ -7,10 +7,10 @@ if (isset($_POST['submit'])) {
   $totalstud = $_POST['totalstud'];
   $percent50above = $_POST['percent50above'];
   $policy = $_POST['policy'];
-  $title = $_POST['title'];
-  $desc = $_POST['desc'];
+  $title = strtoupper($_POST['title']);
+  $desc = strtoupper($_POST['desc']);
   $cost = $_POST['cost'];
-  $fund = $_POST['fund'];
+  $fund = strtoupper($_POST['fund']);
 
   include "includes/config.php"; // CHANGE THIS WITH YOUR ACTUAL CONNECTION TO DATABASE ex: conn.php
 

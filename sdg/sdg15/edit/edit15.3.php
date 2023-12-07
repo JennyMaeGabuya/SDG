@@ -28,10 +28,10 @@ if(isset($_GET['ppa_id'])) //the ppa_id came from 15.3.php which was declared as
  //Processing form data when form is submitted/ when update button is clicked
  if (isset ($_POST['update'])){
     $tptal = $_POST['total'];
-    $title = $_POST['title'];
-    $desc = $_POST['desc'];
+    $title = strtoupper($_POST['title']);
+    $desc = strtoupper($_POST['desc']);
     $cost = $_POST['cost'];
-    $fund = $_POST['fund'];
+    $fund = strtoupper($_POST['fund']);
 
       // SQL query to update the data in user table where the total_number = $ppa_id 
         $query ="UPDATE `tbl15_3_endangered` SET   `total_number` = '{$total}',`title` = '{$title}', `description` = '{$desc}', `cost` = '{$cost}',`fund` = '{$fund}'

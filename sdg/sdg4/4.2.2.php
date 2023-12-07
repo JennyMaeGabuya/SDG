@@ -344,7 +344,7 @@ primary school level.</p>
     ?>
 </script>
     <button type="reset" class="btn btn-danger mb-3" name="cancel"><i class="fa fa-times-circle"></i> Cancel</button>
-    </div><br>
+    </div>
   
 </form>
   </div>

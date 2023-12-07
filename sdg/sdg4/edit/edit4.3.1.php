@@ -105,7 +105,8 @@ h3{
     <div class="form-group"><i class="fa fa-drivers-license"></i>
       <label for="fund">Fund source</label>
       <input type="text" class="form-control" id="" name="fund" value="<?php echo $fund ?>" required>
-    </div>
+    </div><br>
+    
    <button type="submit" class="btn btn-primary mt-6 mb-3" name="update"><i class="far fa-edit"></i> Update</button>
    <script type="text/javascript">
                 <?php
@@ -123,7 +124,7 @@ h3{
 <button type="reset" class="btn btn-danger mt-6 mb-3" name="cancel" onclick="window.location.href='../4.3.1.php';">
     <i class="fa fa-times-circle"></i> Cancel
 </button>
-  <br>
+  <br><br>
 
 </form>
 </div>

@@ -119,7 +119,8 @@ qualifications to teach at primary level.</p> -->
 <div class="form-group "><i class="fa fa-graduation-cap"></i>
   <label for="total">Total number of BTLED passers</label>
   <input type="number" class="form-control" id="btledtotal" name="btledtotal" value="<?php echo $btled?>" required>
-</div>
+</div><br>
+
 <div>
 <button type="submit" class="btn btn-primary  mb-3" id="update" name="update" >
   <i class="fa fa-send"></i> Update</button>

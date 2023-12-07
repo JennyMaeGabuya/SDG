@@ -182,7 +182,7 @@ if (isset($_POST['update'])) {
                 </div>
             </fieldset>
 
-            <button type="submit" class="btn btn-primary mt-6 mb-3" name="update"><i class="far fa-edit"></i>Update</button>
+            <button type="submit" class="btn btn-primary mt-6 mb-3" name="update"><i class="far fa-edit"></i> Update</button>
             <script type="text/javascript">
                 <?php
                 if (isset($successMessage)) {

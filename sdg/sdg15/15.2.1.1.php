@@ -111,7 +111,7 @@ h2 {
   }
   .content{
  /* Same as the width of the sidenav */
-  font-size: 17px; /* Increased text to enable scrolling */
+  font-size: 20px; /* Increased text to enable scrolling */
   padding: 0px 10px;
   color: black;
   margin-left: 80px;
@@ -157,8 +157,14 @@ h2 {
   .table-container{
     margin-right: 20px;
     width:70%;
-    overflow-x: auto; 
+    overflow-x: auto;
+    font-size: 10px; 
   }
+
+  .table{
+    font-size: 14px;
+  }
+
   .h3text{
     justify-content:center;
     
@@ -184,6 +190,9 @@ h2 {
         margin: 0; /* Remove default margin for the paragraph */
     }
 
+    .h3table{
+  margin-left: 280px;
+}
 /* endddd */
 
 /* ==========================================just added===================================================== */
@@ -335,7 +344,7 @@ margin-left: 20px;
                     </button>
 
                 </form>
-            </div><br>
+            </div>
 
             </form>
         </div>
@@ -349,7 +358,7 @@ margin-left: 20px;
 ============================================================================================= -->
     <div class="table-container">
         <h2 class="h3table">Sustainable Land Practices</h2>
-        <table class=" text-center table table-bordered" style="margin: auto;width:56%;">
+        <table class="table table-bordered" style="margin: auto;width:56%;">
             <thead>
                 <tr>
                     <!--    <th scope="col" style="width: 30px;">#</th> -->

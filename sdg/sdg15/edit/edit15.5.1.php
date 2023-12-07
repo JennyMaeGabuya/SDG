@@ -147,7 +147,7 @@ h3{
       <label for="fund">Fund source</label>
       <input type="text" class="form-control" id="" name="fund" value="<?php echo $fund ?>" required>
     </div>
-   <button type="submit" class="btn btn-primary mt-6 mb-3" name="update"><i class="far fa-edit"></i>Update</button>
+   <button type="submit" class="btn btn-primary mt-6 mb-3" name="update"><i class="far fa-edit"></i> Update</button>
    <script type="text/javascript">
                 <?php
                 if (isset($successMessage)) {

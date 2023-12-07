@@ -83,14 +83,18 @@ width: 250px;
 </div>
 
 <div class="mySlides fade">
-  <img src="img/1.jpg" style="width:100%;height: 350px;">
+  <img src="img/slide1.jpg" style="width:100%;height: 350px;">
 </div>
 
 <div class="mySlides fade">
-  <img src="img/educ.jpg" style="width:100%;height: 350px;">
+  <img src="img/slide.jpg" style="width:100%;height: 350px;">
+</div>
+
+<div class="mySlides fade">
+  <img src="img/slide3.jpg" style="width:100%;height: 350px;">
 </div>
 <div class="mySlides fade">
-  <img src="img/pic.jpg" style="width:100%;height: 350px;">
+  <img src="img/slide4.jpg" style="width:100%;height: 350px;">
 </div>
 </div>
 <br>
@@ -99,6 +103,7 @@ width: 250px;
   <span class="dot"></span> 
   <span class="dot"></span> 
   <span class="dot"></span> 
+  <span class="dot"></span>
   <span class="dot"></span>
 </div>
 

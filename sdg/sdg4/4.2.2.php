@@ -329,7 +329,7 @@ primary school level.</p>
   </div>
   <div>
     <button type="submit" class="btn btn-primary  mb-3" id="submit" name="submit" >
-      <i class="fa fa-send"></i>Submit</button>
+      <i class="fa fa-send"></i> Submit</button>
     <script type="text/javascript">
     <?php
     if (isset($successMessage)) {

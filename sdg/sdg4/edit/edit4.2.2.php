@@ -122,7 +122,7 @@ qualifications to teach at primary level.</p> -->
 </div>
 <div>
 <button type="submit" class="btn btn-primary  mb-3" id="update" name="update" >
-  <i class="fa fa-send"></i>Update</button>
+  <i class="fa fa-send"></i> Update</button>
 <script type="text/javascript">
 <?php
 if (isset($successMessage)) {

@@ -337,7 +337,7 @@ h2.h2head {
       <label for="citations">Source</label>
       <textarea class="form-control" id="source"  name="source"required></textarea>
     </div>
-    <button type="submit" class="btn btn-primary mt-3 mb-3" name="submit"><i class="fa fa-send"></i>Submit</button>
+    <button type="submit" class="btn btn-primary mt-3 mb-3" name="submit"><i class="fa fa-send"></i> Submit</button>
     <script type="text/javascript">
     <?php
     if (isset($successMessage)) {

@@ -384,10 +384,10 @@ h2.h2head {
 
           echo "<td class ='text-center' style='width:50px'>
                           <a href='edit/edit_4.3.2.php?update&event_id={$id}' style='width:45px;'>
-                              <i class='fa fa-edit'></i> 
+                              <i class='fa fa-edit fa-lg'></i> 
                           </a>
                           <a href='delete/delete_4.3.2.php?delete={$id}' style='width:45px;color:red;'>
-                          <i class='fa fa-trash'></i>
+                          <i class='fa fa-trash fa-lg'></i>
                       </a>
                       </td>";
         }

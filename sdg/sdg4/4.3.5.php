@@ -424,10 +424,10 @@ $totalPoints += $points;
 
                 echo "<td class ='text-center' style='width:60px'>
                           <a href='edit/edit4.3.5.php?update&access_id={$id}' style='width:45px;'>
-                              <i class='fa fa-edit'></i> 
+                              <i class='fa fa-edit fa-lg'></i> 
                           </a>
                           <a href='delete/delete4.3.5.php?delete={$id}' style='width:45px;color:red;'>
-                          <i class='fa fa-trash'></i>
+                          <i class='fa fa-trash fa-lg'></i>
                       </a>
                       </td>";
 

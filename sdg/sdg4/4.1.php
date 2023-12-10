@@ -379,7 +379,8 @@ h2.h2head {
  while ($row = mysqli_fetch_assoc($result)) {
      $x = $row['total'];}
      ?>
-  <p class="h3table">Total Number of research on early years and lifelong education: <?php echo $x ?></p>        
+  <!--<p class="h3table">Total Number of research on early years and lifelong education: <?php echo $x ?></p>        
+ -->
   <table class="table table-bordered" style="margin: auto;width:56%;">
   <thead>
     <tr>
@@ -436,10 +437,10 @@ h2.h2head {
 
                 echo "<td class ='text-center' style='width:80px'>
                           <a href='edit/edit_4_1.php?update&research_id={$id}' style='width:45px;'>
-                              <i class='fa fa-edit'></i> 
+                              <i class='fa fa-edit fa-lg'></i> 
                           </a>
                           <a href='delete/delete_4.1.php?delete={$id}' style='width:45px;color:red;'>
-                          <i class='fa fa-trash'></i>
+                          <i class='fa fa-trash fa-lg'></i>
                       </a>
                       </td>";
 

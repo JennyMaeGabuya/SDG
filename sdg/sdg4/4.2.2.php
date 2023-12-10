@@ -438,10 +438,10 @@ if ($rslt) {
 
                 echo "<td class ='text-center' style='width:100px'>
                           <a href='edit/edit4.2.2.php?update&passer_id={$id}' style='width:45px;'>
-                              <i class='fa fa-edit'></i> 
+                              <i class='fa fa-edit fa-lg'></i> 
                           </a>
                           <a href='delete/delete4.2.2.php?delete={$id}' style='width:45px;color:red;'>
-                          <i class='fa fa-trash'></i>
+                          <i class='fa fa-trash fa-lg'></i>
                       </a>
                       </td>";
 

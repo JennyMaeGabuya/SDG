@@ -433,10 +433,10 @@ if (isset($_POST['submit'])) {
 
             echo "<td class='text-center' style='width:40px'>
                     <a href='edit/edit15.2.1.php?update&sid={$id}' style='width:30px;'>
-                        <i class='fa fa-edit'></i>
+                        <i class='fa fa-edit fa-lg'></i>
                     </a>
                     <a href='delete/delete15.2.1.php?delete={$id}' style='width:30px;color:red;'>
-                        <i class='fa fa-trash'></i>
+                        <i class='fa fa-trash fa-lg'></i>
                     </a>
             </td>";
           }

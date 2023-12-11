@@ -1,4 +1,17 @@
 <style>
+       .nested-dropdown {
+    display: none;
+    padding-left: 20px; /* Adjust as needed */
+}
+
+.sidenav {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Show the nested dropdown when hovering over the parent link */
+.dropdown-container:hover .nested-dropdown {
+    display: block;
+}
       /* Hamburger icon styles */
       .hamburger {
         display: none; /* Initially hide the hamburger icon */
@@ -42,7 +55,7 @@
         <b><a href="../../index.php">Home</a></b>
         <a href="index.php">SDG 15: Life on Land</a>
         <a href="15.1.php">15.1 Research on Land</a>
-        <button class="dropdown-btn">15.2 Sustainable Land ..
+        <button class=" dropdown-btn">15.2 Sustainable Land
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">

@@ -97,6 +97,11 @@ img{
   cursor: pointer;
   outline: none;
 }
+.active {
+  background-color: #EB0C33;
+  color: white;
+}
+
 .hamburger {
 position: fixed;
 top: 0px;
@@ -123,9 +128,9 @@ cursor: pointer;
     transition: left 0.3s ease; /* Add a smooth transition effect */
 }
 
-.sidenav.active {
+.active {
     left: 0; /* Show the sidebar when active */
-    background-color: #C31F33;
+    background-color: #EB0C33;
 }
 
 /* Additional styles for the content to adjust when the sidebar is active */

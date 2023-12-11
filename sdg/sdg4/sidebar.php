@@ -3,7 +3,10 @@
     display: none;
     padding-left: 20px; /* Adjust as needed */
 }
-
+.active {
+  background-color: #EB0C33;
+  color: white;
+}
 .sidenav {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }

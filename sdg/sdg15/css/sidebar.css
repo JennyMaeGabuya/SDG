@@ -36,7 +36,7 @@
   
 /* Add an active class to the active dropdown button */
 .active {
-    background-color:#56c02b;
+    background-color:#83E352;
     color: white;
   }
   
@@ -85,6 +85,10 @@
     cursor: pointer;
     outline: none;
 }
+.active {
+  background-color:#83E352;
+  color: white;
+}
 .hamburger {
   position: fixed;
   top: 2px;
@@ -113,7 +117,7 @@
 
   .sidenav.active {
       left: 0; /* Show the sidebar when active */
-      background-color: #56c02b;
+      background-color: #83E352;
   }
 
   /* Additional styles for the content to adjust when the sidebar is active */

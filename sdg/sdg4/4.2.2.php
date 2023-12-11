@@ -106,7 +106,7 @@ h2.h2head {
   font-size: 20px; /* Increased text to enable scrolling */
   padding: 0px 10px;
   color: #C31F33;
-  margin-left: 80px;
+  margin-left: 130px;
   }
  
   .card{
